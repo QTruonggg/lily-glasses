@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\Admin\BannerController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -38,6 +38,13 @@ Route::prefix('admin')->middleware('auth')->group(function () {
         Route::get('list/{id}',[App\Http\Controllers\Admin\CategoryController::class,'updateCategoriesList'])->name('admin.updateCategoriesList');
         // delete
         Route::get('list/{id}',[App\Http\Controllers\Admin\CategoryController::class,'deleteCategoriesList'])->name('admin.deleteCategoriesList');
+    });
+
+    Route::prefix('banner')->group(function() {
+        Route::get('list',[BannerController::class,'viewBannerList'])->name('admin.viewBannerList');
+        Route::get('create',[BannerController::class,'createBanner'])->name('banner.create');
+        Route::post('create',[BannerController::class,'storeBanner']);
+        Route::get('deletebanner/{id}', [BannerController::class, 'deleteBanner'])->name('banner.delete');
     });
 
 });

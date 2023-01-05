@@ -51,10 +51,10 @@
           </li>
           <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="user"></i><span class="menu-title text-truncate" data-i18n="User">Banner</span></a>
             <ul class="menu-content">
-              <li><a class="d-flex align-items-center" href="app-user-list.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="List">Danh sách banner</span></a>
+              <li><a class="d-flex align-items-center" href="{{route('admin.viewBannerList')}}"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="List">Danh sách banner</span></a>
               </li>
               <!--  -->
-              <li><a class="d-flex align-items-center" href="app-user-list.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="List">thêm banner</span></a>
+              <li><a class="d-flex align-items-center" href="{{route('banner.create')}}"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="List">thêm banner</span></a>
               </li>
             </ul>
           </li>
