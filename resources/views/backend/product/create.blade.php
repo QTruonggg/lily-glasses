@@ -6,7 +6,7 @@
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1>Thêm danh mục</h1>
+                <h1>Thêm sản phẩm</h1>
             </div>
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right justify-content-end">
@@ -32,7 +32,7 @@
             <div class="card-header">
             </div>
             <div class="card-body p-0">
-                <form id="cerfitication" action="{{$category->id}}" method="POST" enctype="multipart/form-data">
+                <form id="cerfitication" action="create" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="row">
                         <div class="col-md-12">
@@ -48,33 +48,38 @@
                                 <div class="card-body">
                                     <div class="form-group mt-1 mb-1">
                                         <label for="inputName" class="form-label mb-1">Tên</label>
-                                        <input type="text" id="name" name="name" value="{{$category->name}}" class="form-control" placeholder="Nhập tên">
-                                        @error('name')
-                                        <span class="text-danger mt-1 d-block">{{ $message }}</span>
-                                        @enderror
+                                        <input type="text" id="name" name="name" value="" class="form-control" placeholder="Nhập tên">
+                                        
                                     </div>
                                     <div class="form-group mt-1 mb-1">
-                                        <label for="parent_id" class="form-label mb-1">Danh mục cha</label>
-                                        <select class="form-control custom-select" name="parent_id" id="parent_id" placeholder="">
-                                            <option value="0">Danh mục cha</option>
-                                            @foreach($parent_categories as $parent_category)
-                                            <option value="{{$parent_category->id}}">{{$parent_category->name}}</option>
-                                            @endforeach
+                                        <label for="inputName" class="form-label mb-1">Mã sản phẩm</label>
+                                        <input type="text" id="name" name="product_code" value="" class="form-control" placeholder="Nhập mã sản phẩm">
+                                      
+                                    </div>
+                                    <div class="form-group mt-1 mb-1">
+                                        <label for="color" class="form-label mb-1">Mã màu</label>
+                                        @include('frontend.components.input', ['name'=>'color[]'])
+                                    </div> 
+                                    <div class="form-group mt-1 mb-1">
+                                        <label for="old_price" class="form-label mb-1">Giá gốc</label>
+                                        <input type="text" id="seo_title" name="old_price" value="" class="form-control" placeholder="Nhập giá gốc">
+                                        
+                                    </div>
+                                    <div class="form-group mt-1 mb-1">
+                                        <label for="percent_discount" class="form-label mb-1">Giảm giá</label>
+                                        <input type="text" id="seo_title" name="percent_discount" value="" class="form-control" placeholder="Nhập phần trăm giảm giá">
+                                        
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="status">Trạng thái</label>
+                                        <select class="form-control custom-select" name="status" id="status">
+                                            <option value="1">Còn hàng</option>
+                                            <option value="0">Hết hàng</option>
                                         </select>
                                     </div>
                                     <div class="form-group mt-1 mb-1">
-                                        <label for="seo_title" class="form-label mb-1"> Tiêu đề</label>
-                                        <input type="text" id="seo_title" name="seo_title" value="{{$category->seo_title}}" class="form-control" placeholder="Nhập tiêu đề">
-                                        @if ($errors->has('seo_title'))
-                                            <span class="text-danger d-block mt-1">{{ $errors->first('seo_title') }}</span>
-                                        @endif
-                                    </div>
-                                    <div class="form-group mt-1 mb-1">
-                                        <label for="seo_keyword" class="form-label mb-1">Từ khóa</label>
-                                        <input type="text" id="keyword" name="seo_keyword" value="{{$category->seo_keyword}}" class="form-control">
-                                        @if ($errors->has('seo_keyword'))
-                                            <span class="text-danger d-block mt-1">{{ $errors->first('seo_keyword') }}</span>
-                                        @endif
+                                        <label for="seo_description" class="form-label mb-1">Mô tả</label>
+                                        <textarea class="form-control" id="summary-ckeditor" name="seo_description"></textarea>
                                     </div>
                                     <input type="hidden" name="thumbnail"  value="{{ csrf_token() }}">
                                 </div>
@@ -85,8 +90,8 @@
                     </div>
                     <div class="row">
                         <div class="col-12  ps-5 mb-2">
-                            <a href="{{route('admin.showCategoriesList')}}" class="btn btn-secondary">Quay lại</a>
-                            <input type="submit" value="Chỉnh sửa" class="btn btn-success float-right ms-2">
+                            <a href="{{route('admin.showProductList')}}" class="btn btn-secondary">Quay lại</a>
+                            <input type="submit" value="Thêm" class="btn btn-success float-right ms-2">
                         </div>
                     </div>
                 </form>
@@ -118,6 +123,7 @@
     </div>
 </div>
 <!-- /.card -->
+
 </section>
   <script>
     var button = document.getElementById( 'popup-1-button' );
