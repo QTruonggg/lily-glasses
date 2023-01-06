@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Admin\BannerController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -31,11 +31,9 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     Route::prefix('category')->group(function() {
         // get
         Route::get('list',[App\Http\Controllers\Admin\CategoryController::class,'showCategoriesList'])->name('admin.showCategoriesList');
-
         // post
         Route::get('create',[App\Http\Controllers\Admin\CategoryController::class,'interfaceAddCategoriesList'])->name('admin.interfaceAddCategoriesList');
         Route::post('create',[App\Http\Controllers\Admin\CategoryController::class,'addCategoriesList'])->name('admin.postCategoriesList');
-
         // update
         Route::get('list/update/{id}',[App\Http\Controllers\Admin\CategoryController::class,'getEdit'])->name('admin.getUpdateCategoriesList');
         Route::post('list/update/{id}',[App\Http\Controllers\Admin\CategoryController::class,'postEdit'])->name('admin.postUpdateCategoriesList');
@@ -44,13 +42,6 @@ Route::prefix('admin')->middleware('auth')->group(function () {
         Route::get('list/delete/{id}',[App\Http\Controllers\Admin\CategoryController::class,'deleteCategoriesList'])->name('admin.deleteCategoriesList');
     });
 
-<<<<<<< HEAD
-    Route::prefix('banner')->group(function() {
-        Route::get('list',[BannerController::class,'viewBannerList'])->name('admin.viewBannerList');
-        Route::get('create',[BannerController::class,'createBanner'])->name('banner.create');
-        Route::post('create',[BannerController::class,'storeBanner']);
-        Route::get('deletebanner/{id}', [BannerController::class, 'deleteBanner'])->name('banner.delete');
-=======
     // product ???
     Route::prefix('products')->group(function() {
         // get product
@@ -66,7 +57,6 @@ Route::prefix('admin')->middleware('auth')->group(function () {
 
         // delete product
         Route::get('list/delete/{id}', [App\Http\Controllers\Admin\ProductController::class,'deleteProduct'])->name('admin.deleteProduct');
->>>>>>> f20a907220fb4041be33cd282f9476a131f1a350
     });
 
 });
