@@ -18,7 +18,6 @@ class Banner extends Model
         'id',
         'image',
         'name',
-        'status',
-        'actions',
+        'sort',
     ];
 }

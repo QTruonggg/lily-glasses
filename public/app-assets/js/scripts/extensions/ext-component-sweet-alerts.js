@@ -37,7 +37,7 @@ $(function () {
   var ajax = $('#ajax-request');
 
   var confirmText = $('#confirm-text');
-  var confirmColor = $('#confirm-color');
+  var confirmColor = $('.confirm-color');
 
   var assetPath = '../../../app-assets/';
   if ($('body').attr('data-framework') === 'laravel') {
@@ -514,14 +514,16 @@ $(function () {
   // Confirm Color
   if (confirmColor.length) {
     confirmColor.on('click', function () {
+      var id = $(this).data('id');
       Swal.fire({
-        title: 'Are you sure?',
-        text: "You won't be able to revert this!",
+        title: 'Bạn có chắc muốn xóa không?',
+        text: "Bạn sẽ không thể hoàn tác lại!",
         icon: 'warning',
         showCancelButton: true,
-        confirmButtonText: 'Yes, delete it!',
+        confirmButtonText: '<a href="/admin/banner/deletebanner/' + `${id}` + '" class="text-light"> Xóa </a>',
+        cancelButtonText:'Hủy',
         customClass: {
-          confirmButton: 'btn btn-primary',
+          confirmButton: 'btn btn-danger',
           cancelButton: 'btn btn-outline-danger ms-1'
         },
         buttonsStyling: false
@@ -529,16 +531,17 @@ $(function () {
         if (result.value) {
           Swal.fire({
             icon: 'success',
-            title: 'Deleted!',
-            text: 'Your file has been deleted.',
+            title: 'Xóa!',
+            text: 'Đã xóa...',
+            showConfirmButton: false,
             customClass: {
               confirmButton: 'btn btn-success'
             }
           });
         } else if (result.dismiss === Swal.DismissReason.cancel) {
           Swal.fire({
-            title: 'Cancelled',
-            text: 'Your imaginary file is safe :)',
+            title: 'Đã hủy',
+            text: 'OK =)',
             icon: 'error',
             customClass: {
               confirmButton: 'btn btn-success'

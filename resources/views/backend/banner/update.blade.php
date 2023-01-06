@@ -51,8 +51,8 @@
                                         <input type="text" id="name" name="name" value="" class="form-control" placeholder="Nhập tên">
                                     </div>
                                     <div class="form-group mt-1 mb-1">
-                                        <label for="inputSort" class="form-label mb-1">Thứ tự</label>
-                                        <input type="text" id="sort" name="sort" value="" class="form-control" placeholder="Nhập số thứ tự">
+                                        <label for="inputName" class="form-label mb-1">Thứ tự</label>
+                                        <input type="text" id="name" name="name" value="" class="form-control" placeholder="Nhập tên">
                                     </div>
                                     <input type="hidden" name="image"  value="{{ csrf_token() }}">
                                 </div>
@@ -88,6 +88,7 @@
                 <button class="btn btn-primary btn-toggle-sidebar w-100 waves-effect waves-float waves-light" id="popup-1-button">
                     <span class="align-middle">Chọn ảnh</span>
                 </button>
+
             </div>
         </div>
     </div>

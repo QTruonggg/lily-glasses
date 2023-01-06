@@ -15,28 +15,22 @@ class BannerController extends Controller
         return view('backend.banner.list',
         ['title'=>'Danh sách Banner']
         , compact('banner'));
+        
     }
     public function createBanner(){
-        return view('backend.banner.create');
+        return view('backend.banner.create', 
+        ['title'=>'Danh sách Banner']
+        );
     }
     public function storeBanner(Request $request){
-        $imageName = time().'.'.$request->image->extension(); 
-        // lưu ảnh vào file
-        $request->image->move(public_path('upload'), $imageName);
-
         // gán dữ liệu gửi lên vào biến data
         $data = $request->all();
-        $data['image'] = $imageName;
- 
-        // Tạo mới với các dữ liệu tương ứng với dữ liệu được gán trong $data
         Banner::create($data);
         return redirect(route('admin.viewBannerList'));
     }
 
     public function deletebanner($id){
-        // Tìm đến đối tượng muốn xóa
         $banner = Banner::findOrFail($id);
-
         $banner->delete();
         return redirect(route('admin.viewBannerList'));
     }

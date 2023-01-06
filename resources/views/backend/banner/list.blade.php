@@ -41,34 +41,30 @@
                                     <th style="width: 10%">
                                         Ngày cập nhật
                                     </th>
-                                    <th style="width: 10%; text-align: center;">
-                                        Trạng thái
-                                    </th>
                                     <th style="width: 10%; text-align: right;" >
                                         Tác vụ
                                     </th>
                                 </tr>
                                 @foreach($banner as $banner)
                                 <tr>
-                                    <th>{{ $banner->id }}</th>
-                                    <th><img src="{{ asset('upload/'.$banner->image) }}" alt="" style="width:100px; height:100px"></th>
+                                    <th style="text-align: center;">{{ $banner->id }}</th>
+                                    <th><img src="{{$banner->image}}" alt="" style="width:100px; height:50px"></th>
                                     <th>{{ $banner->name }}</th>
-                                    <td>
-                                        {{$banner->created_at}}
-                                    </td>
-                                    <td class="project_progress">
-                                        {{$banner->updated_at}}
-                                    </td>
-                                    <th>{{ $banner->status }}</th>
                                     <th>
-                                        <a href="/banner/deletebanner/{{ $banner->id }}">Delete</a>
-                                        <a href="/banner/deletebanner/{{ $banner->id }}">Delete</a>
+                                        {{$banner->created_at}}
+                                    </th>
+                                    <th>
+                                        {{$banner->updated_at}}
+                                    </th>
+                                    <th style="text-align: right;">
+                                        <a href="/admin/banner/deletebanner/{{ $banner->id }}" class="btn btn-info btn-sm">Sửa</a>
+                                        <a type="button" class="btn btn-danger btn-sm confirm-color" data-id="{{$banner->id}}">Xóa</a>
+                                        <!-- <a href="/admin/banner/deletebanner/{{ $banner->id }}" type="button" class="btn btn-danger btn-sm waves-effect">Xóa</a> -->
                                     </th>
                                 </tr>
                                 @endforeach
                             </thead>
                         </table>
-
                     </div>
                 </div>
 
