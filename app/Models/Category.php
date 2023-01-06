@@ -10,11 +10,11 @@ class Category extends Model
     use HasFactory;
     protected $table = 'category';
     protected $fillable = [
+        'thumbnail',
         'name',
-        'day',
-        'update',
-        'status',
-        'keyword',
-        'description',
+        'parent_id',
+        'seo_title',
+        'seo_keyword',
+        'seo_description',
     ];
 }

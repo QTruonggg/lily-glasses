@@ -3,6 +3,7 @@
 @section('content')
 <section class=" app-content content">
     <!-- Default box -->
+    
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
@@ -15,21 +16,33 @@
                 </ol>
             </div>
         </div>
-    </div><!-- /.container-fluid -->
+    </div>
+
+    <!-- /.container-fluid -->
+    @if(session()->has('mess'))
+        <div class="txt pb-2 pt-2 ps-2 alert alert-success h3">
+        {{ session()->get('mess') }}
+        </div>
+    @endif
+    <script>
+        setTimeout(()=> {
+            $('.txt').addClass('d-none')
+        },2000)
+    </script>
 <div class="card">
     <div class="card-header">
         <div class="btn-group">
             <table>
-                <tbody><tr>
+                <tbody>
+                <tr>
                     <form method="get" action="" enctype="multipart/form-data"></form>
-                        <td>
-                            <input class="form-control" name="category_name" placeholder="Nhập tên sản phẩm" value="">
+                    <td>
+                        <input class="form-control" name="category_name" placeholder="Nhập tên sản phẩm" value="">
 
-                        </td>
-                        <td>
-                            <button type="submit" class="btn btn-secondary">Tìm kiếm</button>
-                        </td>
-                    
+                    </td>
+                    <td>
+                        <button type="submit" class="btn btn-secondary">Tìm kiếm</button>
+                    </td>
                 </tr>
             </tbody>
         </table>
@@ -53,26 +66,25 @@
                         <th style="width: 1%">
                             Id
                         </th>
-    
-                        <th style="width: 20%">
+                        <th style="width: 10%">
+                            Ảnh
+                        </th>
+                        <th style="width: 15%">
                             Tên
                         </th>
                         <th style="width: 10%">
-                            Ngày tạo
+                            parent id
                         </th>
                         <th style="width: 10%">
-                            Ngày cập nhật
+                            Tiêu đề
                         </th>
                         <th style="width: 10%">
-                            keyword
-                        </th>
-                        <th style="width: 10%">
-                            Miêu tả
+                            Từ khóa
                         </th>
                         <th style="width: 8%" class="text-center">
-                            Trạng thái
+                            miêu tả
                         </th>
-                        <th style="width: 10%" class="text-right">
+                        <th style="width: 15%" class="text-right">
                             Tác vụ
                         </th>
                     </tr>
@@ -83,38 +95,37 @@
                         <td>
                             {{$item->id}}
                         </td>
-    
-                        <td style="max-width:200px;"> 
-                            <a style="display:-webkit-box;word-wrap: break-word;white-space: normal;overflow: hidden;display: -webkit-box;text-overflow: ellipsis;-webkit-box-orient: vertical;-webkit-line-clamp: 2; ">
+                        <td >
+                            <div style="max-width:110px; min-width:150px; max-height:80px; overflow:hidden; display:flex;">
+                                <img style="width:100%;" src="{{asset('upload_thumbnail/empty_img.png')}}" alt="">
+                            </div>
+                        </td>
+                        <td style="max-width:110px;"> 
+                            <a style="word-wrap: break-word;white-space: normal;overflow: hidden;display: -webkit-box;text-overflow: ellipsis;-webkit-box-orient: vertical;-webkit-line-clamp: 2; ">
                                 {{$item->name}}
                             </a>
                         </td>
-                        <td>
-                            {{$item->created_at}}
+                        <td class="project_progress" style="">
+                            {{$item->parent_id}}
                         </td>
-                        <td class="project_progress">
-                            {{$item->updated_at}}
-                        </td>
-                        <td style="max-width:200px;"> 
+                        <td style="max-width:110px;"> 
                             <a style="display:-webkit-box;word-wrap: break-word;white-space: normal;overflow: hidden;display: -webkit-box;text-overflow: ellipsis;-webkit-box-orient: vertical;-webkit-line-clamp: 2; ">
-                                {{$item->keyword}}
+                                {{$item->seo_title}}
+                            </a>
+                        </td>
+                        <td class=""  style="max-width:150px;">
+                            <a style="display:-webkit-box;word-wrap: break-word;white-space: normal;overflow: hidden;display: -webkit-box;text-overflow: ellipsis;-webkit-box-orient: vertical;-webkit-line-clamp: 2; ">
+                                {!! $item->seo_keyword !!}
                             </a>
                         </td>
                         <td style="max-width:200px;"> 
                             <a style="display:-webkit-box;word-wrap: break-word;white-space: normal;overflow: hidden;display: -webkit-box;text-overflow: ellipsis;-webkit-box-orient: vertical;-webkit-line-clamp: 2; ">
-                                {!! $item->description !!}
+                                {!! $item->seo_description !!}
                             </a>
-                        </td>
-                        <td class="project-state">
-                            {{$item->status}}
                         </td>
                         <td class="project-actions text-right">
-                            <a class="btn btn-info btn-sm" href="">
-                                <i class="fas fa-pencil-alt">
-                                </i>
-                                Sửa
-                            </a>
-                            <a href="#" type="button" class="btn btn-danger btn-sm waves-effect" id="confirm-text"> Xóa</a>
+                            <a class="btn btn-info btn-sm" href="list/update/{{$item->id}}">Sửa</a>
+                            <a href="list/delete/{{$item->id}}" type="button" class="btn btn-danger btn-sm waves-effect" id="confirm-text"> Xóa</a>
                         </td>
                     </tr>
                     @endforeach
