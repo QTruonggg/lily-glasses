@@ -15,12 +15,13 @@ return new class extends Migration
     {
         Schema::create('category', function (Blueprint $table) {
             $table->id();
+            $table->string('thumbnail');
             $table->string('name');
-            $table->timestamps();
-            $table->bigInteger('status');
-            $table->string('keyword');
+            $table->bigInteger('parent_id');
             $table->string('seo_title');
-            $table->LONGTEXT('description');
+            $table->string('seo_keyword');
+            $table->LONGTEXT('seo_description');
+            $table->timestamps();
         });
     }
 
