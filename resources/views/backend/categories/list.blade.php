@@ -5,6 +5,7 @@
     <!-- Default box -->
     
     <div class="container-fluid">
+        
         <div class="row mb-2">
             <div class="col-sm-6">
                 <h1>Quản lý danh mục</h1>
@@ -17,7 +18,23 @@
             </div>
         </div>
     </div>
-
+    <div class="row">
+            <div class="col-lg-4 col-sm-6">
+                <div class="card">
+                    <div class="card-body d-flex align-items-center justify-content-between">
+                        <div>
+                            <h3 class="fw-bolder mb-75">{{$dataLenght}}</h3>
+                            <span>Tổng số danh mục</span>
+                        </div>
+                        <div class="avatar bg-light-primary p-50">
+                            <span class="avatar-content">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user font-medium-4"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     <!-- /.container-fluid -->
     @if(session()->has('mess'))
         <div class="txt pb-2 pt-2 ps-2 alert alert-success h3">
@@ -81,9 +98,6 @@
                         <th style="width: 10%">
                             Từ khóa
                         </th>
-                        <th style="width: 8%" class="text-center">
-                            miêu tả
-                        </th>
                         <th style="width: 15%" class="text-right">
                             Tác vụ
                         </th>
@@ -116,11 +130,6 @@
                         <td class=""  style="max-width:150px;">
                             <a style="display:-webkit-box;word-wrap: break-word;white-space: normal;overflow: hidden;display: -webkit-box;text-overflow: ellipsis;-webkit-box-orient: vertical;-webkit-line-clamp: 2; ">
                                 {!! $item->seo_keyword !!}
-                            </a>
-                        </td>
-                        <td style="max-width:200px;"> 
-                            <a style="display:-webkit-box;word-wrap: break-word;white-space: normal;overflow: hidden;display: -webkit-box;text-overflow: ellipsis;-webkit-box-orient: vertical;-webkit-line-clamp: 2; ">
-                                {!! $item->seo_description !!}
                             </a>
                         </td>
                         <td class="project-actions text-right">

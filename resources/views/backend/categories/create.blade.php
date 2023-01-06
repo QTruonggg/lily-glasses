@@ -71,13 +71,6 @@
                                         @endif
                                     </div>
                                     <div class="form-group mt-1 mb-1">
-                                        <label for="seo_description" class="form-label mb-1">Mô tả</label>
-                                        <textarea class="form-control" id="summary-ckeditor" name="seo_description"></textarea>
-                                        @if ($errors->has('seo_description'))
-                                            <span class="text-danger d-block mt-1">{{ $errors->first('seo_description') }}</span>
-                                        @endif
-                                    </div>
-                                    <div class="form-group mt-1 mb-1">
                                         <label for="seo_keyword" class="form-label mb-1">Từ khóa</label>
                                         <input type="text" id="keyword" name="seo_keyword" value="" class="form-control">
                                         @if ($errors->has('seo_keyword'))

@@ -28,7 +28,6 @@ class CategoryController extends Controller
             'parent_id' => 'nullable',
             'thumbnail' => 'required',
             'seo_title'     => 'required|max:255',
-            'seo_description' => 'required',
             'seo_keyword' => 'required|max:255',
         ];
         $messages = [
