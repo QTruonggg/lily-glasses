@@ -13,6 +13,7 @@ class Product extends Model
         'thumbnail',
         'product_code',
         'color',
+        'color-image',
         'category_id',
         'old_price',
         'percent_discount',
@@ -21,4 +22,7 @@ class Product extends Model
         'seo_description',
         'status',
     ];
+    public function colors(){
+        return $this->hasMany(ProductColor::class);
+    }
 }

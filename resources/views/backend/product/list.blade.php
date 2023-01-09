@@ -137,7 +137,7 @@
                         </td>
                         <td style="max-width:110px;"> 
                             <a style="word-wrap: break-word;white-space: normal;overflow: hidden;display: -webkit-box;text-overflow: ellipsis;-webkit-box-orient: vertical;-webkit-line-clamp: 2; ">
-                                {{$item->parent_id}}
+                                {{$item->color}}
                             </a>
                         </td>
                         <td style="max-width:110px;"> 

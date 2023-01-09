@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('thumbnail');
             $table->string('color');
+            $table->string('color-image');
             $table->string('product_code');
             $table->bigInteger('category_id');
             $table->bigInteger('old_price');
