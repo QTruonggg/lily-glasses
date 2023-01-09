@@ -52,7 +52,7 @@
                                     </div>
                                     <div class="form-group mt-1 mb-1">
                                         <label for="inputSort" class="form-label mb-1">Thứ tự</label>
-                                        <input type="text" id="sort" name="sort" value="" class="form-control" placeholder="Nhập số thứ tự">
+                                        <input type="number" id="sort" name="sort" value="" class="form-control" placeholder="Nhập số thứ tự">
                                     </div>
                                     <input type="hidden" name="image"  value="{{ csrf_token() }}">
                                 </div>
