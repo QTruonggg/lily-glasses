@@ -49,26 +49,61 @@
                                     <div class="form-group mt-1 mb-1">
                                         <label for="inputName" class="form-label mb-1">Tên</label>
                                         <input type="text" id="name" name="name" value="" class="form-control" placeholder="Nhập tên">
-                                        
+                                         @error('name')
+                                        <span class="text-danger mt-1 d-block">{{ $message }}</span>
+                                        @enderror
                                     </div>
                                     <div class="form-group mt-1 mb-1">
                                         <label for="inputName" class="form-label mb-1">Mã sản phẩm</label>
-                                        <input type="text" id="name" name="product_code" value="" class="form-control" placeholder="Nhập mã sản phẩm">
-                                      
+                                        <input type="text" id="product_code" name="product_code" value="" class="form-control" placeholder="Nhập mã sản phẩm">
+                                         @error('product_code')
+                                        <span class="text-danger mt-1 d-block">{{ $message }}</span>
+                                        @enderror
                                     </div>
-                                    <div class="form-group mt-1 mb-1">
+                                     <div class="form-group mt-1 mb-1">
+                                        <label for="category_id" class="form-label mb-1">Danh mục cha</label>
+                                        <select class="form-control custom-select" name="category_id" id="category_id" placeholder="">
+                                            @foreach($category_id as $parent_category)
+                                            <option value="{{$parent_category->id}}">{{$parent_category->name}}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                    <div class="form-group mt-1 mb-1 d-flex flex-column">
+                                        <div class="btn-group order-3">
+                                            <div class="btn-sm btn-primary me-1 add-button">Thêm</div>
+                                            <div class="btn-sm btn-primary reset">Xóa</div>
+                                        </div>
                                         <label for="color" class="form-label mb-1">Mã màu</label>
                                         @include('frontend.components.input', ['name'=>'color[]'])
+                                        
                                     </div> 
                                     <div class="form-group mt-1 mb-1">
                                         <label for="old_price" class="form-label mb-1">Giá gốc</label>
-                                        <input type="text" id="seo_title" name="old_price" value="" class="form-control" placeholder="Nhập giá gốc">
-                                        
+                                        <input type="number" id="old_price" name="old_price" oninput="this.value = this.value.replace(/[^0-9.]/g, '')" value="" class="form-control" placeholder="Nhập giá gốc">
+                                         @error('old_price')
+                                        <span class="text-danger mt-1 d-block">{{ $message }}</span>
+                                        @enderror
                                     </div>
                                     <div class="form-group mt-1 mb-1">
-                                        <label for="percent_discount" class="form-label mb-1">Giảm giá</label>
-                                        <input type="text" id="seo_title" name="percent_discount" value="" class="form-control" placeholder="Nhập phần trăm giảm giá">
-                                        
+                                        <label for="percent_discount" class="form-label mb-1">Giảm giá %</label>
+                                        <input type="number" id="percent_discount" name="percent_discount"  oninput="this.value = this.value.replace(/[^0-9.]/g, '')" min="0" max="100" value="" class="form-control" placeholder="Nhập phần trăm giảm giá ">
+                                        @error('percent_discount')
+                                        <span class="text-danger mt-1 d-block">{{ $message }}</span>
+                                        @enderror
+                                    </div>
+                                    <div class="form-group mt-1 mb-1">
+                                        <label for="current_price" class="form-label mb-1">Giá hiện tại</label>
+                                        <input type="text" id="current_price" name="current_price" value=""  oninput="this.value = this.value.replace(/[^0-9.]/g, '')" class="form-control" placeholder="Bạn cũng có thể nhập giá hiện tại tại đây!">
+                                         @error('current_price')
+                                        <span class="text-danger mt-1 d-block">{{ $message }}</span>
+                                        @enderror
+                                    </div>
+                                    <div class="form-group mt-1 mb-1">
+                                        <label for="inputName" class="form-label mb-1">Từ khóa</label>
+                                        <input type="text" id="seo_keyword" name="seo_keyword" value="" class="form-control" placeholder="Nhập  từ khóa ">
+                                         @error('seo_keyword')
+                                        <span class="text-danger mt-1 d-block">{{ $message }}</span>
+                                        @enderror
                                     </div>
                                     <div class="form-group">
                                         <label for="status">Trạng thái</label>
@@ -80,6 +115,9 @@
                                     <div class="form-group mt-1 mb-1">
                                         <label for="seo_description" class="form-label mb-1">Mô tả</label>
                                         <textarea class="form-control" id="summary-ckeditor" name="seo_description"></textarea>
+                                         @error('seo_description')
+                                        <span class="text-danger mt-1 d-block">{{ $message }}</span>
+                                        @enderror
                                     </div>
                                     <input type="hidden" name="thumbnail"  value="{{ csrf_token() }}">
                                 </div>
@@ -146,6 +184,18 @@
     button.onclick =() => {
         selectFileWithCKFinder( 'ckfinder-input-1' );
     }
+    $('input[name="percent_discount"]').change(function() {
+        var value_old_price = parseInt($('input[name="old_price"]').val());
+        var value_percent_discount =  parseInt($('input[name="percent_discount"]').val());
+        value_current_price = value_old_price * (100 - value_percent_discount) / 100;
+        $('input[name="current_price"]').val(value_current_price)
+    })
+     $('input[name="current_price"]').change(function() {
+        var value_old_price = parseInt($('input[name="old_price"]').val());
+        var value_current_price =  parseInt($('input[name="current_price"]').val());
+        var value_percent_discount = value_current_price * 100 / value_old_price;
+        $('input[name="percent_discount"]').val(100 - value_percent_discount + '%')
+     })
 </script>
 <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
 <script>
