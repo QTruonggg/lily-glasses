@@ -23,8 +23,9 @@ return new class extends Migration
             $table->bigInteger('old_price');
             $table->bigInteger('percent_discount');
             $table->bigInteger('current_price');
-            $table->string('status');
+            $table->string('seo_keyword');
             $table->LONGTEXT('seo_description');
+            $table->string('status');
             $table->timestamps();
         });
     }
