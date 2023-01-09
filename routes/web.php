@@ -42,6 +42,14 @@ Route::prefix('admin')->middleware('auth')->group(function () {
         Route::get('list/delete/{id}',[App\Http\Controllers\Admin\CategoryController::class,'deleteCategoriesList'])->name('admin.deleteCategoriesList');
     });
 
+
+    Route::prefix('banner')->group(function() {
+        Route::get('list',[App\Http\Controllers\Admin\BannerController::class,'viewBannerList'])->name('admin.viewBannerList');
+        Route::get('create',[App\Http\Controllers\Admin\BannerController::class,'createBanner'])->name('banner.create');
+        Route::post('create',[App\Http\Controllers\Admin\BannerController::class,'storeBanner']);
+        Route::get('deletebanner/{id}', [App\Http\Controllers\Admin\BannerController::class, 'deleteBanner'])->name('banner.delete');
+    });
+
     // product ???
     Route::prefix('products')->group(function() {
         // get product
