@@ -10,6 +10,9 @@ class CategoryHook {
     public function getParentStatus() {
         return Category::where('parent_id', '=', 0)->get();
     }
+    public function getCategoryStatus() {
+        return Category::where('parent_id', '!=', 0)->get();
+    }
     public function createCategory($data){
         return Category::create($data);
     }

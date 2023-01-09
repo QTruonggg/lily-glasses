@@ -17,7 +17,8 @@ class Product extends Model
         'old_price',
         'percent_discount',
         'current_price',
-        'status',
+        'seo_keyword',
         'seo_description',
+        'status',
     ];
 }

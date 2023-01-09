@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Admin\BannerController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -31,11 +31,9 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     Route::prefix('category')->group(function() {
         // get
         Route::get('list',[App\Http\Controllers\Admin\CategoryController::class,'showCategoriesList'])->name('admin.showCategoriesList');
-
         // post
         Route::get('create',[App\Http\Controllers\Admin\CategoryController::class,'interfaceAddCategoriesList'])->name('admin.interfaceAddCategoriesList');
         Route::post('create',[App\Http\Controllers\Admin\CategoryController::class,'addCategoriesList'])->name('admin.postCategoriesList');
-
         // update
         Route::get('list/update/{id}',[App\Http\Controllers\Admin\CategoryController::class,'getEdit'])->name('admin.getUpdateCategoriesList');
         Route::post('list/update/{id}',[App\Http\Controllers\Admin\CategoryController::class,'postEdit'])->name('admin.postUpdateCategoriesList');
@@ -44,11 +42,29 @@ Route::prefix('admin')->middleware('auth')->group(function () {
         Route::get('list/delete/{id}',[App\Http\Controllers\Admin\CategoryController::class,'deleteCategoriesList'])->name('admin.deleteCategoriesList');
     });
 
+<<<<<<< HEAD
     Route::prefix('banner')->group(function() {
         Route::get('list',[BannerController::class,'viewBannerList'])->name('admin.viewBannerList');
         Route::get('create',[BannerController::class,'createBanner'])->name('banner.create');
         Route::post('create',[BannerController::class,'storeBanner']);
         Route::get('deletebanner/{id}', [BannerController::class, 'deleteBanner'])->name('banner.delete');
+=======
+    // product ???
+    Route::prefix('products')->group(function() {
+        // get product
+        Route::get('list', [App\Http\Controllers\Admin\ProductController::class,'showProductList'])->name('admin.showProductList');
+
+        // post product
+        Route::get('create', [App\Http\Controllers\Admin\ProductController::class,'getCreateProduct'])->name('admin.getCreateProduct');
+        Route::post('create', [App\Http\Controllers\Admin\ProductController::class,'addProduct'])->name('admin.addProduct');
+
+        // update Product
+        Route::get('list/update/{id}', [App\Http\Controllers\Admin\ProductController::class,'getUpdateProduct'])->name('admin.getUpdateProduct');
+        Route::post('list/update/{id}', [App\Http\Controllers\Admin\ProductController::class,'updateProduct'])->name('admin.updateProduct');
+
+        // delete product
+        Route::get('list/delete/{id}', [App\Http\Controllers\Admin\ProductController::class,'deleteProduct'])->name('admin.deleteProduct');
+>>>>>>> a6283a561393eef48db665cdd655ccc034d2aa2d
     });
 
 });
