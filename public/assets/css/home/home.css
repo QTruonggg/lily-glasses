@@ -1,11 +1,12 @@
 #header {
-  --height-header: 120px;
+  --height-header: 60px;
 }
 #header .header-top {
   height: var(--height-header);
   z-index: 99;
   width: 100%;
   background-color: rgb(255, 255, 255);
+  padding: 5px 0px;
 }
 #header .header-top .logo {
   height: var(--height-header);
@@ -17,7 +18,6 @@
 }
 #header .header-top .slogan {
   background-color: #C5B39C;
-  padding: 8px 20px;
 }
 #header .header-top .slogan i {
   color: #EBD7A9;
