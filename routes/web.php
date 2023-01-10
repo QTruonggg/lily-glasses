@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\BannerController;
+use App\Http\Controllers\ClientController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +16,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
     
+Route::get('/', [ClientController::class, 'showHome'])->name('home.show');
+
+
+
 
 Route::get('admin/login', [App\Http\Controllers\Admin\LoginController::class, 'showLogin'])->name('admin.showlogin');
 Route::post('admin/login', [App\Http\Controllers\Admin\LoginController::class, 'login'])->name('admin.login');
@@ -42,13 +49,15 @@ Route::prefix('admin')->middleware('auth')->group(function () {
         Route::get('list/delete/{id}',[App\Http\Controllers\Admin\CategoryController::class,'deleteCategoriesList'])->name('admin.deleteCategoriesList');
     });
 
-<<<<<<< HEAD
     Route::prefix('banner')->group(function() {
         Route::get('list',[BannerController::class,'viewBannerList'])->name('admin.viewBannerList');
         Route::get('create',[BannerController::class,'createBanner'])->name('banner.create');
         Route::post('create',[BannerController::class,'storeBanner']);
+        Route::get('update/{id}',[BannerController::class,'getUpdateBanner'])->name('banner.getUpdate');
+        Route::post('update/{id}',[BannerController::class,'updateBanner'])->name('banner.update');
         Route::get('deletebanner/{id}', [BannerController::class, 'deleteBanner'])->name('banner.delete');
-=======
+    });
+
     // product ???
     Route::prefix('products')->group(function() {
         // get product
@@ -64,7 +73,6 @@ Route::prefix('admin')->middleware('auth')->group(function () {
 
         // delete product
         Route::get('list/delete/{id}', [App\Http\Controllers\Admin\ProductController::class,'deleteProduct'])->name('admin.deleteProduct');
->>>>>>> a6283a561393eef48db665cdd655ccc034d2aa2d
     });
 
 });

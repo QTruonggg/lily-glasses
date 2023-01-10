@@ -5,7 +5,7 @@
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1>Thêm Banner</h1>
+                <h1>{{$title}}</h1>
             </div>
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right justify-content-end">
@@ -20,10 +20,15 @@
         {{ session()->get('success') }}
         </div>
     @endif
+    @if(session()->has('error'))
+        <div class="txt pb-2 pt-2 ps-2 alert alert-danger h3">
+        {{ session()->get('error') }}
+        </div>
+    @endif
     <script>
         setTimeout(()=> {
             $('.txt').addClass('d-none')
-        },2000)
+        },3000)
     </script>
 <div class="row">
     <div class="col-md-9">
@@ -32,7 +37,7 @@
             </div>
             <div class="card-body p-0">
                 
-                <form action="/admin/banner/create" method="POST" enctype="multipart/form-data">
+                <form action="{{$banner->id}}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="row">
                         <div class="col-md-12">
@@ -47,14 +52,14 @@
                                 </div>
                                 <div class="card-body">
                                     <div class="form-group mt-1 mb-1">
-                                        <label for="inputName" class="form-label mb-1">Tên</label>
-                                        <input type="text" id="name" name="name" value="" class="form-control" placeholder="Nhập tên">
+                                        <label for="inputName" class="form-label mb-1">Tên:</label>
+                                        <input type="text" id="name" name="name" value="{{$banner->name}}" class="form-control" placeholder="Nhập tên">
                                     </div>
                                     <div class="form-group mt-1 mb-1">
-                                        <label for="inputName" class="form-label mb-1">Thứ tự</label>
-                                        <input type="number" id="sort" name="sort" value="" class="form-control" placeholder="Nhập tên">
+                                        <label for="inputName" class="form-label mb-1">Thứ tự:</label>
+                                        <input type="number" id="sort" name="sort" min="1" value="{{$banner->sort}}" class="form-control" placeholder="Nhập số thứ tự là số nguyên dương">
                                     </div>
-                                    <input type="hidden" name="image"  value="{{ csrf_token() }}">
+                                    <input type="hidden" name="image"  value="{{$banner->image}}">
                                 </div>
                             </div>
                         </div>
@@ -62,7 +67,7 @@
                     <div class="row">
                         <div class="col-12  ps-5 mb-2">
                             <a href="{{route('admin.viewBannerList')}}" class="btn btn-secondary">Quay lại</a>
-                            <input type="submit" value="Thêm" class="btn btn-success float-right ms-2">
+                            <input type="submit" value="Chỉnh sửa" class="btn btn-success float-right ms-2">
                         </div>
                     </div>
                 </form>
@@ -83,7 +88,7 @@
                         margin: 0 auto;
                         margin-bottom: 20px;
                     ">
-                    <img style="width:100%; height:100%; border-radius:50%; object-fit:cover;" id="img_banner" src="{{asset('upload_thumbnail/empty_img.png')}}"  alt="..">
+                    <img style="width:100%; height:100%; border-radius:50%; object-fit:cover;" id="img_banner" src="{{$banner->image}}"  alt="..">
                 </div>
                 <button class="btn btn-primary btn-toggle-sidebar w-100 waves-effect waves-float waves-light" id="popup-1-button">
                     <span class="align-middle">Chọn ảnh</span>

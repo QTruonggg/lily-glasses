@@ -32,6 +32,9 @@
                                     <th style="width: 15%">
                                         Ảnh
                                     </th>
+                                    <th style="width: 1%">
+                                        Stt
+                                    </th>
                                     <th style="width: 5%">
                                         Tên
                                     </th>
@@ -48,7 +51,8 @@
                                 @foreach($banner as $banner)
                                 <tr>
                                     <th style="text-align: center;">{{ $banner->id }}</th>
-                                    <th><img src="{{$banner->image}}" alt="" style="width:100px; height:50px"></th>
+                                    <th><img src="{{$banner->image}}" alt="" style="width:100%; height: 130px; object-fit: cover;"></th>
+                                    <th>{{ $banner->sort }}</th>
                                     <th>{{ $banner->name }}</th>
                                     <th>
                                         {{$banner->created_at}}
@@ -57,7 +61,7 @@
                                         {{$banner->updated_at}}
                                     </th>
                                     <th style="text-align: right;">
-                                        <a href="/admin/banner/deletebanner/{{ $banner->id }}" class="btn btn-info btn-sm">Sửa</a>
+                                        <a href="/admin/banner/update/{{ $banner->id }}" class="btn btn-info btn-sm">Sửa</a>
                                         <a type="button" class="btn btn-danger btn-sm confirm-color" data-id="{{$banner->id}}">Xóa</a>
                                         <!-- <a href="/admin/banner/deletebanner/{{ $banner->id }}" type="button" class="btn btn-danger btn-sm waves-effect">Xóa</a> -->
                                     </th>
