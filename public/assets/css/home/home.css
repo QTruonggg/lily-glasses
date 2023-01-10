@@ -1,17 +1,81 @@
-/* Error: expected "{".
- *   ,
- * 2 | @use '../style-defaultl/header';
- *   |                                ^
- *   '
- *   public\assets\sass\home\home.scss 2:32  root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: "Error: expected \"{\".\a   \2577 \a 2 \2502  @use '../style-defaultl/header';\d\a   \2502                                 ^\a   \2575 \a   public\\assets\\sass\\home\\home.scss 2:32  root stylesheet";
+#header {
+  --height-header: 60px;
 }
+#header .header-top {
+  height: var(--height-header);
+  z-index: 99;
+  width: 100%;
+  background-color: rgb(255, 255, 255);
+  padding: 5px 0px;
+}
+#header .header-top .logo {
+  height: var(--height-header);
+  display: flex;
+  margin-right: 20px;
+}
+#header .header-top .logo img {
+  width: 100%;
+}
+#header .header-top .slogan {
+  background-color: #C5B39C;
+}
+#header .header-top .slogan i {
+  color: #EBD7A9;
+  font-size: 18px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+footer {
+  background: rgb(247, 247, 247);
+  padding: 90px 0px 30px;
+  margin-top: 100px;
+}
+footer .box-1 img {
+  max-width: 100%;
+}
+footer .box-1 p {
+  font-weight: bold;
+}
+footer .box-1 p span {
+  font-weight: normal;
+  color: rgb(79, 86, 101);
+}
+footer .box-2 ul, footer .box-3 ul {
+  padding-left: 25%;
+}
+footer .box-2 ul P, footer .box-3 ul P {
+  font-weight: bold;
+}
+footer .box-2 ul li a, footer .box-3 ul li a {
+  text-decoration: none;
+  color: rgb(79, 86, 101);
+  line-height: 30px;
+  padding-left: 0;
+  font-weight: normal;
+}
+footer .box-2 a, footer .box-3 a {
+  padding-left: 25%;
+  font-weight: bold;
+  text-decoration: none;
+  color: black;
+}
+footer .box-4 .contact {
+  padding: 10px 0;
+}
+footer .box-4 .contact p {
+  font-weight: bold;
+  margin: 0;
+}
+footer .box-4 .contact a {
+  padding: 0 10px 10px;
+}
+footer .box-4 .contact a i {
+  font-size: 1.2rem;
+}
+
+/*# sourceMappingURL=home.css.map */
