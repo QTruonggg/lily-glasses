@@ -20,10 +20,15 @@
         {{ session()->get('success') }}
         </div>
     @endif
+    @if(session()->has('error'))
+        <div class="txt pb-2 pt-2 ps-2 alert alert-danger h3">
+        {{ session()->get('error') }}
+        </div>
+    @endif
     <script>
         setTimeout(()=> {
             $('.txt').addClass('d-none')
-        },2000)
+        },3000)
     </script>
 <div class="row">
     <div class="col-md-9">
@@ -47,14 +52,21 @@
                                 </div>
                                 <div class="card-body">
                                     <div class="form-group mt-1 mb-1">
-                                        <label for="inputName" class="form-label mb-1">Tên</label>
+                                        <label for="inputName" class="form-label mb-1">Tên:</label>
                                         <input type="text" id="name" name="name" value="" class="form-control" placeholder="Nhập tên">
+                                        @error('name')
+                                        <span class="text-danger mt-1 d-block">{{ $message }}</span>
+                                        @enderror
                                     </div>
                                     <div class="form-group mt-1 mb-1">
-                                        <label for="inputSort" class="form-label mb-1">Thứ tự</label>
-                                        <input type="text" id="sort" name="sort" value="" class="form-control" placeholder="Nhập số thứ tự">
+                                        <label for="inputSort" class="form-label mb-1">Thứ tự:</label>
+                                        <input type="number" id="sort" name="sort" min="1" value="" class="form-control" placeholder="Nhập số thứ tự là số nguyên dương">
+                                        @error('sort')
+                                        <span class="text-danger mt-1 d-block">{{ $message }}</span>
+                                        @enderror
                                     </div>
-                                    <input type="hidden" name="image"  value="{{ csrf_token() }}">
+                                    <input type="hidden" name="image"  value="">
+                                        
                                 </div>
                             </div>
                         </div>
@@ -72,7 +84,7 @@
     <div class="col-lg-3 col-md-3 col-12">
         <div class="card card-app-design">
             <div class="card-body">
-                <div id="imgList" 
+                <div id="imgList"
                     style="
                         width: 230px;
                         height: 230px;
@@ -88,6 +100,9 @@
                 <button class="btn btn-primary btn-toggle-sidebar w-100 waves-effect waves-float waves-light" id="popup-1-button">
                     <span class="align-middle">Chọn ảnh</span>
                 </button>
+                @error('image')
+                    <span class="text-danger mt-1 d-block">{{ $message }}</span>
+                @enderror
             </div>
         </div>
     </div>

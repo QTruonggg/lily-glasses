@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\BannerController;
+use App\Http\Controllers\Frontend\FrontendController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +15,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
     
+
+
+
 
 Route::get('admin/login', [App\Http\Controllers\Admin\LoginController::class, 'showLogin'])->name('admin.showlogin');
 Route::post('admin/login', [App\Http\Controllers\Admin\LoginController::class, 'login'])->name('admin.login');
@@ -42,12 +47,13 @@ Route::prefix('admin')->middleware('auth')->group(function () {
         Route::get('list/delete/{id}',[App\Http\Controllers\Admin\CategoryController::class,'deleteCategoriesList'])->name('admin.deleteCategoriesList');
     });
 
-
     Route::prefix('banner')->group(function() {
-        Route::get('list',[App\Http\Controllers\Admin\BannerController::class,'viewBannerList'])->name('admin.viewBannerList');
-        Route::get('create',[App\Http\Controllers\Admin\BannerController::class,'createBanner'])->name('banner.create');
-        Route::post('create',[App\Http\Controllers\Admin\BannerController::class,'storeBanner']);
-        Route::get('deletebanner/{id}', [App\Http\Controllers\Admin\BannerController::class, 'deleteBanner'])->name('banner.delete');
+        Route::get('list',[BannerController::class,'viewBannerList'])->name('admin.viewBannerList');
+        Route::get('create',[BannerController::class,'createBanner'])->name('banner.create');
+        Route::post('create',[BannerController::class,'storeBanner']);
+        Route::get('update/{id}',[BannerController::class,'getUpdateBanner'])->name('banner.getUpdate');
+        Route::post('update/{id}',[BannerController::class,'updateBanner'])->name('banner.update');
+        Route::get('deletebanner/{id}', [BannerController::class, 'deleteBanner'])->name('banner.delete');
     });
 
     // product ???
