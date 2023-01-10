@@ -1,0 +1,26 @@
+#header {
+    --height-header: 60px;
+    .header-top {
+            height: var(--height-header);
+            z-index: 99;
+            width: 100%;
+            background-color: rgb(255, 255, 255);
+            padding: 5px 0px;
+        .logo {
+            height: var(--height-header);
+            display: flex;
+            margin-right: 20px;
+            img {
+                width: 100%;
+            }
+        }
+        .slogan {
+            background-color: #C5B39C;
+            i {
+                color: #EBD7A9;
+                font-size: 18px;
+            }
+        }
+
+    }
+}
