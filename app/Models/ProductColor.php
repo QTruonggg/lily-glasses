@@ -17,3 +17,4 @@ class ProductColor extends Model
         return $this->belongTo(Product::class);
     }
 }
+    

@@ -1,7 +1,7 @@
-<div class="input-group mb-1">
-   <div class="wrap">
-     <input type="color" name="color[]" class="input me-1 ">
-     <input type="imageColor" name="imageColor[]" class="input me-1 ">
+<div class="input-group mb-1 row">
+   <div class="wrap d-flex flex-column col-md-2">
+     <input type="color" name="color[]" class="input me-1 w-100 mb-1">
+    <input type="file" name="imageColor[]" class="form-control btn-sm">
    </div>
 </div>
 
@@ -13,9 +13,9 @@
 
 <script>
     $('.add-button').click(function() {
-        $('.input-group').append('<div class="wrap"><input type="color" name="color[]" class="input me-1 "><input type="text" name="imageColor[]" class="input me-1 "></div>')
+        $('.input-group').append('<div class="wrap  d-flex flex-column col-md-2"><input type="color" name="color[]" class="input me-1 w-100 mb-1 "><input class="form-control btn-sm" type="file" id="customFile1" name="imageColor[]"></div>')
     })
     $('.reset').click(function() {
-        $('.input:last-child').remove()
+        $('.wrap:last-child').remove()
     })
 </script>

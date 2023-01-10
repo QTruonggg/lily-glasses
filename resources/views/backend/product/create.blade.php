@@ -118,7 +118,7 @@
                                         <span class="text-danger mt-1 d-block">{{ $message }}</span>
                                         @enderror
                                     </div>
-                                    <input type="hidden" name="thumbnail"  value="{{ csrf_token() }}">
+                                    <input type="hidden" name="thumbnail"  value="{{asset('upload_thumbnail/empty_img.png')}}">
                                 </div>
                                 <!-- /.card-body -->
                             </div>

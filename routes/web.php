@@ -67,4 +67,13 @@ Route::prefix('admin')->middleware('auth')->group(function () {
         Route::get('list/delete/{id}', [App\Http\Controllers\Admin\ProductController::class,'deleteProduct'])->name('admin.deleteProduct');
     });
 
+
+
+
+    // editting
+    Route::prefix('editing')->group(function () {
+        Route::get('update', [App\Http\Controllers\Admin\EditProfileController::class, 'getInterfaceEdit'])->name('admin.getEditProfile');
+        Route::post('update', [App\Http\Controllers\Admin\EditProfileController::class, 'updateProfile'])->name('admin.getEditProfile');
+    });
+
 });

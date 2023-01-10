@@ -111,7 +111,7 @@
                         </td>
                         <td >
                             <div style="max-width:110px; min-width:150px; max-height:80px; overflow:hidden; display:flex;">
-                                <img style="width:100%;" src="{{asset('upload_thumbnail/empty_img.png')}}" alt="">
+                                <img style="width:100%;" src="{{$item->thumbnail ? $item->thumbnail : asset('upload_thumbnail/empty_img.png')}}" alt="">
                             </div>
                         </td>
                         <td style="max-width:110px;"> 
