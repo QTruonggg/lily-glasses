@@ -1,0 +1,55 @@
+footer{
+    background: rgb(247, 247, 247);
+    padding: 90px 0px 30px;
+    margin-top: 100px;
+    .box-1{
+        img{
+            max-width: 100%;
+        }
+        p{
+            font-weight: bold;
+            span{
+                font-weight: normal;
+                color: rgb(79, 86, 101);
+            }
+        }
+    }
+    .box-2, .box-3{
+        ul{
+            padding-left: 25%;
+            P{
+                font-weight: bold;
+            }
+            li{
+                a{
+                    text-decoration: none;
+                    color: rgb(79, 86, 101);
+                    line-height: 30px;
+                    padding-left: 0;
+                    font-weight: normal;
+                }
+            }
+        }
+        a{
+            padding-left: 25%;
+            font-weight: bold;
+            text-decoration: none;
+            color: black;
+        }
+    }
+    .box-4{
+        .contact{
+            padding: 10px 0;
+            p{
+                font-weight: bold;
+                margin: 0;
+            }
+            a{
+                padding: 0 10px 10px;
+                i{
+                    font-size: 1.2rem;
+                }
+            }
+        }
+    }
+}

@@ -19,12 +19,10 @@
           el: ".swiper-pagination",
           clickable: true,
         },
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-        },
-        autoplay: true,
-        loop:true,
+        // autoplay: 
+        //     {
+        //     delay: 2400,
+        //     },
       });
 </script>
 @endsection
