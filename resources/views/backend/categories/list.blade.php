@@ -173,6 +173,8 @@
             
     </div>
     <!-- /.card-body -->
+    <div>
+</div>
 </div>
 <!-- /.card -->
 </section>

@@ -17,4 +17,10 @@ class Category extends Model
         'seo_keyword',
         'seo_description',
     ];
+    public function parent(){
+       return $this->belongsTo(Category::class);
+    }
+    public function childs(){
+        return $this->hasMany(Category::class ,'parent_id');
+    }
 }

@@ -1,4 +1,4 @@
-<div class="swiper banner-slide">
+<div class="swiper banner-slide d-none">
     <div class="swiper-wrapper">
         <div class="swiper-slide">
             <img src="{{asset('assets/images/logo.png')}}" alt="">

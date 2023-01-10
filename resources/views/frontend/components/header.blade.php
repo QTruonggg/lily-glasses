@@ -51,8 +51,8 @@
                         </div>
                     </div>
 
-                    <div class="col-lg-6 col-md-6 col-sm-6 col-6">
-                        <div class="action">
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-6 d-flex align-items-center justify-content-end">
+                        <div class="action ">
                             <div class="dropdown">
                                 <div class="" data-bs-toggle="dropdown" aria-expanded="true">
                                     <i class="fa-solid fa-magnifying-glass"></i>
@@ -61,7 +61,7 @@
                                     <input type="search" placeholder="Tìm kiếm .. ">
                                 </div>
                             </div>
-                            <a href="">
+                            <a href="" class="shopping-cart">
                                 <i class="fa-solid fa-bag-shopping"></i>
                             </a>
                         </div>
@@ -71,3 +71,4 @@
         </div>
     </header>
 </section>
+@include('frontend.components.category')
