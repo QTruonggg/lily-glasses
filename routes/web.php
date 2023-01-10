@@ -2,8 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\BannerController;
-use App\Http\Controllers\ClientController;
-
+use App\Http\Controllers\Frontend\FrontendController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,7 +15,6 @@ use App\Http\Controllers\ClientController;
 |
 */
     
-Route::get('/', [ClientController::class, 'showHome'])->name('home.show');
 
 
 
