@@ -16,7 +16,7 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="{{asset('assets/font//css/all.min.css')}}">
+    <link rel="stylesheet" href="{{asset('fontawesome/css/all.min.css')}}">
     <title> Mắt kính</title>
     @yield('css')
     @stack('component-css')
