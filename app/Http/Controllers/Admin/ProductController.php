@@ -4,12 +4,17 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\models\Product;
+use App\models\ProductColor;
 use App\Http\Controllers\Hook\ProductHook;
 use App\Http\Controllers\Hook\CategoryHook;
 class ProductController extends Controller
 {
     public function showProductList(ProductHook $productHook) {
+        
         $dataProduct = $productHook->getAll();
+        // $dataRelation = Product::find(10)->loadx('colors');
+        // dd($dataRelation->colors);
+        // dd(json_decode($dataProduct[0]->color));
         $dataLenght = count($dataProduct);
         return view('backend.product.list',['breadcrumb'=>'Danh sách sản phẩm'],compact('dataProduct','dataLenght'));
     }
@@ -18,9 +23,18 @@ class ProductController extends Controller
         return view('backend.product.create',['breadcrumb'=>'Thêm sản phẩm'],compact('category_id'));
     }
     public function addProduct( Request $request,ProductHook $productHook) {
+        // $data = ProductColor::where('product_id', '=', 22)->get();
+        // dd($data);
         $data = $request->all();
+        foreach($data['color'] as $key => $color ){
+            $colorArray[] = [
+                'color'=>$color,
+                'image'=>$data['imageColor'][$key],
+            ];
+        }
         $stringColor = json_encode($data['color']);
         $data['color']=$stringColor;
+        $arr = [];
         $validate = $request->validate([
             'name'=>'required|max:255',
             'product_code'=>'required',
@@ -35,7 +49,13 @@ class ProductController extends Controller
             'old_price.numeric'=>'Vui lòng kiểm tra lại giá gốc',
             'percent_discount.numeric'=>'Vui lòng kiểm tra lại phần trăm giảm giá',
         ]);
-        $productHook->createProduct($data);
+        $model = $productHook->createProduct($data);
+        $model->colors()->createMany($colorArray);
         return back()->with('success', 'Tạo thành công danh mục !');
+    }
+    public function deleteProduct($id, ProductHook $productHook) {
+        $product =  $productHook->getId($id);
+        $productHook->delete($product);
+        return redirect(route('admin.showProductList'))->with('mess', 'xóa thành công danh mục');        
     }
 }

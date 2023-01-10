@@ -74,8 +74,7 @@
                                             <div class="btn-sm btn-primary reset">Xóa</div>
                                         </div>
                                         <label for="color" class="form-label mb-1">Mã màu</label>
-                                        @include('frontend.components.input', ['name'=>'color[]'])
-                                        
+                                        @include('frontend.components.input')
                                     </div> 
                                     <div class="form-group mt-1 mb-1">
                                         <label for="old_price" class="form-label mb-1">Giá gốc</label>
@@ -119,7 +118,7 @@
                                         <span class="text-danger mt-1 d-block">{{ $message }}</span>
                                         @enderror
                                     </div>
-                                    <input type="hidden" name="thumbnail"  value="{{ csrf_token() }}">
+                                    <input type="hidden" name="thumbnail"  value="{{asset('upload_thumbnail/empty_img.png')}}">
                                 </div>
                                 <!-- /.card-body -->
                             </div>

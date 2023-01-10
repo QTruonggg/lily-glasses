@@ -122,7 +122,7 @@
                         </td>
                         <td >
                             <div style="max-width:110px; min-width:80px; max-height:50px; overflow:hidden; display:flex;">
-                                <img style="width:100%;" src="{{$item->thumbnail}}" alt="">
+                                <img style="width:100%;" src="{{$item->thumbnail ? $item->thumbnail : asset('upload_thumbnail/empty_img.png')}}" alt="">
                             </div>
                         </td>
                         <td style="max-width:110px;"> 
@@ -137,7 +137,7 @@
                         </td>
                         <td style="max-width:110px;"> 
                             <a style="word-wrap: break-word;white-space: normal;overflow: hidden;display: -webkit-box;text-overflow: ellipsis;-webkit-box-orient: vertical;-webkit-line-clamp: 2; ">
-                                {{$item->parent_id}}
+                                {{$item->color}}
                             </a>
                         </td>
                         <td style="max-width:110px;"> 
@@ -152,7 +152,7 @@
                         </td>
                         <td style="max-width:110px;"> 
                             <a style="word-wrap: break-word;white-space: normal;overflow: hidden;display: -webkit-box;text-overflow: ellipsis;-webkit-box-orient: vertical;-webkit-line-clamp: 2; ">
-                                {{!! $item->seo_description !!}}
+                                {{ !! $item->seo_description !! }}
                             </a>
                         </td>
                         <td style="max-width:110px;"> 
@@ -188,14 +188,14 @@
                                 </div>
                                 <div class="modal-footer justify-content-center">
                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" aria-label="Close">Quay lại</button>
-                                    <a href="list/delete/"  type="button" class="btn btn-danger">Xóa</a>
+                                    <a href="list/delete/{{$item->id}}"  type="button" class="btn btn-danger">Xóa</a>
                                 </div>
                             </div>
                         </div>
                     </div>
                     @endforeach
                 </tbody>
-            </table>
+            </table>    
         </div>
         <br>
             

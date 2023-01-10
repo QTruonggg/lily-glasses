@@ -55,9 +55,9 @@
                                         @enderror
                                     </div>
                                     <div class="form-group mt-1 mb-1">
-                                        <label for="parent_id" class="form-label mb-1">Danh mục cha</label>
+                                        <label for="parent_id" class="form-label mb-1">Danh mục</label>
                                         <select class="form-control custom-select" name="parent_id" id="parent_id" placeholder="">
-                                            <option value="0">Danh mục cha</option>
+                                            <option value="0">Danh mục lớn</option>
                                             @foreach($parent_categories as $parent_category)
                                             <option value="{{$parent_category->id}}">{{$parent_category->name}}</option>
                                             @endforeach
@@ -84,7 +84,7 @@
                                             <span class="text-danger d-block mt-1">{{ $errors->first('seo_keyword') }}</span>
                                         @endif
                                     </div>
-                                    <input type="hidden" name="thumbnail"  value="{{ csrf_token() }}">
+                                    <input type="hidden" name="thumbnail"  value="{{asset('upload_thumbnail/empty_img.png')}}">
                                 </div>
                                 <!-- /.card-body -->
                             </div>

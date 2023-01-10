@@ -12,4 +12,10 @@ class ProductHook {
     public function getCategoryStatus() {
         return Product::where('category_id','=', '1')->where('status','=','0')->get();
     }
+     public function getId($id) {
+        return Product::findOrFail($id);
+    }
+    public function delete($data) {
+        return $data->delete();
+    }
 }
