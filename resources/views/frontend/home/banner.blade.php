@@ -13,7 +13,7 @@
         <!-- end pagination -->
 </div>
 <div class="banner-content">
-    <div>...Content...</div>
+    <div>Chọn kính thời trang - Nhớ tới ROLAR</div>
 </div>
 
 @pushonce('component-css')

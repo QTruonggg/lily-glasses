@@ -10,6 +10,7 @@ class CategoryController extends Controller
   
     public function showCategoriesList(CategoryHook $CategoryHook) {
         $data = $CategoryHook->getAll();
+        // dd($data);
         $dataLenght = count($data);
         return view('backend.categories.list', [
             'breadcrumb'=>'Quản lý danh mục'

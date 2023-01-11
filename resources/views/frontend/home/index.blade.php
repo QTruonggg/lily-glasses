@@ -6,6 +6,10 @@
 
 @section('content')
     @include('frontend.home.banner')
+    @include('frontend.home.bestseller')
+    @include('frontend.home.module_category')
+    @include('frontend.home.question')
+    @include('frontend.home.book')
 
 @endsection
 

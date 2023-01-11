@@ -17,13 +17,16 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <link rel="stylesheet" href="{{asset('fontawesome/css/all.min.css')}}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300&family=Noto+Sans+Limbu&family=Roboto+Condensed&display=swap" rel="stylesheet">
+    <style> @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300&family=Noto+Sans+Limbu&family=Roboto+Condensed&display=swap'); </style>
     <title> Mắt kính</title>
     @yield('css')
     @stack('component-css')
 </head>
 <body>
     @include('frontend.components.header')
-    @include('frontend.components.category')
     @yield('content')
     @include('frontend.components.footer')
     @yield('script')
