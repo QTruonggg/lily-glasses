@@ -86,3 +86,4 @@ Route::prefix('admin')->middleware('auth')->group(function () {
 
 // frontend ....
 Route::get('/',[App\Http\Controllers\Frontend\FrontendController::class, 'showHome'])->name('showhome');
+Route::get('/product',[App\Http\Controllers\Frontend\FrontendController::class, 'showProduct'])->name('showproduct');

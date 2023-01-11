@@ -5,6 +5,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Banner;
 use App\Models\Category;
+use App\Http\Controllers\Hook\GetCategoryHook;
 
 
 
@@ -15,5 +16,11 @@ class FrontendController extends Controller
         $banner = Banner::all();
         return view('frontend.home.index',
         compact('banner', 'categories'));
+    }
+
+    public function showProduct(GetCategoryHook $getCategory){
+        $categories = $getCategory->getCategories();
+        return view('frontend.product.index',
+        compact('categories') );
     }
 }
