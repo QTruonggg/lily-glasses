@@ -5,12 +5,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Banner;
 use App\Models\Category;
-<<<<<<< HEAD
-use App\Http\Controllers\Hook\GetCategoryHook;
-=======
 use App\Models\ServiceCategory;
 use App\Models\Product;
->>>>>>> linh
 
 
 

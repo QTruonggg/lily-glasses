@@ -101,10 +101,6 @@ Route::prefix('admin')->middleware('auth')->group(function () {
 
 // frontend ....
 Route::get('/',[App\Http\Controllers\Frontend\FrontendController::class, 'showHome'])->name('showhome');
-<<<<<<< HEAD
-Route::get('/product',[App\Http\Controllers\Frontend\FrontendController::class, 'showProduct'])->name('showproduct');
-=======
 // Route::post('/',[App\Http\Controllers\Frontend\FrontendController::class, 'post'])->name('post');
 Route::get('/product/details',[App\Http\Controllers\Frontend\FrontendController::class , 'showDetailsProduct'])->name('showDetailsProduct');
 Route::get('/cart/list',[App\Http\Controllers\Frontend\FrontendController::class , 'showCartList'])->name('showCartList');
->>>>>>> linh
