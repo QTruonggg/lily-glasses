@@ -1,3 +1,4 @@
+<<<<<<< HEAD
     <div class="item-product">
         <div class="view-img">
             <a href="" class="d-block">
@@ -7,6 +8,14 @@
         <div class="info">
             <div class="name">
                 <a href="/kinh-nhua-lily-m2769-p964">Kính Nhựa Lily M2769</a>
+=======
+
+        <div class="item-product">
+            <div class="view-img">
+                <a href="" class="d-block">
+                    <img src="https://cdn.kinhmatlily.com/lily01/2023/1/m2769-trang-1667562308000-1668583615000-1671611095000-1672917663000-1673317847000.jpeg">
+                </a>
+>>>>>>> dev
             </div>
             <div class="price">
                 <div class="detail-p">
@@ -31,7 +40,12 @@
                 </ul>
             </div>
         </div>
+<<<<<<< HEAD
     </div>
+=======
+
+
+>>>>>>> dev
     @pushonce('component-css')
         <style>
             .item-product {

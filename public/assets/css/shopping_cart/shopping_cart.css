@@ -208,8 +208,9 @@ footer .box-4 .contact p {
 footer .box-4 .contact a {
   padding: 0 10px 10px;
 }
-footer .box-4 .contact a i {
-  font-size: 1.2rem;
+footer .box-4 .contact a img {
+  width: 40px;
+  height: 40px;
 }
 
 #cart_list {

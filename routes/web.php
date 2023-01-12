@@ -103,8 +103,14 @@ Route::prefix('admin')->middleware('auth')->group(function () {
 Route::get('/',[App\Http\Controllers\Frontend\FrontendController::class, 'showHome'])->name('showhome');
 // Route::post('/',[App\Http\Controllers\Frontend\FrontendController::class, 'post'])->name('post');
 Route::get('/product/details',[App\Http\Controllers\Frontend\FrontendController::class , 'showDetailsProduct'])->name('showDetailsProduct');
+<<<<<<< HEAD
 Route::get('/gio-hang',[App\Http\Controllers\Frontend\FrontendController::class , 'showCartList'])->name('showCartList');
 Route::get('/thanh-toan',[App\Http\Controllers\Frontend\FrontendController::class , 'showFormPayment'])->name('showFormPayment');
 Route::get('/dat-lich',[App\Http\Controllers\Frontend\FrontendController::class , 'showFormBook'])->name('showFormBook');
 
 
+=======
+Route::get('/cart/list',[App\Http\Controllers\Frontend\FrontendController::class , 'showCartList'])->name('showCartList');
+
+Route::get('/product',[App\Http\Controllers\Frontend\FrontendController::class, 'showProduct'])->name('showProduct');
+>>>>>>> dev
