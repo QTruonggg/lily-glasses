@@ -10,7 +10,7 @@
     @include('frontend.details_product.size')
     @include('frontend.details_product.info_img')
     @include('frontend.details_product.care_product')
-    @include('frontend.details_product.form_link')
+    @include('frontend.components.form_link')
 @endsection
 
 @section('script')

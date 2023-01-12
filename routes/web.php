@@ -90,8 +90,8 @@ Route::prefix('admin')->middleware('auth')->group(function () {
         Route::get('create',[App\Http\Controllers\Admin\CategoryController::class,'getAddServiceCategory'])->name('admin.getAddServiceCategory');
         Route::post('create',[App\Http\Controllers\Admin\CategoryController::class,'addServiceCategory'])->name('admin.addServiceCategory');
         // update
-        Route::get('list/update/{id}',[App\Http\Controllers\Admin\CategoryController::class,'getEdit'])->name('admin.getUpdateServiceCategory');
-        Route::post('list/update/{id}',[App\Http\Controllers\Admin\CategoryController::class,'postEdit'])->name('admin.postServiceCategory');
+        Route::get('list/update/{id}',[App\Http\Controllers\Admin\CategoryController::class,'getEditService'])->name('admin.getUpdateServiceCategory');
+        Route::post('list/update/{id}',[App\Http\Controllers\Admin\CategoryController::class,'postEditService'])->name('admin.postServiceCategory');
 
         // delete
         Route::get('list/delete/{id}',[App\Http\Controllers\Admin\CategoryController::class,'deleteServiceCategory'])->name('admin.deleteServiceCategory');
@@ -103,4 +103,8 @@ Route::prefix('admin')->middleware('auth')->group(function () {
 Route::get('/',[App\Http\Controllers\Frontend\FrontendController::class, 'showHome'])->name('showhome');
 // Route::post('/',[App\Http\Controllers\Frontend\FrontendController::class, 'post'])->name('post');
 Route::get('/product/details',[App\Http\Controllers\Frontend\FrontendController::class , 'showDetailsProduct'])->name('showDetailsProduct');
-Route::get('/cart/list',[App\Http\Controllers\Frontend\FrontendController::class , 'showCartList'])->name('showCartList');
+Route::get('/gio-hang',[App\Http\Controllers\Frontend\FrontendController::class , 'showCartList'])->name('showCartList');
+Route::get('/thanh-toan',[App\Http\Controllers\Frontend\FrontendController::class , 'showFormPayment'])->name('showFormPayment');
+Route::get('/dat-lich',[App\Http\Controllers\Frontend\FrontendController::class , 'showFormBook'])->name('showFormBook');
+
+

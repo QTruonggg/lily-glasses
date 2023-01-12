@@ -212,6 +212,9 @@ footer .box-4 .contact a i {
   font-size: 1.2rem;
 }
 
+#cart_list {
+  padding-bottom: 40px;
+}
 #cart_list .form-wrap {
   padding-left: 4.16%;
   padding-right: 4.16%;

@@ -78,19 +78,10 @@
                 </li>
                 <li>
                     <h3>
-                        <a href="">
+                        <a href="{{route('showFormBook')}}">
                             Đặt lịch khám 
                         </a>
                     </h3>
-                    {{-- <div class="sub-menu">
-                        <ul class="sub-menu-list">
-                            <li class="item">
-                                <h2>
-                                    <a href="">{{$category->name}}</a>
-                                </h2>
-                            </li>
-                        </ul>
-                    </div> --}}
                 </li>
             </ul>
         </div>

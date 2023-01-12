@@ -2,6 +2,37 @@
 @use '../style-defaultl/valiable';
 @use '../style-defaultl/footer';
 
+#product {
+    .cat-title {
+        text-align: center;
+        font-size: 26px;
+        text-transform: uppercase;
+        padding: 0px 40px 30px 40px;
+
+        span {
+            display: inline-block;
+            position: relative;
+            padding: 15px 0px;
+            max-width: 500px;
+
+            &::after {
+                width: 240px;
+                height: 2px;
+                background-color: #EBD7A9;
+                position: absolute;
+                bottom: 0px;
+                left: 50%;
+                transform: translateX(-50%);
+                content: "";
+            }
+        }
+    }
+
+    .container {
+        border-bottom: 1px dashed #EBD7A9;
+        padding: 30px 0;
+    }
+}
 #service {
     .cat-title {
         text-align: center;
@@ -38,7 +69,7 @@
             width: 90%;
             margin: 0 auto;
             text-align: center;
-            min-height: 300px;
+            min-height: 250px;
             box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
             display: flex;
             img {
@@ -221,128 +252,67 @@
     }
 }
 
-#book {
-    margin-top: 30px;
-    background-image: url('../../images/bg-form.jpg');
+#share_corner {
+    padding-top: 30px;
     padding-bottom: 30px;
-    margin-bottom: 30px;
-    .book-title {
+    .news-title {
         height: 28px;
-        border-bottom: 2px solid #EBD7A9; 
-        margin-bottom: 15px;
+        border-bottom: 1px solid #EBD7A9;
         position: relative;
+        margin-bottom: 30px;
         span {
             position: absolute;
             height: 40px;
             line-height: 40px;
             display: inline-block;
             text-transform: uppercase;
-            font-size:30px;
+            font-size: 22px;
             top: 0px;
             background: rgb(255, 255, 255);
             padding: 0px 3px 0px 0px;
         }
     }
-    .book-group {
-        padding-top: 40px;
-        .note {
-            width: 50%;
-            padding-right: 20px;
-            .note-header {
-                padding-bottom: 10px;
-                padding-top: 20px;
-                border-bottom: 2px solid #EBD7A9;
-                h3 {
-                    color: #ecc978;
-                    font-size: 30px;
-                    font-weight: 700;
-                }
-            }
-            .note-content {
-                ul {
-                    padding-left: 15px;
-                    li {
-                        padding: 20px 0;
-                        line-height: 1.5rem;
-                        text-align: left;
-                        span {
-                        }
-                    &::before {
-                        content: "\2022";
-                        color: #EBD7A9;
-                        font-weight: bold;
-                        display: inline-block;
-                        width: 1em;
-                        margin-left: -1em;
-                    }
-                    }
-                }
-            }
+    .swiper {
+        .swiper-scrollbar-drag {
+            background: rgba(240, 183, 50, 0.5);
         }
-        .book-form {
-            width: 50%;
-            background-color: #fff;
-            border-radius: 15px;
-            text-align: center;
-            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-            .book-form-title {
-                padding-bottom: 20px;
-                padding-top: 30px;
-                h3 {
-                    color: #EBD7A9;
-                    font-size: 30px;
-                    font-weight: 700;
-                    text-transform: uppercase;
+    }
+    .main-item  {
+        margin-bottom: 15px;
+        .item-new {
+            position: relative;
+            -webkit-box-shadow: 0 0 10px rgb(0 0 0 / 10%);
+            box-shadow: 0 0 10px rgb(0 0 0 / 10%);
+            box-shadow: 0 0 10px rgb(0 0 0 / 10%);
+            height: 100%;
+            .img {
+                position: relative;
+                a img {
+                    width: 100%;
                 }
             }
-            .book-form-input {
-                padding: 10px 100px;
-                .group {
-                    padding: 10px 0;
-                    display: flex;
-                    flex-direction: column;
-                    align-items: flex-start;
-                    label {
-                        padding-bottom: 5px;
-                        span {
-                            color: #ff0000;
-                        }
-                    }
-                    input,textarea {
-                        width: 100%;
-                        outline: none;
-                        padding: 10px 8px;
-                        font-size: 14px;
-                        border-radius: 10px;
-                        border: 1px solid #e0e0e0;
-                        padding: 12px 10px;
-                        border-radius: 7px;
-                        background: #fbfbfb;
-                    }
-                    input[type="datetime-local"] {
-                        &::-webkit-datetime-edit {
-                            color:#b2b0b0;
-                        }
+            .content {
+                padding: 10px 15px;
+                h2 {
+                    font-weight: 600;
+                    font-size: 16px;
+                    height: 48px;
+                    a {
+                        color: #000;
+                        text-decoration: none;
                     }
                 }
-                input[type="submit"] {
-                    display: block;
-                    margin: 20px auto;
-                    background-color: #EBD7A9;
-                    color: #fff;
-                    padding: 10px 30px;
-                    border-radius: 24px;
-                    text-transform: uppercase;
-                    border: 1px solid #e0e0e0;
+                .date {
+                    color: rgba(66, 66, 66, .63);
+                    margin-top: 5px;
                 }
             }
         }
 
     }
 }
-
 #feedback {
-    border-top: 1px dashed #ebd7a9;
+    border-top: 1px dashed rgb(235, 215, 169);
     background-color: rgb(255, 251, 241);
     .feedbackSwiper {
         padding-top: 40px;

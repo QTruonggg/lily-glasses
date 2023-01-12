@@ -38,4 +38,18 @@ class FrontendController extends Controller
         return view('frontend.shopping_cart.index',
         compact('banner', 'categories','serviceCategory'));
     }
+    public function showFormPayment() {
+        $categories = Category::where('parent_id', '=', 0)->with('childs')->get();
+        $banner = Banner::all();
+        $serviceCategory = ServiceCategory::all();
+        return view('frontend.form_payment.index',
+        compact('banner', 'categories','serviceCategory'));
+    }
+    public function showFormBook() {
+        $categories = Category::where('parent_id', '=', 0)->with('childs')->get();
+        $banner = Banner::all();
+        $serviceCategory = ServiceCategory::all();
+        return view('frontend.form_book.index',
+        compact('banner', 'categories','serviceCategory'));
+    }
 }

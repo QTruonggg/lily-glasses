@@ -1,40 +1,37 @@
-    <div class="col-md-3 col-6">
-        <div class="item-product">
-            <div class="view-img">
-                <a href="" class="d-block">
-                    <img src="https://cdn.kinhmatlily.com/lily01/2023/1/m2769-trang-1667562308000-1668583615000-1671611095000-1672917663000-1673317847000.jpeg">
-                </a>
+    <div class="item-product">
+        <div class="view-img">
+            <a href="" class="d-block">
+                <img src="https://cdn.kinhmatlily.com/lily01/2023/1/m2769-trang-1667562308000-1668583615000-1671611095000-1672917663000-1673317847000.jpeg">
+            </a>
+        </div>
+        <div class="info">
+            <div class="name">
+                <a href="/kinh-nhua-lily-m2769-p964">Kính Nhựa Lily M2769</a>
             </div>
-            <div class="info">
-                <div class="name">
-                    <a href="/kinh-nhua-lily-m2769-p964">Kính Nhựa Lily M2769</a>
+            <div class="price">
+                <div class="detail-p">
+                    <p class="d-flex flex-column">
+                        <span class="regular-price">370.000 đ</span>
+                        <span class="discount-price">351.500 đ</span>
+                    </p>
                 </div>
-                <div class="price">
-                    <div class="detail-p">
-                        <p class="d-flex flex-column">
-                            <span class="regular-price">370.000 đ</span>
-                            <span class="discount-price">351.500 đ</span>
-                        </p>
-                    </div>
-                </div>
-                <div class="list-color">
-                    <ul>
-                        <li class="" style="background-color:#000;">
-                        </li>
-                        <li class="" style="background-color:#000;">
-                        </li>
-                        <li class="" style="background-color:#000;">
-                        </li>
-                        <li class="" style="background-color:#000;">
-                        </li>
-                        <li class="" style="background-color:#000;">
-                        </li>
-                    </ul>
-                </div>
+            </div>
+            <div class="list-color">
+                <ul>
+                    <li class="" style="background-color:#000;">
+                    </li>
+                    <li class="" style="background-color:#000;">
+                    </li>
+                    <li class="" style="background-color:#000;">
+                    </li>
+                    <li class="" style="background-color:#000;">
+                    </li>
+                    <li class="" style="background-color:#000;">
+                    </li>
+                </ul>
             </div>
         </div>
     </div>
-
     @pushonce('component-css')
         <style>
             .item-product {

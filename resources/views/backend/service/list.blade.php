@@ -65,7 +65,7 @@
         </table>
         </div>
         <div class="dt-buttons btn-group">
-            <a href="{{route('admin.postCategoriesList')}}" class="btn btn-secondary action-item" tabindex="0" aria-controls="table-categories">
+            <a href="{{route('admin.getAddServiceCategory')}}" class="btn btn-secondary action-item" tabindex="0" aria-controls="table-categories">
                 <span>
                     <span data-action="create">
                     <i class="fa fa-plus"></i>
@@ -89,6 +89,9 @@
                         <th style="width: 15%">
                             Tên
                         </th>
+                        <th style="width: 15%">
+                            Danh mục
+                        </th>
                         <th style="width: 15%" class="text-right">
                             Tác vụ
                         </th>
@@ -108,6 +111,11 @@
                         <td style="max-width:110px;"> 
                             <a style="word-wrap: break-word;white-space: normal;overflow: hidden;display: -webkit-box;text-overflow: ellipsis;-webkit-box-orient: vertical;-webkit-line-clamp: 2; ">
                                 {{$item->name}}
+                            </a>
+                        </td>
+                        <td style="max-width:110px;"> 
+                            <a style="word-wrap: break-word;white-space: normal;overflow: hidden;display: -webkit-box;text-overflow: ellipsis;-webkit-box-orient: vertical;-webkit-line-clamp: 2; ">
+                                {{$item->category_id}}
                             </a>
                         </td>
                         <td class="project-actions text-right">

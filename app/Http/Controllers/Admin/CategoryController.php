@@ -72,15 +72,17 @@ class CategoryController extends Controller
         ],compact('data','dataLenght'));
     }
     public function getAddServiceCategory() {
+        $parent_categories = ServiceCategory::where('category_id', '=', 0)->get();
         return view('backend.service.create',[
             'breadcrumb'=> 'Thêm dịch vụ'
-        ]);
+        ], compact('parent_categories'));
     }
      public function addServiceCategory(Request $request) {
         $data = $request->all();
         $validate = $request->validate([
             'name'=>'required',
             'thumbnail'=>'required'
+
         ],[
             'name.required'=>'Vui lòng nhập tên!!!',
             'thumbnail.required'=>'Vui lòng nhập ảnh!!!',
@@ -88,9 +90,25 @@ class CategoryController extends Controller
         ServiceCategory::create($data);
         return back()->with('success', 'Tạo thành công danh mục dịch vụ !');
     }
+
+    public function getEditService(Request $request,$id) {
+        $data = ServiceCategory::FindOrFail($id);
+        $parent_categories = ServiceCategory::where('category_id', '=', 0)->get();
+
+        return view('backend.service.update',[
+            'breadcrumb'=> 'Chỉnh sửa danh mục'
+        ], compact('data','parent_categories'));
+    }
+     public function postEditService(Request $request,$id) {
+        $csc = ServiceCategory::FindOrFail($id);
+        $data = $request->all();
+        $csc->update($data);
+        return redirect(route('admin.ShowServiceCategory'))->with('mess', 'Cập nhật thành công danh mục');
+    }
      public function deleteServiceCategory($id) {
         $serviceCategory = ServiceCategory::findOrFail($id);
         $serviceCategory->delete();
         return redirect(route('admin.ShowServiceCategory'))->with('mess', 'xóa thành công danh mục');
     }
+    
 }

@@ -53,7 +53,15 @@
                                         @error('name')
                                         <span class="text-danger mt-1 d-block">{{ $message }}</span>
                                         @enderror
-                                    
+                                    </div>
+                                    <div class="form-group mt-1 mb-1">
+                                        <label for="parent_id" class="form-label mb-1">Danh mục</label>
+                                        <select class="form-control custom-select" name="category_id" id="category_id" placeholder="">
+                                            <option value="0">Danh mục lớn</option>
+                                            @foreach($parent_categories as $parent_category)
+                                            <option value="{{$parent_category->id}}">{{$parent_category->name}}</option>
+                                            @endforeach
+                                        </select>
                                     </div>
                                     <input type="hidden" name="thumbnail"  value="">
                                 </div>

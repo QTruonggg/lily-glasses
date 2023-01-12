@@ -6,10 +6,12 @@
 
 @section('content')
     @include('frontend.home.banner')
+    @include('frontend.home.category_product')
     @include('frontend.home.service')
     @include('frontend.home.module_category')
     @include('frontend.home.question')
-    @include('frontend.home.book')
+    @include('frontend.components.book')
+    @include('frontend.home.shared_corner')
     @include('frontend.home.feedback')
 @endsection
 
@@ -42,6 +44,14 @@
         pagination: {
           el: ".swiper-pagination",
           clickable: true,
+        },
+    });
+    var sharedCorner = new Swiper(".shared-corner", {
+        spaceBetween: 20,
+        slidesPerView: 4,
+        scrollbar: {
+          el: ".swiper-scrollbar",
+          hide: true,
         },
     });
 </script>
