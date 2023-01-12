@@ -37,8 +37,8 @@
                 </div>
                 <div class="contact">
                     <p>Kết nốt với SOLAR:</p>
-                    <a href=""><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href=""><i class="fa-brands fa-instagram"></i></a>
+                    <a href=""><img src="{{asset('assets/images/fb.png')}}" alt=""></a>
+                    <a href=""><img src="{{asset('assets/images/intergram.png')}}" alt=""></a>
                 </div>
                 <iframe width="100%" height="40%" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d993.9958863081504!2d105.76413481793809!3d20.959363044443222!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1svi!2s!4v1673343494219!5m2!1svi!2s" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
