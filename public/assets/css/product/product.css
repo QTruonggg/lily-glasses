@@ -39,7 +39,7 @@
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(50px);
+    transform: translateY(10px);
   }
   to {
     opacity: 1;
@@ -57,7 +57,7 @@
   transform: translateY(0);
   padding: 0;
   display: none;
-  animation: fadeIn linear 0.4s;
+  animation: fadeIn linear 0.35s;
 }
 #menu .header-menu-top .menu-top ul li .sub-menu .sub-menu-list {
   text-align: left;

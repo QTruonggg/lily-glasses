@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\models\Category;
+use App\models\ServiceCategory;
 use App\Http\Controllers\Hook\CategoryHook;
 class CategoryController extends Controller
 {
@@ -58,5 +59,38 @@ class CategoryController extends Controller
         $data = $CategoryHook->getId($id);
         $CategoryHook->updateCategory($request,$data);
         return redirect(route('admin.showCategoriesList'))->with('mess', 'Cập nhật thành công danh mục');
+    }
+
+
+    // service category
+
+    public function showServiceCategory() {
+        $data = ServiceCategory::all();
+        $dataLenght = count($data);
+        return view('backend.service.list',[
+            'breadcrumb'=> 'Danh sách dịch vụ'
+        ],compact('data','dataLenght'));
+    }
+    public function getAddServiceCategory() {
+        return view('backend.service.create',[
+            'breadcrumb'=> 'Thêm dịch vụ'
+        ]);
+    }
+     public function addServiceCategory(Request $request) {
+        $data = $request->all();
+        $validate = $request->validate([
+            'name'=>'required',
+            'thumbnail'=>'required'
+        ],[
+            'name.required'=>'Vui lòng nhập tên!!!',
+            'thumbnail.required'=>'Vui lòng nhập ảnh!!!',
+        ]);
+        ServiceCategory::create($data);
+        return back()->with('success', 'Tạo thành công danh mục dịch vụ !');
+    }
+     public function deleteServiceCategory($id) {
+        $serviceCategory = ServiceCategory::findOrFail($id);
+        $serviceCategory->delete();
+        return redirect(route('admin.ShowServiceCategory'))->with('mess', 'xóa thành công danh mục');
     }
 }

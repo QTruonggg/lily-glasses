@@ -7,67 +7,23 @@
                         <span>Danh mục sản phẩm</span>
                     </div>
                 </div>
-                
+                @foreach($categories as $child)
                 <div class="col-md-6 col-sm-6 col-12">
                     <div class="cat-item">
                         <a href="/gong-kinh-ram">
-                            <img src="{{asset('assets/images/gong-kinh-can.jpg')}}" alt="Gọng Kính Râm">
+                            <img src="{{$child->thumbnail}}" alt="{{$child->name}}">
                         </a>
                         <div class="info">
                             <div class="title">
-                                <a href="/gong-kinh-ram">Gọng Kính cận</a>
+                                <a href="">{{$child->name}}</a>
                             </div>
                             <div class="more">
-                                <a href="/gong-kinh-ram">Xem thêm</a>
+                                <a href="">Xem thêm</a>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-sm-6 col-12">
-                    <div class="cat-item">
-                        <a href="/gong-kinh-ram">
-                            <img src="{{asset('assets/images/gong-kinh-can.jpg')}}" alt="Gọng Kính Râm">
-                        </a>
-                        <div class="info">
-                            <div class="title">
-                                <a href="/gong-kinh-ram">Gọng Kính cận</a>
-                            </div>
-                            <div class="more">
-                                <a href="/gong-kinh-ram">Xem thêm</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-sm-6 col-12">
-                    <div class="cat-item">
-                        <a href="/gong-kinh-ram">
-                            <img src="{{asset('assets/images/gong-kinh-can.jpg')}}" alt="Gọng Kính Râm">
-                        </a>
-                        <div class="info">
-                            <div class="title">
-                                <a href="/gong-kinh-ram">Gọng Kính cận</a>
-                            </div>
-                            <div class="more">
-                                <a href="/gong-kinh-ram">Xem thêm</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-sm-6 col-12">
-                    <div class="cat-item">
-                        <a href="/gong-kinh-ram">
-                            <img src="{{asset('assets/images/gong-kinh-can.jpg')}}" alt="Gọng Kính Râm">
-                        </a>
-                        <div class="info">
-                            <div class="title">
-                                <a href="/gong-kinh-ram">Gọng Kính cận</a>
-                            </div>
-                            <div class="more">
-                                <a href="/gong-kinh-ram">Xem thêm</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
                 
             </div>
         </div>

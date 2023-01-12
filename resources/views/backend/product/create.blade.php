@@ -192,8 +192,9 @@
      $('input[name="current_price"]').change(function() {
         var value_old_price = parseInt($('input[name="old_price"]').val());
         var value_current_price =  parseInt($('input[name="current_price"]').val());
-        var value_percent_discount = value_current_price * 100 / value_old_price;
-        $('input[name="percent_discount"]').val(100 - value_percent_discount + '%')
+        var value_percent_discount = value_current_price * (100 / value_old_price);
+        var result = parseFloat( Math.round(100 - value_percent_discount))
+        $('input[name="percent_discount"]').val(result)
      })
 </script>
 <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>

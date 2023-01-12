@@ -35,14 +35,12 @@
                     </h3>
                     <div class="sub-menu">
                         <ul class="sub-menu-list">
-                            @foreach($categories as $category)
-                                @foreach($category->childs as $child)
-                                    <li class="item">
-                                        <h2>
-                                            <a href="">{{$child->name}}</a>
-                                        </h2>
-                                    </li>
-                                @endforeach
+                            @foreach($serviceCategory as $child)
+                                <li class="item">
+                                    <h2>
+                                        <a href="">{{$child->name}}</a>
+                                    </h2>
+                                </li>
                             @endforeach
                         </ul>
                     </div>

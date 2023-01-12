@@ -8,7 +8,7 @@
         
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1>Quản lý sản phẩm</h1>
+                <h1>Quản lý danh mục</h1>
             </div>
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right justify-content-end">
@@ -65,7 +65,7 @@
         </table>
         </div>
         <div class="dt-buttons btn-group">
-            <a href="{{route('admin.getCreateProduct')}}" class="btn btn-secondary action-item" tabindex="0" aria-controls="table-categories">
+            <a href="{{route('admin.postCategoriesList')}}" class="btn btn-secondary action-item" tabindex="0" aria-controls="table-categories">
                 <span>
                     <span data-action="create">
                     <i class="fa fa-plus"></i>
@@ -80,48 +80,28 @@
             <table class="table table-striped projects">
                 <thead>
                     <tr class="text-center">
-                        <th style=" font-size:10px;width: 1%">
+                        <th style="width: 1%">
                             Id
                         </th>
-                        <th style=" font-size:10px;width: 10%">
+                        <th style="width: 10%">
                             Ảnh
                         </th>
-                        <th style=" font-size:10px;width: 10%">
-                            tên
+                        <th style="width: 15%">
+                            Tên
                         </th>
-                        <th style=" font-size:10px;width: 10%">
-                            Mã sản phẩm
-                        </th>
-                        <th style=" font-size:10px;width: 10%">
-                            mã màu
-                        </th>
-                        <th style=" font-size:10px;width: 10%">
-                            Giá gốc
-                        </th>
-                        <th style=" font-size:10px;width: 10%">
-                            Giá hiện tại
-                        </th>
-                        <th style=" font-size:10px;width: 10%">
-                            tình trạng
-                        </th>
-                        <th style=" font-size:10px;width: 10%">
-                            Mô tả
-                        </th>
-                        <th style=" font-size:10px;" class="text-right">
+                        <th style="width: 15%" class="text-right">
                             Tác vụ
                         </th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach($dataProduct as $item)
+                    @foreach($data as $item)
                     <tr id="row" class="text-center">
-                        <td style="max-width:110px;"> 
-                            <a style="word-wrap: break-word;white-space: normal;overflow: hidden;display: -webkit-box;text-overflow: ellipsis;-webkit-box-orient: vertical;-webkit-line-clamp: 2; ">
+                        <td>
                             {{$item->id}}
-                            </a>
                         </td>
                         <td >
-                            <div style="max-width:110px; min-width:80px; max-height:50px; overflow:hidden; display:flex;">
+                            <div style="max-width:110px; min-width:150px; max-height:80px; overflow:hidden; display:flex;">
                                 <img style="width:100%;" src="{{$item->thumbnail ? $item->thumbnail : asset('upload_thumbnail/empty_img.png')}}" alt="">
                             </div>
                         </td>
@@ -130,44 +110,14 @@
                                 {{$item->name}}
                             </a>
                         </td>
-                        <td style="max-width:110px;"> 
-                            <a style="word-wrap: break-word;white-space: normal;overflow: hidden;display: -webkit-box;text-overflow: ellipsis;-webkit-box-orient: vertical;-webkit-line-clamp: 2; ">
-                                {{$item->product_code}}
-                            </a>
-                        </td>
-                        <td style="max-width:110px;"> 
-                            <a style="word-wrap: break-word;white-space: normal;overflow: hidden;display: -webkit-box;text-overflow: ellipsis;-webkit-box-orient: vertical;-webkit-line-clamp: 2; ">
-                                {{$item->color}}
-                            </a>
-                        </td>
-                        <td style="max-width:110px;"> 
-                            <a style="word-wrap: break-word;white-space: normal;overflow: hidden;display: -webkit-box;text-overflow: ellipsis;-webkit-box-orient: vertical;-webkit-line-clamp: 2; ">
-                                {{$item->old_price}}
-                            </a>
-                        </td>
-                        <td style="max-width:110px;"> 
-                            <a style="word-wrap: break-word;white-space: normal;overflow: hidden;display: -webkit-box;text-overflow: ellipsis;-webkit-box-orient: vertical;-webkit-line-clamp: 2; ">
-                                {{$item->current_price}}
-                            </a>
-                        </td>
-                        <td style="max-width:110px;"> 
-                            <a style="word-wrap: break-word;white-space: normal;overflow: hidden;display: -webkit-box;text-overflow: ellipsis;-webkit-box-orient: vertical;-webkit-line-clamp: 2; ">
-                                {{!! $item->seo_description !!}}
-                            </a>
-                        </td>
-                        <td style="max-width:110px;"> 
-                            <a style="word-wrap: break-word;white-space: normal;overflow: hidden;display: -webkit-box;text-overflow: ellipsis;-webkit-box-orient: vertical;-webkit-line-clamp: 2; ">
-                                {{$item->status}}
-                            </a>
-                        </td>
-                        <td class="project-actions">
-                            <a href="" class="btn btn-sm btn-icon">
+                        <td class="project-actions text-right">
+                            <a href="list/update/{{$item->id}}" class="btn btn-sm btn-icon">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit font-medium-2 text-body">
                                     <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
                                     <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
                                 </svg>
                             </a>
-                            <a href class="btn btn-sm btn-icon delete-record"  data-bs-toggle="modal" data-bs-target="#deleteProductModal">
+                            <a type="button" data-bs-toggle="modal" data-bs-target="#deleteModal{{$item->id}}" class="btn btn-sm btn-icon delete-record">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-trash font-medium-2 text-body">
                                     <polyline points="3 6 5 6 21 6"></polyline>
                                     <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
@@ -175,7 +125,7 @@
                             </a>
                         </td>
                     </tr>
-                    <div class="modal fade" id="deleteProductModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal fade" id="deleteModal{{$item->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-header flex-column">
@@ -195,12 +145,14 @@
                     </div>
                     @endforeach
                 </tbody>
-            </table>    
+            </table>
         </div>
         <br>
             
     </div>
     <!-- /.card-body -->
+    <div>
+</div>
 </div>
 <!-- /.card -->
 </section>

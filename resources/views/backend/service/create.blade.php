@@ -53,38 +53,9 @@
                                         @error('name')
                                         <span class="text-danger mt-1 d-block">{{ $message }}</span>
                                         @enderror
+                                    
                                     </div>
-                                    <div class="form-group mt-1 mb-1">
-                                        <label for="parent_id" class="form-label mb-1">Danh mục</label>
-                                        <select class="form-control custom-select" name="parent_id" id="parent_id" placeholder="">
-                                            <option value="0">Danh mục lớn</option>
-                                            @foreach($parent_categories as $parent_category)
-                                            <option value="{{$parent_category->id}}">{{$parent_category->name}}</option>
-                                            @endforeach
-                                        </select>
-                                    </div>
-                                    <div class="form-group mt-1 mb-1">
-                                        <label for="seo_title" class="form-label mb-1"> Tiêu đề</label>
-                                        <input type="text" id="seo_title" name="seo_title" value="" class="form-control" placeholder="Nhập tiêu đề">
-                                        @if ($errors->has('seo_title'))
-                                            <span class="text-danger d-block mt-1">{{ $errors->first('seo_title') }}</span>
-                                        @endif
-                                    </div>
-                                     {{-- <div class="form-group">
-                                        <label for="status">Trạng thái</label>
-                                        <select class="form-control custom-select" name="status" id="status">
-                                            <option value="1">Còn hàng</option>
-                                            <option value="0">Hết hàng</option>
-                                        </select>
-                                    </div> --}}
-                                    <div class="form-group mt-1 mb-1">
-                                        <label for="seo_keyword" class="form-label mb-1">Từ khóa</label>
-                                        <input type="text" id="keyword" name="seo_keyword" value="" class="form-control">
-                                        @if ($errors->has('seo_keyword'))
-                                            <span class="text-danger d-block mt-1">{{ $errors->first('seo_keyword') }}</span>
-                                        @endif
-                                    </div>
-                                    <input type="hidden" name="thumbnail"  value="{{asset('upload_thumbnail/empty_img.png')}}">
+                                    <input type="hidden" name="thumbnail"  value="">
                                 </div>
                                 <!-- /.card-body -->
                             </div>
@@ -121,6 +92,9 @@
                 <button class="btn btn-primary btn-toggle-sidebar w-100 waves-effect waves-float waves-light" id="popup-1-button">
                     <span class="align-middle">Chọn ảnh</span>
                 </button>
+                 @error('thumbnail')
+                    <span class="text-danger mt-1 d-block">{{ $message }}</span>
+                @enderror
             </div>
         </div>
     </div>
