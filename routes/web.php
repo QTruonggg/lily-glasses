@@ -82,7 +82,25 @@ Route::prefix('admin')->middleware('auth')->group(function () {
         Route::post('update', [App\Http\Controllers\Admin\EditProfileController::class, 'updateProfile'])->name('admin.getEditProfile');
     });
 
+    // service
+
+    Route::prefix('service')->group(function() {
+        Route::get('list',[App\Http\Controllers\Admin\CategoryController::class, 'showServiceCategory'])->name('admin.ShowServiceCategory');
+         // post
+        Route::get('create',[App\Http\Controllers\Admin\CategoryController::class,'getAddServiceCategory'])->name('admin.getAddServiceCategory');
+        Route::post('create',[App\Http\Controllers\Admin\CategoryController::class,'addServiceCategory'])->name('admin.addServiceCategory');
+        // update
+        Route::get('list/update/{id}',[App\Http\Controllers\Admin\CategoryController::class,'getEdit'])->name('admin.getUpdateServiceCategory');
+        Route::post('list/update/{id}',[App\Http\Controllers\Admin\CategoryController::class,'postEdit'])->name('admin.postServiceCategory');
+
+        // delete
+        Route::get('list/delete/{id}',[App\Http\Controllers\Admin\CategoryController::class,'deleteServiceCategory'])->name('admin.deleteServiceCategory');
+    });
+
 });
 
 // frontend ....
 Route::get('/',[App\Http\Controllers\Frontend\FrontendController::class, 'showHome'])->name('showhome');
+// Route::post('/',[App\Http\Controllers\Frontend\FrontendController::class, 'post'])->name('post');
+Route::get('/product/details',[App\Http\Controllers\Frontend\FrontendController::class , 'showDetailsProduct'])->name('showDetailsProduct');
+Route::get('/cart/list',[App\Http\Controllers\Frontend\FrontendController::class , 'showCartList'])->name('showCartList');

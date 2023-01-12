@@ -37,6 +37,9 @@
 
     @pushonce('component-css')
         <style>
+            .item-product {
+                padding: 30px 0;
+            }
             .item-product:hover {
                 box-shadow: 0 4px 8px rgb(0 0 0 / 25%);
             }

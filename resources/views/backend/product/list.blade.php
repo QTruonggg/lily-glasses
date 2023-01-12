@@ -152,7 +152,7 @@
                         </td>
                         <td style="max-width:110px;"> 
                             <a style="word-wrap: break-word;white-space: normal;overflow: hidden;display: -webkit-box;text-overflow: ellipsis;-webkit-box-orient: vertical;-webkit-line-clamp: 2; ">
-                                {{ !! $item->seo_description !! }}
+                                {{!! $item->seo_description !!}}
                             </a>
                         </td>
                         <td style="max-width:110px;"> 
