@@ -70,13 +70,13 @@
                                             <span class="text-danger d-block mt-1">{{ $errors->first('seo_title') }}</span>
                                         @endif
                                     </div>
-                                     <div class="form-group">
+                                     {{-- <div class="form-group">
                                         <label for="status">Trạng thái</label>
                                         <select class="form-control custom-select" name="status" id="status">
                                             <option value="1">Còn hàng</option>
                                             <option value="0">Hết hàng</option>
                                         </select>
-                                    </div>
+                                    </div> --}}
                                     <div class="form-group mt-1 mb-1">
                                         <label for="seo_keyword" class="form-label mb-1">Từ khóa</label>
                                         <input type="text" id="keyword" name="seo_keyword" value="" class="form-control">

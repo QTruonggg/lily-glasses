@@ -76,7 +76,7 @@
                                             <span class="text-danger d-block mt-1">{{ $errors->first('seo_keyword') }}</span>
                                         @endif
                                     </div>
-                                    <input type="hidden" name="thumbnail"  value="{{ csrf_token() }}">
+                                    <input type="hidden" name="thumbnail"  value="{{asset('upload_thumbnail/empty_img.png')}}">
                                 </div>
                                 <!-- /.card-body -->
                             </div>
