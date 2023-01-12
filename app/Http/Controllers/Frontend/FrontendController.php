@@ -7,6 +7,7 @@ use App\Models\Banner;
 use App\Models\Category;
 use App\Models\ServiceCategory;
 use App\Models\Product;
+use App\Http\Controllers\Hook\GetCategoryHook;
 
 
 
@@ -22,6 +23,7 @@ class FrontendController extends Controller
     public function post(Request $request) {
         // dd($request->all());
     }
+
 
 
     public function showDetailsProduct() {
@@ -41,7 +43,8 @@ class FrontendController extends Controller
 
     public function showProduct(GetCategoryHook $getCategory){
         $categories = $getCategory->getCategories();
+        $serviceCategory = ServiceCategory::all();
         return view('frontend.product.index',
-        compact('categories') );
+        compact('categories','serviceCategory') );
     }
 }

@@ -213,4 +213,20 @@ footer .box-4 .contact a img {
   height: 40px;
 }
 
+@media (min-width: 992px) {
+  .container {
+    max-width: 90%;
+  }
+}
+@media (min-width: 768px) {
+  .container {
+    max-width: 90%;
+  }
+}
+@media (min-width: 576px) {
+  .container {
+    max-width: 90%;
+  }
+}
+
 /*# sourceMappingURL=product.css.map */
