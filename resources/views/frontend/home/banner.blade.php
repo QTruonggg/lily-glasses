@@ -2,7 +2,9 @@
     <div class="swiper-wrapper">
         @foreach($banner as $banner)
         <div class="swiper-slide">
-            <img src="{{$banner->image}}" alt="">
+            <a href="#">
+                <img src="{{$banner->image}}" alt="">
+            </a>
         </div>
         @endforeach
     </div>
@@ -40,5 +42,8 @@
         font-size: 18px;
     }
 
+    .swiper-pagination span{
+        background-color: #ffe29e;
+    }
 </style>
 @endpushonce

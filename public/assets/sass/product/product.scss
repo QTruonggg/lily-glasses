@@ -1,3 +1,19 @@
 @use '../style-defaultl/header';
 @use '../style-defaultl/valiable';
 @use '../style-defaultl/footer';
+
+@media (min-width: 992px){
+    .container{
+        max-width: 90%;
+    }
+}
+@media (min-width: 768px){
+    .container{
+        max-width: 90%;
+    }
+}
+@media (min-width: 576px){
+    .container{
+        max-width: 90%;
+    }
+}

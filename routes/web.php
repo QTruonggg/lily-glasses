@@ -104,3 +104,5 @@ Route::get('/',[App\Http\Controllers\Frontend\FrontendController::class, 'showHo
 // Route::post('/',[App\Http\Controllers\Frontend\FrontendController::class, 'post'])->name('post');
 Route::get('/product/details',[App\Http\Controllers\Frontend\FrontendController::class , 'showDetailsProduct'])->name('showDetailsProduct');
 Route::get('/cart/list',[App\Http\Controllers\Frontend\FrontendController::class , 'showCartList'])->name('showCartList');
+
+Route::get('/product',[App\Http\Controllers\Frontend\FrontendController::class, 'showProduct'])->name('showProduct');
