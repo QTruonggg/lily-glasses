@@ -1,3 +1,4 @@
+@charset "UTF-8";
 #menu .header-menu-top {
   background-color: rgb(246, 246, 247);
   text-align: center;
@@ -39,7 +40,7 @@
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(50px);
+    transform: translateY(10px);
   }
   to {
     opacity: 1;
@@ -57,7 +58,7 @@
   transform: translateY(0);
   padding: 0;
   display: none;
-  animation: fadeIn linear 0.4s;
+  animation: fadeIn linear 0.35s;
 }
 #menu .header-menu-top .menu-top ul li .sub-menu .sub-menu-list {
   text-align: left;
@@ -212,12 +213,73 @@ footer .box-4 .contact a i {
   font-size: 1.2rem;
 }
 
-#best-seller {
-  padding-top: 30px;
+#service .cat-title {
+  text-align: center;
+  font-size: 26px;
+  text-transform: uppercase;
+  padding: 0px 40px 30px 40px;
 }
-#best-seller .container {
+#service .cat-title span {
+  display: inline-block;
+  position: relative;
+  padding: 15px 0px;
+  max-width: 500px;
+}
+#service .cat-title span::after {
+  width: 240px;
+  height: 2px;
+  background-color: #EBD7A9;
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+  transform: translateX(-50%);
+  content: "";
+}
+#service .container {
   border-bottom: 1px dashed #EBD7A9;
   padding: 30px 0;
+}
+#service .wrap .service-thumbnail {
+  border-radius: 10px;
+  overflow: hidden;
+  width: 90%;
+  margin: 0 auto;
+  text-align: center;
+  min-height: 300px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  display: flex;
+}
+#service .wrap .service-thumbnail img {
+  object-fit: fill;
+  width: 100%;
+}
+#service .wrap .service-content {
+  width: 90%;
+  margin: 0 auto;
+  padding-top: 20px;
+  text-align: center;
+}
+#service .wrap .service-content h3 {
+  font-size: 18px;
+  white-space: normal;
+  overflow: hidden;
+  display: -webkit-box;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+#service .wrap .service-content a {
+  text-decoration: none;
+  color: #000;
+}
+#service .wrap .service-content a:hover {
+  color: #EBD7A9;
+}
+#service .wrap .service-content a span {
+  font-size: 16px;
+}
+#service .wrap .service-content a span i {
+  font-size: 14px;
 }
 
 #module-category .container {
@@ -358,6 +420,9 @@ footer .box-4 .contact a i {
 
 #book {
   margin-top: 30px;
+  background-image: url("../../images/bg-form.jpg");
+  padding-bottom: 30px;
+  margin-bottom: 30px;
 }
 #book .book-title {
   height: 28px;
@@ -377,13 +442,157 @@ footer .box-4 .contact a i {
   padding: 0px 3px 0px 0px;
 }
 #book .book-group {
-  background-color: rgba(235, 215, 169, 0.2);
+  padding-top: 40px;
 }
 #book .book-group .note {
   width: 50%;
+  padding-right: 20px;
+}
+#book .book-group .note .note-header {
+  padding-bottom: 10px;
+  padding-top: 20px;
+  border-bottom: 2px solid #EBD7A9;
+}
+#book .book-group .note .note-header h3 {
+  color: #ecc978;
+  font-size: 30px;
+  font-weight: 700;
+}
+#book .book-group .note .note-content ul {
+  padding-left: 15px;
+}
+#book .book-group .note .note-content ul li {
+  padding: 20px 0;
+  line-height: 1.5rem;
+  text-align: left;
+}
+#book .book-group .note .note-content ul li::before {
+  content: "•";
+  color: #EBD7A9;
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
 }
 #book .book-group .book-form {
   width: 50%;
+  background-color: #fff;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+#book .book-group .book-form .book-form-title {
+  padding-bottom: 20px;
+  padding-top: 30px;
+}
+#book .book-group .book-form .book-form-title h3 {
+  color: #EBD7A9;
+  font-size: 30px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+#book .book-group .book-form .book-form-input {
+  padding: 10px 100px;
+}
+#book .book-group .book-form .book-form-input .group {
+  padding: 10px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+#book .book-group .book-form .book-form-input .group label {
+  padding-bottom: 5px;
+}
+#book .book-group .book-form .book-form-input .group label span {
+  color: #ff0000;
+}
+#book .book-group .book-form .book-form-input .group input, #book .book-group .book-form .book-form-input .group textarea {
+  width: 100%;
+  outline: none;
+  padding: 10px 8px;
+  font-size: 14px;
+  border-radius: 10px;
+  border: 1px solid #e0e0e0;
+  padding: 12px 10px;
+  border-radius: 7px;
+  background: #fbfbfb;
+}
+#book .book-group .book-form .book-form-input .group input[type=datetime-local]::-webkit-datetime-edit {
+  color: #b2b0b0;
+}
+#book .book-group .book-form .book-form-input input[type=submit] {
+  display: block;
+  margin: 20px auto;
+  background-color: #EBD7A9;
+  color: #fff;
+  padding: 10px 30px;
+  border-radius: 24px;
+  text-transform: uppercase;
+  border: 1px solid #e0e0e0;
+}
+
+#feedback {
+  border-top: 1px dashed #ebd7a9;
+  background-color: rgb(255, 251, 241);
+}
+#feedback .feedbackSwiper {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+#feedback .feedbackSwiper .swiper-pagination-bullet-active {
+  background-color: #EBD7A9;
+}
+#feedback .cat-title {
+  text-align: center;
+  font-size: 26px;
+  text-transform: uppercase;
+  padding: 0px 40px 30px 40px;
+}
+#feedback .cat-title span {
+  display: inline-block;
+  position: relative;
+  padding: 15px 0px;
+  max-width: 500px;
+}
+#feedback .cat-title span::after {
+  width: 240px;
+  height: 2px;
+  background-color: #EBD7A9;
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+  transform: translateX(-50%);
+  content: "";
+}
+#feedback .list-feedback {
+  margin-bottom: 20px;
+}
+#feedback .list-feedback .swiper-slide {
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  padding: 0 15px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+#feedback .list-feedback .avatar {
+  border-radius: 50%;
+  overflow: hidden;
+  text-align: center;
+  margin: 0 auto;
+  width: 150px;
+  height: 150px;
+  margin-bottom: 30px;
+}
+#feedback .list-feedback .avatar img {
+  width: 100%;
+}
+#feedback .list-feedback .content {
+  text-align: center;
+}
+#feedback .list-feedback .content .rate i {
+  color: #efef01;
+}
+#feedback .list-feedback .content .comment-feedback p {
+  font-size: 14px;
 }
 
 /*# sourceMappingURL=home.css.map */

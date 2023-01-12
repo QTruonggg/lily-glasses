@@ -23,8 +23,8 @@ class ProductController extends Controller
         return view('backend.product.create',['breadcrumb'=>'Thêm sản phẩm'],compact('category_id'));
     }
     public function addProduct( Request $request,ProductHook $productHook) {
-        // $data = ProductColor::where('product_id', '=', 22)->get();
-        // dd($data);
+        $data = Product_group::where('category_id', '=', 39)->get();
+        dd($data);
         $data = $request->all();
         foreach($data['color'] as $key => $color ){
             $colorArray[] = [
@@ -41,7 +41,7 @@ class ProductController extends Controller
             'old_price'=>'required|numeric',
             'percent_discount'=>'numeric',
             'current_price'=>'required',
-            'seo_description'=>'max:500',
+            'seo_description'=>'max:2000',
         ], [
             'name.required'=>'Bạn chưa nhập tên sản phẩm',
             'product_code.required'=>'Bạn chưa nhập mã sản phẩm',
