@@ -9,9 +9,7 @@ use App\Models\Banner;
 class BannerController extends Controller
 {
     public function viewBannerList(){
-        // lấy ra toàn bộ user
         $banner = Banner::all();
-        // trả về view hiển thị danh sách user
         return view('backend.banner.list',
         ['title'=>'Danh sách Banner']
         , compact('banner'));

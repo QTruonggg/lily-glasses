@@ -6,6 +6,7 @@
 
 @section('content')
     @include('frontend.home.banner')
+    @include('frontend.introduce.self_introduce')
     @include('frontend.home.question')
     @include('frontend.components.book')
     @include('frontend.home.shared_corner')

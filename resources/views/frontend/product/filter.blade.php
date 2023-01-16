@@ -10,7 +10,7 @@
                         <li> <a style="color:#333; text-decoration:none;"  href="{{request()->fullUrlWithQuery(['price' => 'desc'])}}">Giá từ cao xuống thấp</a> <i class="fa-solid fa-arrow-down-long"></i></li>
                         <li><a style="color:#333; text-decoration:none;"  href="{{request()->fullUrlWithQuery(['price' => 'asc'])}}   ">Giá từ thấp tới cao</a> <i class="fa-solid fa-arrow-up-long"></i></li>
                         <li> <a style="color:#333; text-decoration:none;"  href="{{request()->fullUrlWithQuery(['created_at' => 'desc'])}}">Mới nhất</a> <i class="fa-solid fa-arrow-up-long"></i></li>
-                        <li> <a style="color:#333; text-decoration:none;"  href="{{request()->fullUrlWithQuery(['Created_at' => 'asc'])}}">Cũ nhất</a> <i class="fa-solid fa-arrow-down-long"></i></li>
+                        <li> <a style="color:#333; text-decoration:none;"  href="{{request()->fullUrlWithQuery(['created_at' => 'asc'])}}">Cũ nhất</a> <i class="fa-solid fa-arrow-down-long"></i></li>
                     </ul>
                 </div>
             </div>

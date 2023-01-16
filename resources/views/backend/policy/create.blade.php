@@ -1,11 +1,12 @@
 @extends('backend.layout.layout_default')
+
 @section('content')
 <section class=" app-content content">
     <!-- Default box -->
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1>Thêm danh mục</h1>
+                <h1>Thêm chính sách</h1>
             </div>
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right justify-content-end">
@@ -47,112 +48,60 @@
                                 </div>
                                 <div class="card-body">
                                     <div class="form-group mt-1 mb-1">
-                                        <label for="inputName" class="form-label mb-1">Tiêu đề</label>
-                                        <input type="text" id="title" name="title" value="" class="form-control" placeholder="Nhập tên">
-                                        @error('title')
+                                        <label for="inputName" class="form-label mb-1">Tên</label>
+                                        <input type="text" id="name" name="name" value="" class="form-control" placeholder="Nhập tên">
+                                        @error('name')
                                         <span class="text-danger mt-1 d-block">{{ $message }}</span>
                                         @enderror
                                     </div>
                                     <div class="form-group mt-1 mb-1">
-                                        <label for="inputName" class="form-label mb-1">address</label>
-                                        <input type="text" id="address" name="address"  value="" class="form-control" placeholder="">
-                                        @error('address')
+                                        <label for="inputName" class="form-label mb-1">subname</label>
+                                        <input type="text" id="subname" name="subname"  value="" class="form-control" placeholder="">
+                                        @error('slug')
                                         <span class="text-danger mt-1 d-block">{{ $message }}</span>
                                         @enderror
                                     </div>
                                     <div class="form-group mt-1 mb-1">
-                                        <label for="seo_title" class="form-label mb-1">Thời gian mở cửa</label>
-                                        <input type="text" id="time" name="time" value="" class="form-control" placeholder="Nhập tiêu đề">
+                                        <label for="parent_id" class="form-label mb-1">description</label>
+                                        <input type="text" id="seo_title" name="seo_title" value="" class="form-control" placeholder="Nhập tiêu đề">
+                                        
                                     </div>
                                     <div class="form-group mt-1 mb-1">
-                                        <label for="inputName" class="form-label mb-1">Địa chỉ email</label>
-                                        <input type="text" id="email" name="email" value="" class="form-control" placeholder="Nhập tên">
-                                        @error('title')
-                                        <span class="text-danger mt-1 d-block">{{ $message }}</span>
-                                        @enderror
-                                    </div>
-                                    <div class="form-group mt-1 mb-1">
-                                        <label for="inputName" class="form-label mb-1">HotLine</label>
-                                        <input type="text" id="hotline" name="hotline" value="" class="form-control" placeholder="Nhập tên">
-                                        @error('title')
-                                        <span class="text-danger mt-1 d-block">{{ $message }}</span>
-                                        @enderror
-                                    </div>
-                                    <div class="form-group mt-1 mb-1">
-                                        <label for="inputName" class="form-label mb-1">Chính sách</label>
-                                        <input type="text" id="blog" name="blog" value="" class="form-control" placeholder="Nhập tên">
-                                        @error('title')
-                                        <span class="text-danger mt-1 d-block">{{ $message }}</span>
-                                        @enderror
-                                    </div>
-                                    <div class="form-group mt-1 mb-1">
-                                        <label for="inputName" class="form-label mb-1">Chia sẻ</label>
-                                        <input type="text" id="share" name="share" value="" class="form-control" placeholder="Nhập tên">
-                                        @error('title')
-                                        <span class="text-danger mt-1 d-block">{{ $message }}</span>
-                                        @enderror
-                                    </div>
-                                    <div class="form-group mt-1 mb-1">
-                                        <label for="inputName" class="form-label mb-1">Dịch vụ</label>
-                                        <input type="text" id="service" name="service" value="" class="form-control" placeholder="Nhập tên">
-                                        @error('service')
-                                        <span class="text-danger mt-1 d-block">{{ $message }}</span>
-                                        @enderror
-                                    </div>
-                                    <div class="form-group mt-1 mb-1">
-                                        <label for="inputName" class="form-label mb-1">video</label>
-                                        <input type="text" id="video" name="video" value="" class="form-control" placeholder="Nhập tên">
-                                        @error('video')
-                                        <span class="text-danger mt-1 d-block">{{ $message }}</span>
-                                        @enderror
-                                    </div>
-
-                                    <div class="form-group mt-1 mb-1">
-                                        <label for="inputName" class="form-label mb-1">Mạng xã hội</label>
-                                        <input type="text" id="social_network" name="social_network" value="" class="form-control" placeholder="Nhập tên">
-                                        @error('social_network')
-                                        <span class="text-danger mt-1 d-block">{{ $message }}</span>
-                                        @enderror
+                                        <label for="seo_title" class="form-label mb-1">Status</label>
+                                        <select class="form-control custom-select" name="status" id="status" placeholder="">
+                                            <option value="0">Ẩn</option>
+                                            <option value="1">Hiện</option>
+                                        </select>
                                     </div>
                                     <div class="row">
                                         <div class="col-6">
-                                            <div class="form-group mt-1 mb-1">
-                                                <label for="seo_keyword" class="form-label mb-1">google map</label>
-                                                <input type="text" id="google_map" name="google_map" value="" class="form-control">
-                                                @if ($errors->has('google_map'))
-                                                    <span class="text-danger d-block mt-1">{{ $errors->first('seo_keyword') }}</span>
-                                                @endif
-                                            </div>
-                                        </div>
-                                        <div class="col-6">
-                                            <div class="form-group mt-1 mb-1">
+                                             <div class="form-group mt-1 mb-1">
                                                 <label for="seo_keyword" class="form-label mb-1">Seo title</label>
                                                 <input type="text" id="seo_title" name="seo_title" value="" class="form-control">
-                                                @if ($errors->has('seo_title'))
+                                                @if ($errors->has('seo_keyword'))
                                                     <span class="text-danger d-block mt-1">{{ $errors->first('seo_keyword') }}</span>
                                                 @endif
                                             </div>
                                         </div>
                                         <div class="col-6">
-                                            <div class="form-group mt-1 mb-1">
+                                             <div class="form-group mt-1 mb-1">
                                                 <label for="seo_keyword" class="form-label mb-1">Seo description</label>
                                                 <input type="text" id="seo_description" name="seo_description" value="" class="form-control">
-                                                @if ($errors->has('seo_description'))
+                                                @if ($errors->has('seo_keyword'))
                                                     <span class="text-danger d-block mt-1">{{ $errors->first('seo_keyword') }}</span>
                                                 @endif
                                             </div>
                                         </div>
                                         <div class="col-6">
-                                            <div class="form-group mt-1 mb-1">
-                                                <label for="seo_keyword" class="form-label mb-1">Seo keyword</label>
-                                                <input type="text" id="seo_keyword" name="seo_keyword" value="" class="form-control">
+                                             <div class="form-group mt-1 mb-1">
+                                                <label for="seo_keyword" class="form-label mb-1">Từ khóa</label>
+                                                <input type="text" id="keyword" name="seo_keyword" value="" class="form-control">
                                                 @if ($errors->has('seo_keyword'))
                                                     <span class="text-danger d-block mt-1">{{ $errors->first('seo_keyword') }}</span>
                                                 @endif
                                             </div>
                                         </div>
                                     </div>
-                                    <input type="hidden" name="logo"  value="{{asset('upload_thumbnail/empty_img.png')}}">
                                 </div>
                                 <!-- /.card-body -->
                             </div>

@@ -8,8 +8,8 @@ use Illuminate\Support\Facades\DB;
 class IntroduceController extends Controller
 {
     function getUpdateIntroduce() {
-        $introduce = Introduce::all();
-        return view('backend.introduce.update',['breadcrumb'=>'Chỉnh sửa giới thiệu'], compact('introduce'));
+        $data = DB::select('SELECT * from Introduces WHERE id = ?', [1]);
+        return view('backend.introduce.update',['breadcrumb'=>'Chỉnh sửa giới thiệu'], compact('data'));
     }
     function updateIntroduce(Request $request) {
         $request->validate([

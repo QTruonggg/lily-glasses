@@ -7,10 +7,13 @@ use App\models\Product;
 use App\models\ProductColor;
 use App\Http\Controllers\Hook\ProductHook;
 use App\Http\Controllers\Hook\CategoryHook;
+use Illuminate\Support\Str;
 class ProductController extends Controller
+
 {
     public function showProductList(ProductHook $productHook) {
         $dataProduct = $productHook->getAll();
+        dd($dataProduct);
         // dd(json_decode($dataProduct[0]->color));
         $dataLenght = count($dataProduct);
         return view('backend.product.list',['breadcrumb'=>'Danh sách sản phẩm'],compact('dataProduct','dataLenght'));
@@ -22,6 +25,7 @@ class ProductController extends Controller
     public function addProduct( Request $request,ProductHook $productHook) {
         $data = $request->all();
         // dd($data);
+        // dd($data->name);
         foreach($data['color'] as $key => $color ){
             $colorArray[] = [
                 'color'=>$color,

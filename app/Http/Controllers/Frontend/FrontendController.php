@@ -7,6 +7,7 @@ use App\Models\Banner;
 use App\Models\Category;
 use App\Models\ServiceCategory;
 use App\Models\Product;
+use App\Models\Introduce;
 use App\Http\Controllers\Hook\GetCategoryHook;
 
 
@@ -19,10 +20,9 @@ class FrontendController extends Controller
     }
     public function post(Request $request) {
     }
-    public function showDetailsProduct($id) {
-
+    public function showDetailsProduct($id,$slug) {
         $product = Product::FindOrFail($id);
-        $products = Product::orderBy('created_at', 'DESC')->with('colors')->take(8)->get();
+        $products = Product::orderBy('created_at', 'DESC')->with('colors')->get();
         return view('frontend.details_product.index', compact('product','products'));
     }
     public function showCartList() {
@@ -70,9 +70,9 @@ class FrontendController extends Controller
         return view('frontend.product.index',compact('pr_category'));
     }
     public function introduce() {
-        return view('frontend.introduce.index');
+        $data = Introduce::where('id','=', 1)->get();
+        return view('frontend.introduce.index', ['title'=>'Giới thiệu chung'] ,compact('data'));
     }
     public function postBook(Request $request) {
-        dd($request->all());
     }
 }

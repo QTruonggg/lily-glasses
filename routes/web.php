@@ -87,7 +87,7 @@ Route::prefix('admin')->middleware('auth')->group(function () {
 
     // editting
     Route::prefix('editing')->group(function () {
-        Route::get('update', [App\Http\Controllers\Admin\EditProfileController::class, 'getInterfaceEdit'])->name('admin.getEditProfile');
+        Route::get('update', [App\Http\Controllers\Admin\EditProfileController::class, 'getEdit'])->name('admin.getEditProfile');
         Route::post('update', [App\Http\Controllers\Admin\EditProfileController::class, 'updateProfile'])->name('admin.getEditProfile');
     });
 
@@ -119,7 +119,7 @@ Route::post('/dat-lich',[App\Http\Controllers\Frontend\FrontendController::class
 
 Route::get('/cart/list',[App\Http\Controllers\Frontend\FrontendController::class , 'showCartList'])->name('showCartList');
 
-Route::get('/san-pham/{slug}',[App\Http\Controllers\Frontend\FrontendController::class, 'showProduct'])->name('showProduct');
+Route::get('/danh-muc/{slug}',[App\Http\Controllers\Frontend\FrontendController::class, 'showProduct'])->name('showProduct');
 Route::get('/san-pham-con/{id}',[App\Http\Controllers\Frontend\FrontendController::class, 'showChildCategory'])->name('showChildCategory');
-Route::get('/san-pham/chi-tiet/{id}',[App\Http\Controllers\Frontend\FrontendController::class , 'showDetailsProduct'])->name('showDetailsProduct');
+Route::get('/san-pham/{id}-{slug}',[App\Http\Controllers\Frontend\FrontendController::class , 'showDetailsProduct'])->name('showDetailsProduct');
 Route::get('/gioi-thieu',[App\Http\Controllers\Frontend\FrontendController::class, 'introduce'])->name('introduce');

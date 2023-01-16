@@ -1,12 +1,12 @@
     <div class="item-product pt-0">
         <div class="view-img">
-            <a href="{{route('showDetailsProduct', ['id'=>$product->id])}}" class="d-flex justify-content-center" style="max-height:260px; min-height:260px; ">
+            <a href="{{route('showDetailsProduct', [$product->id,Str::slug($product->name)])}}" class="d-flex justify-content-center" style="max-height:260px; min-height:260px; ">
                 <img class="thumb" src="{{$product->thumbnail}}">
             </a>
         </div>
         <div class="info">
             <div class="name">
-                <a href="{{route('showDetailsProduct', ['id'=>$product->id])}}">{{$product->name}}</a>
+                <a href="{{route('showDetailsProduct', [$product->id,Str::slug($product->name)])}}">{{$product->name}}</a>
             </div>
             <div class="price">
                 <div class="detail-p">
