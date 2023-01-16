@@ -1,14 +1,14 @@
 <div class="container">
     <div class="row">
-        <div class="col-xl-3 col-md-3 col-lg-3">
+        <div class="col-xl-12 col-md-12 col-lg-12">
             @include('frontend.product.filter')
         </div>
-        <div class="col-xl-9 col-md-9 col-lg-9">
+        <div class="col-xl-12 col-md-12 col-lg-12">
             <div class="row">
                 @foreach ($pr_category as $category)
                     @foreach ($category->childs as $category_child)
                         @foreach ($category_child->productChilds as $product)
-                            <div class="col-xl-4 col-md-4 col-lg-4">
+                            <div class="col-xl-3 col-md-3 col-lg-3">
                                 @include('frontend.components.product_item')
                             </div>
                         @endforeach

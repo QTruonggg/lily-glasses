@@ -3,99 +3,19 @@
         <button class="filter-drop"><i class="fa-solid fa-arrow-down-wide-short"></i> BỘ LỌC</button>
         <div id="filter-dropdown" class="filter-content">
 
-            <div class="filter-horizontal">
-                <button onclick="horizontal()" class="horizontal-drop"><h2><span>Chiều ngang <img src="{{asset('assets/images/mat-kinh.png')}}" style="width: 18%; padding-bottom: 2%;" alt=""></span> <span><i class="fa-solid fa-plus" id="plus"></i> <i class="fa-solid fa-minus minus" id="minus"></i></span></h2></button>
-                <div id="horizontal-dropdown" class="horizontal-content ">
-                    <ul>
-                        <li>Rộng</li>
-                        <li>Vừa</li>
-                        <li>Hẹp</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="filter-shape">
-                <button onclick="shape()" class="shape-drop"><h2><span>Hình dạng</span><span><i class="fa-solid fa-plus" id="plusShape"></i> <i class="fa-solid fa-minus minus" id="minusShape"></i></span></h2></button>
-                <div id="shape-dropdown" class="shape-content ">
-                    <ul>
-                        <li>Mắt mèo</li>
-                        <li>Tròn Oval</li>
-                        <li>Vuông chữ nhật</li>
-                        <li>Vuông Tròn</li>
-                        <li>Tròn Tròn</li>
-                        <li>Vuông vuông</li>
-                        <li>Tròn Cạnh</li>
-                        <li>Đặc biệt</li>
-                        <li>Đa Giác</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="filter-material">
-                <button onclick="material()" class="material-drop"><h2><span>Vật liệu</span> <span><i class="fa-solid fa-plus" id="plusMaterial"></i> <i class="fa-solid fa-minus minus" id="minusMaterial"></i></span></h2></button>
-                <div id="material-dropdown" class="material-content ">
-                    <ul>
-                        <li>Nhựa Cứng</li>
-                        <li>Kim loại</li>
-                        <li>Nhựa Pha Kim Loại</li>
-                        <li>Nhựa Dẻo</li>
-                        <li>Nhựa Càng Titan</li>
-                        <li>Nhựa Ultem</li>
-                        <li>Nhựa Acetate</li>
-                        <li>Kim loại Titan</li>
-                        <li>Kim loại Thép không gỉ</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="filter-eyeglass-frame-color"> 
-                <button onclick="filterEyeglassFrame()" class="eyeglass-frame-color-drop"><h2><span>Màu gọng kính</span> <span><i class="fa-solid fa-plus" id="plusFrame"></i> <i class="fa-solid fa-minus minus" id="minusFrame"></i></span></h2></button>
-                <div id="eyeglass-frame-color-dropdown" class="eyeglass-frame-color-content ">
-                    <ul>
-                        <li>Màu trung tính</li>
-                        <li>Màu tối</li>
-                        <li>Màu sáng</li>
-                    </ul>
-                </div>
-            </div>
-
             <div class="filter-price">
                 <button onclick="" class="price-drop"><h2><span>Giá từ</span></h2></button>
                 <div id="price-dropdown" class="price-content">
                     <ul>
-                        <li> <a href="{{route('showChildCategory',['id'=>44,'price'=>'desc'])}}">Cao</a> <i class="fa-solid fa-arrow-down-long"></i></li>
-                        <li>Thấp <i class="fa-solid fa-arrow-up-long"></i></li>
-                    </ul>
-                    <input id="price_input" type="range" min="0" max="5000000" step="100000" style="color: rgb(249, 184, 70);"/>
-                    <div class="row">
-                        <div class="col-xl-6">
-                            <input type="number" min="0" max="5000000" value="0" placeholder="Min" autocomplete="off">
-                        </div>
-                        <div class="col-xl-6">
-                            <input type="number" id="maxPrice" min="0" max="5000000" value="2500000" placeholder="Max">
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="filter-color">
-                <button onclick="color()" class="color-drop"><h2><span>Màu sắc</span> <span><i class="fa-solid fa-plus" id="plusColor"></i> <i class="fa-solid fa-minus minus" id="minusColor"></i></span></h2></button>
-                <div id="color-dropdown" class="color-content">
-                    <ul>
-                        <li>Xanh</li>
-                        <li>Đỏ</li>
-                        <li>Tím</li>
-                        <li>Vàng</li>
+                        <li> <a style="color:#333; text-decoration:none;"  href="{{request()->fullUrlWithQuery(['price' => 'desc'])}}">Giá từ cao xuống thấp</a> <i class="fa-solid fa-arrow-down-long"></i></li>
+                        <li><a style="color:#333; text-decoration:none;"  href="{{request()->fullUrlWithQuery(['price' => 'asc'])}}   ">Giá từ thấp tới cao</a> <i class="fa-solid fa-arrow-up-long"></i></li>
+                        <li> <a style="color:#333; text-decoration:none;"  href="{{request()->fullUrlWithQuery(['created_at' => 'desc'])}}">Mới nhất</a> <i class="fa-solid fa-arrow-up-long"></i></li>
+                        <li> <a style="color:#333; text-decoration:none;"  href="{{request()->fullUrlWithQuery(['Created_at' => 'asc'])}}">Cũ nhất</a> <i class="fa-solid fa-arrow-down-long"></i></li>
                     </ul>
                 </div>
             </div>
-            
-            <div class="delete-filter">Xóa bộ lọc</div>
-            <form action="{{route('showChildCategory',['id'=>44,'price'=>'desc'])}}" method="GET">
-                <input type="text" name="price">
-                <input type="text" name="material">
-                <button type="submit">asdsad</button>
-            </form>
+            <div class="delete-filter"> <a style="color:#333; text-decoration:none;"  href="{{Request::URL()}}"> Xóa bộ lọc</a></div>
+         
           </div>
     </div>
 
