@@ -31,13 +31,13 @@
         },3000)
     </script>
     <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-9">
             <div class="card">
                 <div class="card-header">
                 </div>
                 <div class="card-body p-0">
                     
-                    <form action="/admin/banner/create" method="POST" enctype="multipart/form-data">
+                    <form action="/admin/blog/create" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="row">
                             <div class="col-md-12">
@@ -59,12 +59,42 @@
                                             @enderror
                                         </div> 
                                         <div class="form-group mt-1 mb-1">
-                                            <label for="seo_description" class="form-label mb-1">Mô tả</label>
+                                            <label for="inputName" class="form-label mb-1">Tên phụ:</label>
+                                            <input type="text" id="subname" name="subname" value="" class="form-control" placeholder="Nhập tên phụ">
+                                            @error('subname')
+                                            <span class="text-danger mt-1 d-block">{{ $message }}</span>
+                                            @enderror
+                                        </div> 
+                                        <div class="form-group mt-1 mb-1">
+                                            <label for="inputName" class="form-label mb-1">Miêu tả:</label>
+                                            <input type="text" id="description" name="description" value="" class="form-control" placeholder="Nhập miêu tả">
+                                            @error('description')
+                                            <span class="text-danger mt-1 d-block">{{ $message }}</span>
+                                            @enderror
+                                        </div> 
+                                        <div class="form-group mt-1 mb-1">
+                                            <label for="inputName" class="form-label mb-1">Tiêu đề - tìm kiếm:</label>
+                                            <input type="text" id="seo_title" name="seo_title" value="" class="form-control" placeholder="Nhập tiêu đề">
+                                            @error('seo_title')
+                                            <span class="text-danger mt-1 d-block">{{ $message }}</span>
+                                            @enderror
+                                        </div> 
+                                        <div class="form-group mt-1 mb-1">
+                                            <label for="seo_description" class="form-label mb-1">Mô tả:</label>
                                             <textarea class="form-control" id="summary-ckeditor" name="seo_description"></textarea>
                                              @error('seo_description')
                                             <span class="text-danger mt-1 d-block">{{ $message }}</span>
                                             @enderror
-                                        </div>                                        
+                                        </div>   
+                                        <div class="form-group mt-1 mb-1">
+                                            <label for="inputName" class="form-label mb-1">Từ khóa:</label>
+                                            <input type="text" id="seo_keyword" name="seo_keyword" value="" class="form-control" placeholder="Nhập  từ khóa ">
+                                             @error('seo_keyword')
+                                            <span class="text-danger mt-1 d-block">{{ $message }}</span>
+                                            @enderror
+                                        </div>          
+                                        <input type="hidden" name="image"  value="">
+
                                     </div>                               
                                 </div>
                             </div>
@@ -79,11 +109,57 @@
                 </div>
             </div>
         </div>
+        <div class="col-lg-3 col-md-3 col-12">
+            <div class="card card-app-design">
+                <div class="card-body">
+                    <div id="imgList"
+                        style="
+                            width: 230px;
+                            height: 230px;
+                            overflow: hidden;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            margin: 0 auto;
+                            margin-bottom: 20px;
+                        ">
+                        <img style="width:100%; height:100%; border-radius:50%; object-fit:cover;" id="img_blog" src="{{asset('upload_thumbnail/empty_img.png')}}"  alt="..">
+                    </div>
+                    <button class="btn btn-primary btn-toggle-sidebar w-100 waves-effect waves-float waves-light" id="popup-1-button">
+                        <span class="align-middle">Chọn ảnh</span>
+                    </button>
+                    @error('image')
+                        <span class="text-danger mt-1 d-block">{{ $message }}</span>
+                    @enderror
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
 
-
+<script>
+    var button = document.getElementById( 'popup-1-button' );
+    function selectFileWithCKFinder() {
+        CKFinder.modal( {
+            chooseFiles: true,
+            width: 800,
+            height: 600,
+            onInit: function( finder ) {
+                finder.on( 'files:choose', function( evt ) {
+                    var file = evt.data.files.first();
+                    var img = document.getElementById('img_blog')
+                    var image = file.getUrl();
+                    $('input[name="image"]').val(`{{env('APP_URL')}}${image}`);
+                    img.src = `{{env('APP_URL')}}${image}`;    
+                } );
+            }
+        } );
+    }
+    button.onclick =() => {
+        selectFileWithCKFinder( 'ckfinder-input-1' );
+    }
+</script>
 
 <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
 <script>

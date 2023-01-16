@@ -16,7 +16,12 @@ return new class extends Migration
         Schema::create('blog', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-
+            $table->string('image');
+            $table->string('subname');
+            $table->string('description');
+            $table->string('seo_title');
+            $table->LONGTEXT('seo_description');
+            $table->string('seo_keyword');
             $table->timestamps();
         });
     }
