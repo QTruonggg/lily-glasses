@@ -6,7 +6,7 @@
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1>Thêm danh mục</h1>
+                <h1>{{$breadcrumb}}</h1>
             </div>
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right justify-content-end">
@@ -32,8 +32,7 @@
             <div class="card-header">
             </div>
             <div class="card-body p-0">
-                
-                <form id="cerfitication" action="create" method="POST" enctype="multipart/form-data">
+                <form id="cerfitication" action="" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="row">
                         <div class="col-md-12">
@@ -47,51 +46,28 @@
                                     </div>
                                 </div>
                                 <div class="card-body">
-                                    <div class="form-group mt-1 mb-1">
+                                    <div class="form-group mt-1 mb-1"> 
                                         <label for="inputName" class="form-label mb-1">Tên</label>
-                                        <input type="text" id="name" name="name" value="" class="form-control" placeholder="Nhập tên">
+                                        <input type="text" id="name" name="name" value="{{$introduce->name}}" class="form-control" placeholder="Nhập tên">
                                         @error('name')
                                         <span class="text-danger mt-1 d-block">{{ $message }}</span>
                                         @enderror
                                     </div>
                                     <div class="form-group mt-1 mb-1">
-                                        <label for="inputName" class="form-label mb-1">slug</label>
-                                        <input type="text" id="name" name="slug"  value="" class="form-control" placeholder="">
-                                        @error('slug')
-                                        <span class="text-danger mt-1 d-block">{{ $message }}</span>
-                                        @enderror
-                                    </div>
-                                    <div class="form-group mt-1 mb-1">
-                                        <label for="parent_id" class="form-label mb-1">Danh mục</label>
-                                        <select class="form-control custom-select" name="parent_id" id="parent_id" placeholder="">
-                                            <option value="0">Danh mục lớn</option>
-                                            @foreach($parent_categories as $parent_category)
-                                            <option value="{{$parent_category->id}}">{{$parent_category->name}}</option>
-                                            @endforeach
-                                        </select>
-                                    </div>
-                                    <div class="form-group mt-1 mb-1">
                                         <label for="seo_title" class="form-label mb-1"> Tiêu đề</label>
-                                        <input type="text" id="seo_title" name="seo_title" value="" class="form-control" placeholder="Nhập tiêu đề">
+                                        <input type="text" id="seo_title" name="seo_title" value="{{old('$introduce->seo_title')}}" class="form-control" placeholder="Nhập tiêu đề">
                                         @if ($errors->has('seo_title'))
                                             <span class="text-danger d-block mt-1">{{ $errors->first('seo_title') }}</span>
                                         @endif
                                     </div>
-                                     {{-- <div class="form-group">
-                                        <label for="status">Trạng thái</label>
-                                        <select class="form-control custom-select" name="status" id="status">
-                                            <option value="1">Còn hàng</option>
-                                            <option value="0">Hết hàng</option>
-                                        </select>
-                                    </div> --}}
                                     <div class="form-group mt-1 mb-1">
-                                        <label for="seo_keyword" class="form-label mb-1">Từ khóa</label>
-                                        <input type="text" id="keyword" name="seo_keyword" value="" class="form-control">
-                                        @if ($errors->has('seo_keyword'))
-                                            <span class="text-danger d-block mt-1">{{ $errors->first('seo_keyword') }}</span>
-                                        @endif
+                                        <label for="seo_description" class="form-label mb-1">Nội dung</label>
+                                        <textarea class="form-control" id="summary-ckeditor" name="seo_description" value="{{old('$introduce->seo_description')}}"></textarea>
+                                         @error('seo_description')
+                                        <span class="text-danger mt-1 d-block">{{ $message }}</span>
+                                        @enderror
                                     </div>
-                                    <input type="hidden" name="thumbnail"  value="{{asset('upload_thumbnail/empty_img.png')}}">
+                                    <input type="hidden" name="thumbnail"  value="{{old('$introduce->thumbnail')}}">
                                 </div>
                                 <!-- /.card-body -->
                             </div>
@@ -101,7 +77,7 @@
                     <div class="row">
                         <div class="col-12  ps-5 mb-2">
                             <a href="{{route('admin.showCategoriesList')}}" class="btn btn-secondary">Quay lại</a>
-                            <input type="submit" value="Thêm" class="btn btn-success float-right ms-2">
+                            <input type="submit" value="Chỉnh sửa" class="btn btn-success float-right ms-2">
                         </div>
                     </div>
                 </form>
@@ -133,40 +109,9 @@
     </div>
 </div>
 <!-- /.card -->
-<script>
-    console.log();
-    $('input[name="name"]')
-    function xoa_dau(str) {
-        str = str.replace(/à|á|ạ|ả|ã|â|ầ|ấ|ậ|ẩ|ẫ|ă|ằ|ắ|ặ|ẳ|ẵ/g, "a");
-        str = str.replace(/è|é|ẹ|ẻ|ẽ|ê|ề|ế|ệ|ể|ễ/g, "e");
-        str = str.replace(/ì|í|ị|ỉ|ĩ/g, "i");
-        str = str.replace(/ò|ó|ọ|ỏ|õ|ô|ồ|ố|ộ|ổ|ỗ|ơ|ờ|ớ|ợ|ở|ỡ/g, "o");
-        str = str.replace(/ù|ú|ụ|ủ|ũ|ư|ừ|ứ|ự|ử|ữ/g, "u");
-        str = str.replace(/ỳ|ý|ỵ|ỷ|ỹ/g, "y");
-        str = str.replace(/đ/g, "d");
-        str = str.replace(/À|Á|Ạ|Ả|Ã|Â|Ầ|Ấ|Ậ|Ẩ|Ẫ|Ă|Ằ|Ắ|Ặ|Ẳ|Ẵ/g, "A");
-        str = str.replace(/È|É|Ẹ|Ẻ|Ẽ|Ê|Ề|Ế|Ệ|Ể|Ễ/g, "E");
-        str = str.replace(/Ì|Í|Ị|Ỉ|Ĩ/g, "I");
-        str = str.replace(/Ò|Ó|Ọ|Ỏ|Õ|Ô|Ồ|Ố|Ộ|Ổ|Ỗ|Ơ|Ờ|Ớ|Ợ|Ở|Ỡ/g, "O");
-        str = str.replace(/Ù|Ú|Ụ|Ủ|Ũ|Ư|Ừ|Ứ|Ự|Ử|Ữ/g, "U");
-        str = str.replace(/Ỳ|Ý|Ỵ|Ỷ|Ỹ/g, "Y");
-        str = str.replace(/Đ/g, "D");
-        return str
-    }
-    $('input[name="name"]').change(function() {
-         var s = xoa_dau($('input[name="name"]').val())
-        result = s.replaceAll(' ', '-')
-        $('input[name="slug"]').val(result)
-    })
-
-</script>
 </section>
-
-
-<script>
-    
+  <script>
     var button = document.getElementById( 'popup-1-button' );
-    
     function selectFileWithCKFinder() {
         CKFinder.modal( {
             chooseFiles: true,
@@ -186,7 +131,6 @@
     button.onclick =() => {
         selectFileWithCKFinder( 'ckfinder-input-1' );
     }
-   
 </script>
 <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
 <script>

@@ -63,7 +63,7 @@
                 <button onclick="" class="price-drop"><h2><span>Giá từ</span></h2></button>
                 <div id="price-dropdown" class="price-content">
                     <ul>
-                        <li>Cao <i class="fa-solid fa-arrow-down-long"></i></li>
+                        <li> <a href="{{route('showChildCategory',['id'=>44,'price'=>'desc'])}}">Cao</a> <i class="fa-solid fa-arrow-down-long"></i></li>
                         <li>Thấp <i class="fa-solid fa-arrow-up-long"></i></li>
                     </ul>
                     <input id="price_input" type="range" min="0" max="5000000" step="100000" style="color: rgb(249, 184, 70);"/>
@@ -89,12 +89,18 @@
                     </ul>
                 </div>
             </div>
-    
-            <div class="delete-filter">Xóa bộ lọc</div>
             
+            <div class="delete-filter">Xóa bộ lọc</div>
+            <form action="{{route('showChildCategory',['id'=>44,'price'=>'desc'])}}" method="GET">
+                <input type="text" name="price">
+                <input type="text" name="material">
+                <button type="submit">asdsad</button>
+            </form>
           </div>
     </div>
 
+
+    
 
 
 

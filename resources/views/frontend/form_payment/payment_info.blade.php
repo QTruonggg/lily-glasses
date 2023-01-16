@@ -20,7 +20,7 @@
                                                                     <span class="required">*</span>
                                                                 </div>
                                                                 <div class="col-xl-9 col-lg-9 col-md-9 col-12">
-                                                                    <input id="first_name" class="form-control" name="first_name" autocomplete="off" pattern=".*" value="">
+                                                                    <input id="first_name" class="form-control" name="first_name"  pattern=".*" value="">
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -41,7 +41,7 @@
                                                                     Email <span class="required">*</span>
                                                                 </div>
                                                                 <div class="col-xl-9 col-lg-9 col-md-9 col-12">
-                                                                    <input id="email" class="form-control" name="email" autocomplete="off" pattern=".*" value="">
+                                                                    <input id="email" class="form-control" name="email"  pattern=".*" value="">
                                                                 </div>
                                                             </div>
                                                         </div>

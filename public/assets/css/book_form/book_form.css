@@ -2,10 +2,11 @@
   background-color: rgb(246, 246, 247);
   text-align: center;
   height: 46px;
+  margin-bottom: 20px;
 }
 #menu .header-menu-top .menu-top {
   height: 46px;
-  background-color: rgb(220, 220, 221);
+  background-color: rgb(242, 242, 242);
 }
 #menu .header-menu-top .menu-top ul {
   list-style: none;
@@ -17,8 +18,10 @@
   position: relative;
 }
 #menu .header-menu-top .menu-top ul li:hover h3 {
-  color: rgb(0, 0, 0);
-  background-color: rgb(255, 234, 198);
+  background-color: #ffcb72;
+}
+#menu .header-menu-top .menu-top ul li:hover h3 a {
+  color: rgb(255, 255, 255);
 }
 #menu .header-menu-top .menu-top ul li:hover .sub-menu {
   display: block;
@@ -34,7 +37,7 @@
 }
 #menu .header-menu-top .menu-top ul li h3 a {
   text-decoration: none;
-  color: #000;
+  color: rgb(137, 137, 137);
 }
 @keyframes fadeIn {
   from {
@@ -75,7 +78,7 @@
   line-height: 30px;
   padding: 0px;
   height: 30px;
-  color: rgb(88, 88, 88);
+  color: rgb(137, 137, 137);
   font-weight: 700;
 }
 #menu .header-menu-top .menu-top ul li .sub-menu .sub-menu-list .item h2 a:hover {
@@ -117,7 +120,7 @@
 #header .header-top .action .dropdown i {
   font-size: 22px;
   margin-right: 40px;
-  color: #666;
+  color: #e7ba51;
   font-weight: 900;
 }
 #header .header-top .action .dropdown .dropdown-menu {
@@ -128,7 +131,7 @@
 #header .header-top .action .dropdown .dropdown-menu input {
   height: 34px;
   outline: none;
-  min-width: 320px;
+  min-width: 350px;
   padding: 4px 8px;
   font-size: 1rem;
   font-weight: 400;
@@ -141,7 +144,7 @@
 }
 #header .header-top .action .shopping-cart {
   position: relative;
-  color: #000;
+  color: #e7ba51;
 }
 #header .header-top .action .shopping-cart i {
   font-size: 22px;
@@ -152,7 +155,7 @@
   position: absolute;
   top: -14px;
   right: -14px;
-  background-color: #999;
+  background-color: rgb(224, 221, 221);
   padding: 0 7px;
   font-size: 13px;
   border-radius: 50%;

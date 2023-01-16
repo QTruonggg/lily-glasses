@@ -279,8 +279,9 @@
                     width: 50%;
                     text-align: center;
 
-                    button {
+                    a {
                         color: #333;
+                        display: block;
                         background-color: transparent;
                         font-weight: 700;
                         font-size: 14px;
@@ -297,7 +298,7 @@
                     }
                 }
 
-                .resrum button {
+                .resrum a {
                     &:hover {
                         background-color: #333;
                         color: #fff;
@@ -305,7 +306,7 @@
                 }
 
                 .order {
-                    button {
+                    a {
                         background-color: #f9b846;
                         color: white;
 

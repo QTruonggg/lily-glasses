@@ -24,14 +24,13 @@
                         </div>
                          <div class="group">
                             <label for="input-name">Thời gian(<span>*</span>)</label>
-                            <input type="datetime-local" name="datetime-local" id="" placeholder="Time">
+                            <input type="datetime-local" name="time" id="" placeholder="Time">
                         </div>
                          <div class="group">
                             <label for="">Triệu chứng</label>
                            <select class="form-select" aria-label="Default select example" name="symptom">
                                 <option selected>Các triệu chứng thường gặp : </option>
-                                <option value="1"> Nhìn mờ</option>
-                                <option value="2"> Nhức mỏi mắt</option>
+                                <option value="1"> Nhìn mờ</option>>
                                 <option value="3"> Đỏ mắt</option>
                                 <option value="4"> Chảy nước mắt</option>
                                 <option value="5"> Khác</option>
@@ -74,36 +73,6 @@
 #book .book-group {
   padding-top: 40px;
 }
-#book .book-group .note {
-  width: 50%;
-  padding-right: 20px;
-}
-#book .book-group .note .note-header {
-  padding-bottom: 10px;
-  padding-top: 20px;
-  border-bottom: 2px solid #EBD7A9;
-}
-#book .book-group .note .note-header h3 {
-  color: #ecc978;
-  font-size: 30px;
-  font-weight: 700;
-}
-#book .book-group .note .note-content ul {
-  padding-left: 15px;
-}
-#book .book-group .note .note-content ul li {
-  padding: 20px 0;
-  line-height: 1.5rem;
-  text-align: left;
-}
-#book .book-group .note .note-content ul li::before {
-  content: "•";
-  color: #EBD7A9;
-  font-weight: bold;
-  display: inline-block;
-  width: 1em;
-  margin-left: -1em;
-}
 #book .book-group .book-form {
   width: 70%;
   background-color: #fff;
@@ -122,7 +91,7 @@
   text-transform: uppercase;
 }
 #book .book-group .book-form .book-form-input {
-  padding: 10px 100px;
+  padding: 10px 50px;
 }
 #book .book-group .book-form .book-form-input .group {
   padding: 10px 0;

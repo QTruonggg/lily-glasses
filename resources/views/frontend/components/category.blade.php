@@ -4,14 +4,14 @@
             <ul>
                 <li>
                     <h3>
-                        <a href="">
+                        <a href="{{route('introduce')}}">
                             Giới thiệu
                         </a>
                     </h3>
                 </li>
                 <li>
                     <h3>
-                        <a href="">
+                        <a href="#">
                             Sản phẩm
                         </a>
                     </h3>
@@ -20,7 +20,7 @@
                             @foreach($categories as $category)
                                 <li class="item">
                                     <h2>
-                                        <a href="">{{$category->name}}</a>
+                                        <a href="{{route('showProduct', ['slug'=>$category->slug])}}">{{$category->name}}</a>
                                     </h2>
                                 </li>
                             @endforeach

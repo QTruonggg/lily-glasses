@@ -6,9 +6,6 @@
 
 @section('content')
     @include('frontend.home.banner')
-    @include('frontend.home.category_product')
-    @include('frontend.home.service')
-    @include('frontend.home.module_category')
     @include('frontend.home.question')
     @include('frontend.components.book')
     @include('frontend.home.shared_corner')

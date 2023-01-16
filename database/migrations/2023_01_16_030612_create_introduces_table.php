@@ -13,14 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('category', function (Blueprint $table) {
+        Schema::create('introduces', function (Blueprint $table) {
             $table->id();
-            $table->string('thumbnail');
             $table->string('name');
-            $table->string('slug');
-            $table->bigInteger('parent_id');
+            $table->string('thumbnail');
             $table->string('seo_title');
-            $table->string('seo_keyword');
             $table->LONGTEXT('seo_description');
             $table->timestamps();
         });
@@ -33,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('category');
+        Schema::dropIfExists('introduces');
     }
 };

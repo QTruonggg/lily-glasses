@@ -1,55 +1,36 @@
-<<<<<<< HEAD
-    <div class="item-product">
+    <div class="item-product pt-0">
         <div class="view-img">
-            <a href="" class="d-block">
-                <img src="https://cdn.kinhmatlily.com/lily01/2023/1/m2769-trang-1667562308000-1668583615000-1671611095000-1672917663000-1673317847000.jpeg">
+            <a href="{{route('showDetailsProduct', ['id'=>$product->id])}}" class="d-flex justify-content-center" style="max-height:260px; min-height:260px; ">
+                <img class="thumb" src="{{$product->thumbnail}}">
             </a>
         </div>
         <div class="info">
             <div class="name">
-                <a href="/kinh-nhua-lily-m2769-p964">Kính Nhựa Lily M2769</a>
-=======
-
-        <div class="item-product">
-            <div class="view-img">
-                <a href="" class="d-block">
-                    <img src="https://cdn.kinhmatlily.com/lily01/2023/1/m2769-trang-1667562308000-1668583615000-1671611095000-1672917663000-1673317847000.jpeg">
-                </a>
->>>>>>> dev
+                <a href="{{route('showDetailsProduct', ['id'=>$product->id])}}">{{$product->name}}</a>
             </div>
             <div class="price">
                 <div class="detail-p">
                     <p class="d-flex flex-column">
-                        <span class="regular-price">370.000 đ</span>
-                        <span class="discount-price">351.500 đ</span>
+                        <span class="regular-price">{{$product->old_price}}đ</span>
+                        <span class="discount-price">{{$product->current_price}} đ</span>
                     </p>
                 </div>
             </div>
             <div class="list-color">
                 <ul>
-                    <li class="" style="background-color:#000;">
-                    </li>
-                    <li class="" style="background-color:#000;">
-                    </li>
-                    <li class="" style="background-color:#000;">
-                    </li>
-                    <li class="" style="background-color:#000;">
-                    </li>
-                    <li class="" style="background-color:#000;">
-                    </li>
+                     @foreach ($product->colors as $color)
+                     <li class="color" onclick="replaceImage()" style="background-color:{{$color->color}};">
+                        <input type="hidden" name="{{$color->image}}">
+                     </li>
+                     @endforeach
                 </ul>
             </div>
         </div>
-<<<<<<< HEAD
     </div>
-=======
-
-
->>>>>>> dev
     @pushonce('component-css')
-        <style>
+        <style> 
             .item-product {
-                padding: 30px 0;
+                padding:0 0 30px 0;
             }
             .item-product:hover {
                 box-shadow: 0 4px 8px rgb(0 0 0 / 25%);
@@ -97,3 +78,13 @@
             }
         </style>
     @endpushonce
+
+    <script>
+        
+        function replaceImage() {
+            console.log(123);
+            var name = $('input[type="hidden"]').attr('name')
+            console.log(name);
+            $('.thumb').attr('src', name)
+        }
+    </script>

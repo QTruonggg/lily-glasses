@@ -7,30 +7,17 @@
                        <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper swiper-thumb-big">
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide">
-                                    <img src="{{asset('assets/images/gong-kinh-can.jpg')}}" />
+                                    <img src="{{$product->thumbnail}}" />
                                 </div>
                             </div>
                         </div>
                         <div thumbsSlider="" class="swiper swiper-thumb-small">
                             <div class="swiper-wrapper">
-                                <div class="swiper-slide">
-                                    <img src="{{asset('assets/images/gong-kinh-can.jpg')}}" />
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="{{asset('assets/images/gong-kinh-can.jpg')}}" />
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="{{asset('assets/images/gong-kinh-can.jpg')}}" />
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="{{asset('assets/images/gong-kinh-can.jpg')}}" />
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="{{asset('assets/images/gong-kinh-can.jpg')}}" />
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="{{asset('assets/images/gong-kinh-can.jpg')}}" />
-                                </div>
+                                @foreach ($product->colors as $color)
+                                    <div class="swiper-slide">
+                                        <img src="{{$color->image}}" />
+                                    </div>
+                                @endforeach
                             </div>
                         </div>
                     </div>
@@ -38,16 +25,16 @@
             </div>
             <div class="col-xl-4 col-lg-4 col-md-4 col-12">
                 <div class="info">
-                    <h1>kính nhựa lily-glass ms-131032</h1>
+                    <h1>{{$product->name}}</h1>
                     <div class="product-code">
-                        <p>Mã sản phẩm:C-ND-VT-M2769</p>
+                        <p>Mã sản phẩm:{{$product->product_code}}</p>
                     </div>
                     <div class="price">
                         <p class="old-price">
-                            <span>370.000 đ</span>
+                            <span>{{$product->old_price}} đ</span>
                         </p>
                         <p class="current-price">
-                            <span>351.500 đ</span>
+                            <span>{{$product->current_price}} đ</span>
                         </p>
                     </div>
                     <div class="description">
@@ -61,25 +48,7 @@
                             </p>
                         </div>
                         <div  id="chitiet" class="contents content-info" >
-                            <p>THÔNG TIN GỌNG KÍNH</p>
-
-                            <p>* Thương Hiệu:LILY</p><p>* Mã sản phẩm: M2769</p>
-
-                            <p>*Thông tin kỹ thuật số :40-20-145</p>
-
-                            <p>*Chất liệu: Nhựa Dẻo</p>
-
-                            <p>*Giá sản phẩm: 370000 VNĐ</p>
-
-                            <p>*Xuất sứ: Trung Quốc</p>
-
-                            <p>*CHỊU TRÁCH NHIỆM SP: CÔNG TY TNHH THƯƠNG MẠI VÀ DỊCH VỤ LILY GROUP VIỆT NAM</p>
-
-                            <p>*CẢNH BÁO: BẢO QUẢN TRONG HỘP KÍNH</p>
-
-                            <p>*HDSD: DÙNG ĐỂ ĐEO MẮT, TRÁNH NHIỆT ĐỘ CAO &amp; VA CHẠM MẠNH</p>
-
-                            <p>*MH:568050</p>
+                            {!! $product->seo_description !!}
                         </div>
                     </div>
                     <div class="color">
@@ -90,21 +59,11 @@
                                 </div>
                                 <div class="col-md-9">
                                     <ul class=" list row gy-2">
+                                        @foreach ($product->colors as $color)
                                         <li class="col-4">
-                                            <span class="cl" onclick="activeColor()">Ghi</span>
+                                            <span class="cl h-100" style="background-color:{{$color->color}};"></span>
                                         </li>
-                                         <li class="col-4">
-                                            <span class="cl" data="2" onclick="activeColor()">Trắng vàng</span>
-                                        </li>
-                                        <li class="col-4">
-                                            <span class="cl" data="2" onclick="activeColor()">Ghi</span>
-                                        </li>
-                                        <li class="col-4">
-                                            <span class="cl" data="2" onclick="activeColor()">Ghi</span>
-                                        </li>
-                                        <li class="col-4">
-                                            <span class="cl" data="2" onclick="activeColor()">Ghi</span>
-                                        </li>
+                                        @endforeach
                                     </ul>
                                 </div>
                             </div>

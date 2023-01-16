@@ -27,6 +27,7 @@ class CategoryController extends Controller
     public function addCategoriesList(Request $request,CategoryHook $CategoryHook) {
         $requi = [
             'name'        => 'required|max:255',
+            'slug'        => 'required|max:255',
             'parent_id' => 'nullable',
             'thumbnail' => 'required',
             'seo_title'     => 'required|max:255',
@@ -34,6 +35,7 @@ class CategoryController extends Controller
         ];
         $messages = [
             'name.required'    => 'Chưa nhập tên',
+            'slug.required'=>'Chưa có đường dẫn mục',
             'thumbnail.required'    => 'Chưa nhập ảnh',
             'seo_title.required' => 'Chưa nhập tiêu đề',
             'seo_keyword.required' => 'Chưa nhập từ khóa'

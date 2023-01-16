@@ -32,7 +32,7 @@
                 i {
                     font-size: 22px;
                     margin-right: 40px;
-                    color: #666;
+                    color: #e7ba51;
                     font-weight: 900;
                 }
                 .dropdown-menu {
@@ -43,7 +43,7 @@
                     input {
                         height: 34px;
                         outline: none;
-                        min-width: 320px;
+                        min-width: 350px;
                         padding: 4px 8px;
                         font-size: 1rem;
                         font-weight: 400;
@@ -58,7 +58,7 @@
             }
             .shopping-cart {
                 position: relative;
-                color:#000;
+                color:#e7ba51;
                 i {
                     font-size: 22px
                 }
@@ -67,7 +67,7 @@
                     display: block;
                     position: absolute;
                     top: -14px;right: -14px;
-                    background-color: #999;
+                    background-color: rgb(224, 221, 221);
                     padding:0 7px;
                     font-size: 13px;
                     border-radius: 50%;

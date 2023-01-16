@@ -5,6 +5,8 @@
 @endsection
 
 @section('content')
+    @include('frontend.components.breadcrumb', ['name'=>'thanh-toan'])
+    @include('frontend.form_payment.payment_info')
     @include('frontend.components.form_link')
 @endsection
 

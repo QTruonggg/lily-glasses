@@ -43,7 +43,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6 col-md-6 col-sm-6 col-6 d-flex align-items-center">
-                        <a href="" class="logo">
+                        <a href="{{route('showhome')}}" class="logo">
                             <img src="{{asset('assets/images/logo.png')}}" alt="">
                         </a>
                         <div class="slogan">
@@ -61,7 +61,7 @@
                                     <input type="search" placeholder="Tìm kiếm .. ">
                                 </div>
                             </div>
-                            <a href="" class="shopping-cart">
+                            <a href="{{route('showCartList')}}" class="shopping-cart">
                                 <i class="fa-solid fa-bag-shopping"></i>
                             </a>
                         </div>

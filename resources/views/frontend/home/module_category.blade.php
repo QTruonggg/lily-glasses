@@ -10,7 +10,7 @@
                 @foreach($categories as $child)
                 <div class="col-md-6 col-sm-6 col-12">
                     <div class="cat-item">
-                        <a href="/gong-kinh-ram">
+                        <a href="{{route('showProduct',['slug'=>$child->slug])}}">
                             <img src="{{$child->thumbnail}}" alt="{{$child->name}}">
                         </a>
                         <div class="info">

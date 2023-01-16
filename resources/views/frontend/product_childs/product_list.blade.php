@@ -5,16 +5,11 @@
         </div>
         <div class="col-xl-9 col-md-9 col-lg-9">
             <div class="row">
-                @foreach ($pr_category as $category)
-                    @foreach ($category->childs as $category_child)
-                        @foreach ($category_child->productChilds as $product)
-                            <div class="col-xl-4 col-md-4 col-lg-4">
-                                @include('frontend.components.product_item')
-                            </div>
-                        @endforeach
-                    @endforeach
+                @foreach ($product_child->productChilds as $product)
+                    <div class="col-xl-4 col-md-4 col-lg-4">
+                        @include('frontend.components.product_item')
+                    </div>
                 @endforeach
-                
             </div>
         </div>
         <div class="col-xl-12 col-md-12 col-lg-12 col-sm-12">

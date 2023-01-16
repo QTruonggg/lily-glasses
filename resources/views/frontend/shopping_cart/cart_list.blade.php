@@ -130,10 +130,10 @@
                 <div class="btn-order">
                     <div class="wrap-btn">
                         <div class="resrum">
-                            <button>Tiếp tục mua hàng</button>
+                            <a href="">Tiếp tục mua hàng</a>
                         </div>
                         <div class="order">
-                            <button>Đặt hàng</button>
+                            <a href="{{route('showFormPayment')}}">Đặt hàng</a>
                         </div>
                     </div>
                 </div>

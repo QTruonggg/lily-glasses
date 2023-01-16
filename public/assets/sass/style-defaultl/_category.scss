@@ -3,9 +3,10 @@
         background-color: rgb(246, 246, 247);
         text-align: center;
         height: 46px;
+        margin-bottom: 20px;
         .menu-top {
             height: 46px;
-            background-color: rgb(220, 220, 221);
+            background-color: rgb(242, 242, 242);
             ul {
                 list-style: none;
                 margin: 0px;
@@ -15,8 +16,10 @@
                     position: relative;
                     &:hover {
                         h3 {
-                            color: rgb(0, 0, 0);
-                            background-color: rgb(255, 234, 198);
+                            a {
+                                color: rgb(255, 255, 255);
+                            }
+                            background-color: #ffcb72;
                         }
                         .sub-menu {
                             display: block;
@@ -32,7 +35,7 @@
                         line-height: 46px;
                         a {
                             text-decoration: none;
-                            color: #000;
+                            color: rgb(137, 137, 137);
                         }
                     }
                     @keyframes fadeIn {
@@ -70,7 +73,7 @@
                                         line-height: 30px;
                                         padding: 0px;
                                         height: 30px;
-                                        color: rgb(88, 88, 88);
+                                        color: rgb(137, 137, 137);
                                         font-weight: 700;
                                         &:hover {
                                             text-decoration: underline;
@@ -79,6 +82,7 @@
                                 }
                                 &:hover {
                                     background-color: rgb(255, 234, 198);
+                                    
                                 }
                             }
                         }

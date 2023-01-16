@@ -93,7 +93,7 @@
                             Mã sản phẩm
                         </th>
                         <th style=" font-size:10px;width: 10%">
-                            mã màu
+                             danh mục
                         </th>
                         <th style=" font-size:10px;width: 10%">
                             Giá gốc
@@ -137,7 +137,7 @@
                         </td>
                         <td style="max-width:110px;"> 
                             <a style="word-wrap: break-word;white-space: normal;overflow: hidden;display: -webkit-box;text-overflow: ellipsis;-webkit-box-orient: vertical;-webkit-line-clamp: 2; ">
-                                {{$item->color}}
+                                {{$item->category_id}}
                             </a>
                         </td>
                         <td style="max-width:110px;"> 
@@ -152,22 +152,22 @@
                         </td>
                         <td style="max-width:110px;"> 
                             <a style="word-wrap: break-word;white-space: normal;overflow: hidden;display: -webkit-box;text-overflow: ellipsis;-webkit-box-orient: vertical;-webkit-line-clamp: 2; ">
-                                {{!! $item->seo_description !!}}
+                                {{ $item->status}}
                             </a>
                         </td>
                         <td style="max-width:110px;"> 
                             <a style="word-wrap: break-word;white-space: normal;overflow: hidden;display: -webkit-box;text-overflow: ellipsis;-webkit-box-orient: vertical;-webkit-line-clamp: 2; ">
-                                {{$item->status}}
+                                {!!$item->seo_description!!}
                             </a>
                         </td>
                         <td class="project-actions">
-                            <a href="" class="btn btn-sm btn-icon">
+                            <a href="list/update{{$item->id}}" class="btn btn-sm btn-icon">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit font-medium-2 text-body">
                                     <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
                                     <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
                                 </svg>
                             </a>
-                            <a href class="btn btn-sm btn-icon delete-record"  data-bs-toggle="modal" data-bs-target="#deleteProductModal">
+                            <a href="" class="btn btn-sm btn-icon delete-record"  data-bs-toggle="modal" data-bs-target="#deleteProductModal">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-trash font-medium-2 text-body">
                                     <polyline points="3 6 5 6 21 6"></polyline>
                                     <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
