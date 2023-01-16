@@ -12,7 +12,7 @@
                     <div class="book-form-title">
                         <h3>đặt lịch khám</h3>
                     </div>
-                    <form action="" class="book-form-input" method="post"  enctype="multipart/form-data">
+                    <form action="{{route('postBook')}}" class="book-form-input" method="post"  enctype="multipart/form-data">
                         @csrf
                         <div class="group">
                             <label for="input-name">Họ và tên (<span>*</span>)</label>

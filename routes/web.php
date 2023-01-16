@@ -122,6 +122,7 @@ Route::get('/gio-hang',[App\Http\Controllers\Frontend\FrontendController::class 
 Route::get('/thanh-toan',[App\Http\Controllers\Frontend\FrontendController::class , 'showFormPayment'])->name('showFormPayment');
 Route::post('/thanh-toan',[App\Http\Controllers\Frontend\FrontendController::class , 'postsa'])->name('showFormPayment');
 Route::get('/dat-lich',[App\Http\Controllers\Frontend\FrontendController::class , 'showFormBook'])->name('showFormBook');
+Route::post('/dat-lich',[App\Http\Controllers\Frontend\FrontendController::class , 'postBook'])->name('postBook');
 
 Route::get('/cart/list',[App\Http\Controllers\Frontend\FrontendController::class , 'showCartList'])->name('showCartList');
 

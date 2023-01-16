@@ -40,7 +40,7 @@ class FrontendController extends Controller
     }
 
     public function showChildCategory($id ,Request $request ){
-        $products = Product::where('category_id',$id);
+        $products = Product::where('category_id',$id)->where('status','=',1);
         if($request->price == 'desc'){
             $products = $products->orderBy('current_price','DESC');
             
@@ -61,9 +61,8 @@ class FrontendController extends Controller
             $products= $products->where('material','=','plastic');
         }
         $products = $products->get();
-        $product_child = Category::find($id)->load('productChilds');
-        $pr_category = $product_child->parent()->with('childs')->get();
-        return view('frontend.product_childs.index',compact('product_child','pr_category'));
+        $pr_category = Category::find($id)->load('productChilds')->parent()->with('childs')->get();
+            return view('frontend.product_childs.index',compact('pr_category','products'));
     }
     public function postsa(Request $request){
         dd($request->all());
@@ -72,5 +71,8 @@ class FrontendController extends Controller
     }
     public function introduce() {
         return view('frontend.introduce.index');
+    }
+    public function postBook(Request $request) {
+        dd($request->all());
     }
 }
