@@ -74,11 +74,11 @@
               </li>
             </ul>
           </li>
-          <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="file-text"></i><span class="menu-title text-truncate" data-i18n="Pages">Tin tức</span></a>
+          <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="file-text"></i><span class="menu-title text-truncate" data-i18n="Pages">Blog</span></a>
             <ul class="menu-content">
-              <li><a class="d-flex align-items-center" href="page-license.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="License">Danh sách Tin tức</span></a>
+              <li><a class="d-flex align-items-center" href="{{route('blog.list')}}"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="License">Danh sách blog</span></a>
               </li>
-              <li><a class="d-flex align-items-center" href="page-api-key.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="API Key">Thêm tin tức</span></a>
+              <li><a class="d-flex align-items-center" href="{{route('blog.create')}}"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="API Key">Thêm blog</span></a>
               </li>
             </ul>
           </li>

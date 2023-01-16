@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\BannerController;
+use App\Http\Controllers\Admin\BlogController;
 use App\Http\Controllers\Frontend\FrontendController;
 
 /*
@@ -106,6 +107,12 @@ Route::prefix('admin')->middleware('auth')->group(function () {
         Route::get('list/delete/{id}',[App\Http\Controllers\Admin\CategoryController::class,'deleteServiceCategory'])->name('admin.deleteServiceCategory');
     });
 
+    Route::prefix('blog')->group(function() {
+        Route::get('list',[BlogController::class,'BlogList'])->name('blog.list');
+        Route::get('create',[BlogController::class,'createBlog'])->name('blog.create');
+        Route::post('create',[BlogController::class,'storeBlog']);
+
+    });
 });
 
 // frontend ....
