@@ -62,7 +62,7 @@
                                     </th>
                                     <th style="text-align: right;">
                                         <a href="/admin/banner/update/{{ $banner->id }}" class="btn btn-info btn-sm">Sửa</a>
-                                        <a type="button" class="btn btn-danger btn-sm confirm-color" data-id="{{$banner->id}}">Xóa</a>
+                                        <a type="button" class="btn btn-danger btn-sm confirm-color" data-id="/admin/banner/deletebanner/{{$banner->id}}">Xóa</a>
                                         <!-- <a href="/admin/banner/deletebanner/{{ $banner->id }}" type="button" class="btn btn-danger btn-sm waves-effect">Xóa</a> -->
                                     </th>
                                 </tr>

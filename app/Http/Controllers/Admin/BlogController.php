@@ -26,4 +26,24 @@ class BlogController extends Controller
         Blog::create($data);
         return redirect(route('blog.list'));
     }
+
+    public function getUpdateBlog($id){
+        $blog = Blog::findOrFail($id);
+        return view('backend.blog.update', 
+        ['title'=>'Chỉnh sửa Blog']
+        , compact('blog'));
+    }
+
+    public function updateBlog(Request $request, $id){
+        $blog = Blog::findOrFail($id);
+        $data = $request->all();
+        $blog->update($data);
+        return redirect(route('blog.list'));
+    }
+
+    public function deleteBlog($id){
+        $blog = Blog::findOrFail($id);
+        $blog->delete();
+        return redirect(route('blog.list'));
+    }
 }

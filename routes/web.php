@@ -111,6 +111,9 @@ Route::prefix('admin')->middleware('auth')->group(function () {
         Route::get('list',[BlogController::class,'BlogList'])->name('blog.list');
         Route::get('create',[BlogController::class,'createBlog'])->name('blog.create');
         Route::post('create',[BlogController::class,'storeBlog']);
+        Route::get('update/{id}',[BlogController::class,'getUpdateBlog'])->name('blog.getUpdate');
+        Route::post('update/{id}',[BlogController::class,'updateBlog'])->name('blog.update');
+        Route::get('deleteblog/{id}', [BlogController::class, 'deleteBlog'])->name('blog.delete');
 
     });
 });
@@ -130,3 +133,6 @@ Route::get('/san-pham/{slug}',[App\Http\Controllers\Frontend\FrontendController:
 Route::get('/san-pham-con/{id}',[App\Http\Controllers\Frontend\FrontendController::class, 'showChildCategory'])->name('showChildCategory');
 Route::get('/san-pham/chi-tiet/{id}',[App\Http\Controllers\Frontend\FrontendController::class , 'showDetailsProduct'])->name('showDetailsProduct');
 Route::get('/gioi-thieu',[App\Http\Controllers\Frontend\FrontendController::class, 'introduce'])->name('introduce');
+
+Route::get('/blog',[App\Http\Controllers\Frontend\FrontendController::class, 'blog'])->name('blog');
+

@@ -62,7 +62,7 @@
                                     </th>
                                     <th style="text-align: right;">
                                         <a href="/admin/blog/update/{{ $blog->id }}" class="btn btn-info btn-sm">Sửa</a>
-                                        <a type="button" class="btn btn-danger btn-sm confirm-color" data-id="{{$blog->id}}">Xóa</a>
+                                        <a type="button" class="btn btn-danger btn-sm confirm-color" data-id="/admin/blog/deleteblog/{{$blog->id}}">Xóa</a>
                                     </th>
                                 </tr>
                                 @endforeach

@@ -159,15 +159,18 @@
     button.onclick =() => {
         selectFileWithCKFinder( 'ckfinder-input-1' );
     }
+
+    
+
 </script>
 
-<script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
-<script>
-CKEDITOR.replace( 'summary-ckeditor' );
-</script>
 @endsection
 
 @section('script')
 <script src="{{asset('ckeditor/ckeditor.js')}}"></script>
 <script src="{{asset('ckfinder/ckfinder.js')}}" ></script>
+<script> 
+    var editor = CKEDITOR.replace( 'summary-ckeditor' );
+        CKFinder.setupCKEditor(editor);
+</script>
 @endsection

@@ -7,6 +7,7 @@ use App\Models\Banner;
 use App\Models\Category;
 use App\Models\ServiceCategory;
 use App\Models\Product;
+use App\Models\Blog;
 use App\Http\Controllers\Hook\GetCategoryHook;
 
 
@@ -74,5 +75,11 @@ class FrontendController extends Controller
     }
     public function postBook(Request $request) {
         dd($request->all());
+    }
+
+    public function blog(){
+        $blog = Blog::all();
+        return view('frontend.blog.index',
+        compact('blog'));
     }
 }
