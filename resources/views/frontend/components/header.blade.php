@@ -63,6 +63,7 @@
                             </div>
                             <a href="{{route('showCartList')}}" class="shopping-cart">
                                 <i class="fa-solid fa-bag-shopping"></i>
+                                <span class="count">{{Cart::count()}}</span>
                             </a>
                         </div>
                     </div>

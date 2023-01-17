@@ -145,19 +145,18 @@
 #header .header-top .action .shopping-cart {
   position: relative;
   color: #e7ba51;
+  text-decoration: none;
 }
 #header .header-top .action .shopping-cart i {
   font-size: 22px;
 }
-#header .header-top .action .shopping-cart::after {
-  content: "0";
-  display: block;
+#header .header-top .action .shopping-cart .count {
   position: absolute;
-  top: -14px;
+  top: -10px;
   right: -14px;
-  background-color: rgb(224, 221, 221);
-  padding: 0 7px;
+  padding: 0px 7px;
   font-size: 13px;
+  background-color: rgb(222, 223, 223);
   border-radius: 50%;
 }
 
@@ -354,28 +353,37 @@ footer .box-4 .contact a img {
 #details-product .info .detail-order-quantity .quantity span.qty {
   min-width: 50px;
 }
+#details-product .info .detail-order-quantity .quantity .back.disable {
+  color: #999;
+}
 #details-product .info .order {
   margin-top: 30px;
 }
 #details-product .info .order .add-to-cart {
-  background-color: rgb(249, 184, 70);
+  background-color: #f9b846;
   margin-top: 15px;
+  border: none;
   border-radius: 3px;
   padding: 7px 10px;
   text-align: center;
-  cursor: pointer;
   text-transform: uppercase;
   color: rgb(255, 255, 255);
   font-weight: 600;
+  min-width: 400px;
+  margin-bottom: 20px;
 }
 #details-product .info .order .add-to-cart:hover {
   background-color: rgb(0, 0, 0);
 }
 #details-product .info .order .add-to-cart.buy-now {
   background-color: rgb(94, 102, 164);
+  min-width: 400px;
+  display: block;
+  text-decoration: none;
 }
 #details-product .info .order .add-to-cart.buy-now:hover {
-  background-color: rgb(0, 0, 0);
+  background-color: rgb(255, 255, 255);
+  color: #f9b846;
 }
 #details-product .info .farallo-policy {
   border: 1px solid rgb(66, 66, 66);

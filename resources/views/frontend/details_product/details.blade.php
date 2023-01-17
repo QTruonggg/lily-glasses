@@ -60,10 +60,13 @@
                                 <div class="col-md-9">
                                     <ul class=" list row gy-2">
                                         @foreach ($product->colors as $color)
-                                        <li class="col-4">
-                                            <span class="cl h-100" style="background-color:{{$color->color}};"></span>
+                                        <li class="col-4 items">
+                                            <span class="cl h-100" data-color="{{$color->color}}" style="background-color:{{$color->color}};"></span>
                                         </li>
                                         @endforeach
+                                        @error('color')
+                                            <span class="text-danger mt-1 d-block">{{ $message }}</span>
+                                        @enderror
                                     </ul>
                                 </div>
                             </div>
@@ -79,8 +82,8 @@
                             <li class="col-md-9">
                                 <div class="quantity">
                                     <span class="back">-</span>
-                                    <span class="qty">1</span>
-                                    <span class="next">+</span>
+                                    <input id="qty" value="1" name="quantity" style ="width:50px;text-align:center;border:none;outline:none;" ></input>
+                                    <span class="next" style="border-left: 1px solid rgb(221, 221, 221);">+</span>
                                 </div>
                             </li>
                         </ul>
@@ -88,8 +91,12 @@
 
                     <div class="order">
                         <div>
-                            <div class="add-to-cart">Thêm vào giỏ hàng</div>
-                            <div class="add-to-cart buy-now">Mua ngay</div>
+                            <form action="{{route('addProduct', $product->id)}}">
+                                <input type="hidden" class="input-qty" id="quantity" name="qty" value="1" >
+                                <input type="hidden" class="input-color" name="color" value="">
+                                <button type="submit" class="add-to-cart d-block">Thêm vào giỏ hàng</button>
+                            </form>
+                            <a href="{{route('showFormPayment', [$product->name])}}" class="add-to-cart buy-now">Mua ngay</a>
                         </div>
                     </div>
                     <div class="farallo-policy">
@@ -101,3 +108,34 @@
     </div>
 </div>
 </section>
+
+
+
+<script>
+var up = document.querySelector('.next')
+var down = document.querySelector('.back')
+var next = () => {
+    var input = document.getElementById('qty').value
+    var parseInput = parseInt(input)
+    var newInput  = parseInput + 1
+    document.getElementById('qty').value = newInput
+    document.getElementById('quantity').value = newInput
+}
+var prev = () => {
+    var input = document.getElementById('qty').value
+    var parseInput = parseInt(input)
+    var newInput = parseInput - 1
+    document.getElementById('qty').value = newInput
+    document.getElementById('quantity').value = newInput
+    if (input <= 1) {
+        document.getElementById('qty').value = 1
+        document.getElementById('quantity').value = 1
+    }
+}
+up.addEventListener('click', function() {
+    next()
+})
+down.addEventListener('click', function() {
+    prev()
+})
+</script>

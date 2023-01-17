@@ -154,28 +154,37 @@
                 span.qty {
                     min-width: 50px;
                 }
+                .back.disable {
+                    color:#999;
+                }
             }
         }
         .order {
             margin-top: 30px;
             .add-to-cart {
-                background-color: rgb(249, 184, 70);
+                background-color: #f9b846;
                 margin-top: 15px;
+                border:none;
                 border-radius: 3px;
                 padding: 7px 10px;
                 text-align: center;
-                cursor: pointer;
                 text-transform: uppercase;
                 color: rgb(255, 255, 255);
                 font-weight: 600;
+                min-width: 400px;
+                margin-bottom: 20px;
                 &:hover {
                     background-color: rgb(0, 0, 0);
                 }
             }
             .add-to-cart.buy-now {
                 background-color: rgb(94, 102, 164);
+                min-width: 400px;
+                display: block;
+                text-decoration: none;
                 &:hover {
-                    background-color: rgb(0, 0, 0);
+                    background-color: rgb(255, 255, 255);
+                    color:#f9b846 ;
                 }
             }
         }

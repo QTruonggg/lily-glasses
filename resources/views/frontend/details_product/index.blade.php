@@ -46,7 +46,6 @@
             document.getElementById(tapName).style.display = "block";
             evt.currentTarget.className += " active";
         }
-x
 
     function activeColor(params) {
         var cls = document.getElementsByClassName("cl");
@@ -55,5 +54,14 @@ x
         }
         console.log(params);
     }
+    $('.cl').each(function() {
+        $(this).click(function() {
+            $('.cl').css('border', 'none')
+            $(this).css('border', '2px solid #666')
+           var dataColor =  $(this).attr('data-color')
+            $('.input-color').val(dataColor)
+            
+        })
+    })
 </script>
 @endsection

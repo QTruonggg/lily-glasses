@@ -111,15 +111,22 @@ Route::prefix('admin')->middleware('auth')->group(function () {
 // frontend ....
 Route::get('/',[App\Http\Controllers\Frontend\FrontendController::class, 'showHome'])->name('showhome');
 Route::post('/',[App\Http\Controllers\Frontend\FrontendController::class, 'post'])->name('post');
-Route::get('/gio-hang',[App\Http\Controllers\Frontend\FrontendController::class , 'showCartList'])->name('showCartList');
-Route::get('/thanh-toan',[App\Http\Controllers\Frontend\FrontendController::class , 'showFormPayment'])->name('showFormPayment');
-Route::post('/thanh-toan',[App\Http\Controllers\Frontend\FrontendController::class , 'postsa'])->name('showFormPayment');
 Route::get('/dat-lich',[App\Http\Controllers\Frontend\FrontendController::class , 'showFormBook'])->name('showFormBook');
 Route::post('/dat-lich',[App\Http\Controllers\Frontend\FrontendController::class , 'postBook'])->name('postBook');
 
-Route::get('/cart/list',[App\Http\Controllers\Frontend\FrontendController::class , 'showCartList'])->name('showCartList');
 
 Route::get('/danh-muc/{slug}',[App\Http\Controllers\Frontend\FrontendController::class, 'showProduct'])->name('showProduct');
 Route::get('/san-pham-con/{id}',[App\Http\Controllers\Frontend\FrontendController::class, 'showChildCategory'])->name('showChildCategory');
 Route::get('/san-pham/{id}-{slug}',[App\Http\Controllers\Frontend\FrontendController::class , 'showDetailsProduct'])->name('showDetailsProduct');
 Route::get('/gioi-thieu',[App\Http\Controllers\Frontend\FrontendController::class, 'introduce'])->name('introduce');
+
+
+
+// bumbum
+Route::get('/them-{id}', [App\Http\Controllers\Frontend\AddProductController::class, 'addCart'])->name('addProduct');
+
+Route::get('/gio-hang',[App\Http\Controllers\Frontend\AddProductController::class , 'showCartList'])->name('showCartList');
+Route::get('/xoa-gio-hang-{rowId}',[App\Http\Controllers\Frontend\AddProductController::class , 'deleteCart'])->name('deleteCart');
+// thanh toán 
+Route::get('/thanh-toan-{slug}',[App\Http\Controllers\Frontend\FrontendController::class , 'showFormPayment'])->name('showFormPayment');
+Route::post('/thanh-toan',[App\Http\Controllers\Frontend\FrontendController::class , 'postsa'])->name('showFormPayment');
