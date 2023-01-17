@@ -128,5 +128,5 @@ Route::get('/them-{id}', [App\Http\Controllers\Frontend\AddProductController::cl
 Route::get('/gio-hang',[App\Http\Controllers\Frontend\AddProductController::class , 'showCartList'])->name('showCartList');
 Route::get('/xoa-gio-hang-{rowId}',[App\Http\Controllers\Frontend\AddProductController::class , 'deleteCart'])->name('deleteCart');
 // thanh toán 
-Route::get('/thanh-toan-{slug}',[App\Http\Controllers\Frontend\FrontendController::class , 'showFormPayment'])->name('showFormPayment');
-Route::post('/thanh-toan',[App\Http\Controllers\Frontend\FrontendController::class , 'postsa'])->name('showFormPayment');
+Route::get('/thanh-toan-{slug}-{id}',[App\Http\Controllers\Frontend\FrontendController::class , 'showFormPayment'])->name('showFormPayment');
+Route::post('/thanh-toan',[App\Http\Controllers\Frontend\FrontendController::class , 'sendOrder'])->name('sendRequest');

@@ -5,7 +5,8 @@
                 <div class="payment-top">
                     <div class="row">
                         <div class="col-xl-12 col-lg-12 col-md-12 col-12">
-                            <form action="" class="payment-main">
+                            <form action="{{route('sendRequest')}}" class="payment-main" method="post">
+                                @csrf
                                 <div class="row">
                                     <div class="col-xl-7 col-lg-7 col-md-7 col-12">
                                         <div class="list-payment-item">
@@ -20,7 +21,10 @@
                                                                     <span class="required">*</span>
                                                                 </div>
                                                                 <div class="col-xl-9 col-lg-9 col-md-9 col-12">
-                                                                    <input id="first_name" class="form-control" name="first_name"  pattern=".*" value="">
+                                                                    <input id="name" class="form-control" name="name"  value="">
+                                                                     @error('name')
+                                                                        <span class="text-danger mt-1 d-block">{{ $message }}</span>
+                                                                    @enderror
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -31,7 +35,10 @@
                                                                     <span class="required">*</span>
                                                                 </div>
                                                                 <div class="col-xl-9 col-lg-9 col-md-9 col-12">
-                                                                    <input id="phone" class="form-control" name="phone" autocomplete="off" pattern="^[0-9-+()._ ]*$" value="">
+                                                                    <input type='number' id="phone" class="form-control" name="phoneNumber" autocomplete="off" pattern="^[0-9-+()._ ]*$" value="">
+                                                                    @error('phoneNumber')
+                                                                        <span class="text-danger mt-1 d-block">{{ $message }}</span>
+                                                                    @enderror
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -41,7 +48,10 @@
                                                                     Email <span class="required">*</span>
                                                                 </div>
                                                                 <div class="col-xl-9 col-lg-9 col-md-9 col-12">
-                                                                    <input id="email" class="form-control" name="email"  pattern=".*" value="">
+                                                                    <input id="email" class="form-control" name="email" value="">
+                                                                    @error('email')
+                                                                        <span class="text-danger mt-1 d-block">{{ $message }}</span>
+                                                                    @enderror
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -61,7 +71,10 @@
                                                                     <span class="required">*</span>
                                                                 </div>
                                                                 <div class="col-xl-9 col-lg-9 col-md-9 col-12">
-                                                                    <input id="first_name" class="form-control" name="tinh" pattern=".*" value="">
+                                                                    <input id="tinh" class="form-control" name="tinh" value="">
+                                                                    @error('tinh')
+                                                                        <span class="text-danger mt-1 d-block">{{ $message }}</span>
+                                                                    @enderror
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -72,7 +85,10 @@
                                                                     <span class="required">*</span>
                                                                 </div>
                                                                 <div class="col-xl-9 col-lg-9 col-md-9 col-12">
-                                                                    <input id="phone" class="form-control" name="huyen"  value="">
+                                                                    <input id="huyen" class="form-control" name="huyen"  value="">
+                                                                    @error('huyen')
+                                                                        <span class="text-danger mt-1 d-block">{{ $message }}</span>
+                                                                    @enderror
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -82,7 +98,10 @@
                                                                     Phường / Xã <span class="required">*</span>
                                                                 </div>
                                                                 <div class="col-xl-9 col-lg-9 col-md-9 col-12">
-                                                                    <input id="text" class="form-control" name="xa" pattern=".*" value="">
+                                                                    <input id="xa" class="form-control" name="xa"  value="">
+                                                                    @error('xa')
+                                                                        <span class="text-danger mt-1 d-block">{{ $message }}</span>
+                                                                    @enderror
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -92,7 +111,10 @@
                                                                     Địa chỉ <span class="required">*</span>
                                                                 </div>
                                                                 <div class="col-xl-9 col-lg-9 col-md-9 col-12">
-                                                                    <input id="text" class="form-control" name="diachi" pattern=".*" value="">
+                                                                    <input id="diachi" class="form-control" name="diachi"  value="">
+                                                                    @error('diachi')
+                                                                        <span class="text-danger mt-1 d-block">{{ $message }}</span>
+                                                                    @enderror
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -102,7 +124,7 @@
                                                                     Ghi chú <span class="required">*</span>
                                                                 </div>
                                                                 <div class="col-xl-9 col-lg-9 col-md-9 col-12">
-                                                                    <textarea id="text" class="form-control" name="note" value=""></textarea>
+                                                                    <textarea id="note" class="form-control" name="note" value=""></textarea>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -117,25 +139,27 @@
                                             <div class="content">
                                                 <div class="main-content">
                                                     <div class="list-product">
-                                                        <div class="sum-title">1 sản phẩm</div>
+                                                        <div class="sum-title">{{Cart::count()}} sản phẩm</div>
                                                         <div class="item-product">
-                                                            <div class="row">
+                                                            @foreach ($productCart as $product)
+                                                            <div class="row pb-2">
                                                                 <div class="col-xl-6 col-lg-6 col-md-6 col-6">
-                                                                    <p class="name">KÍNH RÂM NO BRAND 032 - Nâu</p>
+                                                                    <p class="name">{{$product->name}}</p>
                                                                 </div>
                                                                 <div class="col-xl-2 col-lg-2 col-md-2 col-2">
-                                                                    <p class="quantity">x1</p>
+                                                                    <p class="quantity">x{{$product->qty}}</p>
                                                                 </div>
                                                                 <div class="col-xl-4 col-lg-4 col-md-4 col-4">
-                                                                    <p class="price">218.500 đ</p>
+                                                                    <p class="price">{{$product->price * $product->qty}} đ</p>
                                                                 </div>
                                                             </div>
+                                                            @endforeach
                                                         </div>
                                                     </div>
                                                     <div class="item">
                                                         <div class="row">
                                                             <div class="col-xl-6 col-lg-6 col-md-6 col-6">Đơn hàng</div>
-                                                            <div class="col-xl-6 col-lg-6 col-md-6 col-6 text-end">218.500 đ</div>
+                                                            <div class="col-xl-6 col-lg-6 col-md-6 col-6 text-end">{{Cart::subtotal()}} đ</div>
                                                         </div>
                                                     </div>
                                                     <div class="item none-border">
@@ -150,7 +174,7 @@
                                                                 <span>Tổng đơn</span>
                                                             </div>
                                                             <div class="col-xl-6 col-lg-6 col-md-6 col-6 text-end">
-                                                                <strong>248.500 đ</strong>
+                                                                <strong>{{Cart::subtotal()}}đ</strong>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -201,6 +225,7 @@
                                         </div>
                                     </div>
                                 </div>
+                                <input type="hidden" name="" value="{{}}">
                             </form>
                         </div>
                     </div>

@@ -96,7 +96,7 @@
                                 <input type="hidden" class="input-color" name="color" value="">
                                 <button type="submit" class="add-to-cart d-block">Thêm vào giỏ hàng</button>
                             </form>
-                            <a href="{{route('showFormPayment', [$product->name])}}" class="add-to-cart buy-now">Mua ngay</a>
+                            <a href="{{route('showFormPayment', [Str::slug($product->name), $product->id])}}" class="add-to-cart buy-now">Mua ngay</a>
                         </div>
                     </div>
                     <div class="farallo-policy">

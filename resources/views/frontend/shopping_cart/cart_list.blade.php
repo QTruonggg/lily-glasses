@@ -97,7 +97,7 @@
                             <a href="{{route('showhome')}}">Tiếp tục mua hàng</a>
                         </div>
                         <div class="order">
-                            <a href="{{route('showFormPayment')}}">Đặt hàng</a>
+                            <a href="{{route('showFormPayment', [Str::slug($product->name), $product->id])}}">Đặt hàng</a>
                         </div>
                     </div>
                 </div>
