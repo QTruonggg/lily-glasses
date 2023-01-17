@@ -14,10 +14,14 @@
             <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3 box-2">
                 <ul>
                     <p>Các chính sách:</p>
-                    <li><a href="">Bảo hành</a></li>
+                    {{-- <li><a href="">Bảo hành</a></li>
                     <li><a href="">Đổi trả</a></li>
                     <li><a href="">Vận chuyển</a></li>
-                    <li><a href="">Thu cũ - Đổi mới</a></li>
+                    <li><a href="">Thu cũ - Đổi mới</a></li> --}}
+                    @foreach($blog as $blog)
+                    <li><a href="">{{$blog->name}}</a></li>
+                    @endforeach
+                    
                 </ul>
                 <a href="">Góc chia sẻ</a>
             </div>

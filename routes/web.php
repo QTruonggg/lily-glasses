@@ -130,7 +130,6 @@ Route::get('/san-pham-con/{id}',[App\Http\Controllers\Frontend\FrontendControlle
 Route::get('/san-pham/{id}-{slug}',[App\Http\Controllers\Frontend\FrontendController::class , 'showDetailsProduct'])->name('showDetailsProduct');
 Route::get('/gioi-thieu',[App\Http\Controllers\Frontend\FrontendController::class, 'introduce'])->name('introduce');
 
-<<<<<<< HEAD
 
 
 // bumbum
@@ -141,7 +140,6 @@ Route::get('/xoa-gio-hang-{rowId}',[App\Http\Controllers\Frontend\AddProductCont
 // thanh toán 
 Route::get('/thanh-toan-{slug}-{id}',[App\Http\Controllers\Frontend\FrontendController::class , 'showFormPayment'])->name('showFormPayment');
 Route::post('/thanh-toan',[App\Http\Controllers\Frontend\FrontendController::class , 'sendOrder'])->name('sendRequest');
-=======
-Route::get('/blog',[App\Http\Controllers\Frontend\FrontendController::class, 'blog'])->name('blog');
 
->>>>>>> 152f75ac98dd8053ef8437ba61e9754dd365063f
+
+Route::get('/blog',[App\Http\Controllers\Frontend\FrontendController::class, 'blog'])->name('blog');
