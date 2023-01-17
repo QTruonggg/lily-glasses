@@ -47,61 +47,40 @@
                                 </div>
                                 <div class="card-body">
                                     <div class="form-group mt-1 mb-1">
-                                        <label for="inputName" class="form-label mb-1">Tiêu đề</label>
+                                        <label for="inputName" class="form-label mb-1">Tên</label>
                                         <input type="text" id="title" name="title" value="" class="form-control" placeholder="Nhập tên">
                                         @error('title')
                                         <span class="text-danger mt-1 d-block">{{ $message }}</span>
                                         @enderror
                                     </div>
                                     <div class="form-group mt-1 mb-1">
-                                        <label for="inputName" class="form-label mb-1">address</label>
-                                        <input type="text" id="address" name="address"  value="" class="form-control" placeholder="">
+                                        <label for="inputName" class="form-label mb-1">Địa chỉ</label>
+                                        <input type="text" id="address" name="address"  value="" class="form-control" placeholder="Nhập địa chỉ">
                                         @error('address')
                                         <span class="text-danger mt-1 d-block">{{ $message }}</span>
                                         @enderror
                                     </div>
                                     <div class="form-group mt-1 mb-1">
                                         <label for="seo_title" class="form-label mb-1">Thời gian mở cửa</label>
-                                        <input type="text" id="time" name="time" value="" class="form-control" placeholder="Nhập tiêu đề">
+                                        <input type="text" id="time" name="time" value="" class="form-control" placeholder="Nhập thời gian">
                                     </div>
                                     <div class="form-group mt-1 mb-1">
                                         <label for="inputName" class="form-label mb-1">Địa chỉ email</label>
-                                        <input type="text" id="email" name="email" value="" class="form-control" placeholder="Nhập tên">
+                                        <input type="text" id="email" name="email" value="" class="form-control" placeholder="Nhập email">
                                         @error('title')
                                         <span class="text-danger mt-1 d-block">{{ $message }}</span>
                                         @enderror
                                     </div>
                                     <div class="form-group mt-1 mb-1">
-                                        <label for="inputName" class="form-label mb-1">HotLine</label>
-                                        <input type="text" id="hotline" name="hotline" value="" class="form-control" placeholder="Nhập tên">
+                                        <label for="inputName" class="form-label mb-1">Số điện thoại</label>
+                                        <input type="text" id="hotline" name="hotline" value="" class="form-control" placeholder="Nhập số điện thoại">
                                         @error('title')
                                         <span class="text-danger mt-1 d-block">{{ $message }}</span>
                                         @enderror
                                     </div>
                                     <div class="form-group mt-1 mb-1">
-                                        <label for="inputName" class="form-label mb-1">Chính sách</label>
-                                        <input type="text" id="blog" name="blog" value="" class="form-control" placeholder="Nhập tên">
-                                        @error('title')
-                                        <span class="text-danger mt-1 d-block">{{ $message }}</span>
-                                        @enderror
-                                    </div>
-                                    <div class="form-group mt-1 mb-1">
-                                        <label for="inputName" class="form-label mb-1">Chia sẻ</label>
-                                        <input type="text" id="share" name="share" value="" class="form-control" placeholder="Nhập tên">
-                                        @error('title')
-                                        <span class="text-danger mt-1 d-block">{{ $message }}</span>
-                                        @enderror
-                                    </div>
-                                    <div class="form-group mt-1 mb-1">
-                                        <label for="inputName" class="form-label mb-1">Dịch vụ</label>
-                                        <input type="text" id="service" name="service" value="" class="form-control" placeholder="Nhập tên">
-                                        @error('service')
-                                        <span class="text-danger mt-1 d-block">{{ $message }}</span>
-                                        @enderror
-                                    </div>
-                                    <div class="form-group mt-1 mb-1">
-                                        <label for="inputName" class="form-label mb-1">video</label>
-                                        <input type="text" id="video" name="video" value="" class="form-control" placeholder="Nhập tên">
+                                        <label for="inputName" class="form-label mb-1">Video</label>
+                                        <input type="text" id="video" name="video" value="" class="form-control" placeholder="Nhập đường link video">
                                         @error('video')
                                         <span class="text-danger mt-1 d-block">{{ $message }}</span>
                                         @enderror
@@ -109,7 +88,9 @@
 
                                     <div class="form-group mt-1 mb-1">
                                         <label for="inputName" class="form-label mb-1">Mạng xã hội</label>
-                                        <input type="text" id="social_network" name="social_network" value="" class="form-control" placeholder="Nhập tên">
+                                        <input type="text" id="network_fb" name="network_fb" value="" class="form-control" placeholder="Nhập link fb">
+                                        <br>
+                                        <input type="text" id="network_ins" name="network_ins" value="" class="form-control" placeholder="Nhập link intergram">
                                         @error('social_network')
                                         <span class="text-danger mt-1 d-block">{{ $message }}</span>
                                         @enderror
@@ -117,8 +98,8 @@
                                     <div class="row">
                                         <div class="col-6">
                                             <div class="form-group mt-1 mb-1">
-                                                <label for="seo_keyword" class="form-label mb-1">google map</label>
-                                                <input type="text" id="google_map" name="google_map" value="" class="form-control">
+                                                <label for="seo_keyword" class="form-label mb-1">Google Maps</label>
+                                                <input type="text" id="google_map" name="google_map" value="" class="form-control" placeholder="Nhập iframe">
                                                 @if ($errors->has('google_map'))
                                                     <span class="text-danger d-block mt-1">{{ $errors->first('seo_keyword') }}</span>
                                                 @endif
@@ -152,7 +133,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <input type="hidden" name="logo"  value="{{asset('upload_thumbnail/empty_img.png')}}">
+                                    <input type="hidden" name="logo"  value="">
                                 </div>
                                 <!-- /.card-body -->
                             </div>
@@ -187,7 +168,7 @@
                     <img style="width:100%; height:100%; border-radius:50%; object-fit:cover;" id="thumbnail_prev" src="{{asset('upload_thumbnail/empty_img.png')}}"  alt="..">
                 </div>
                 <button class="btn btn-primary btn-toggle-sidebar w-100 waves-effect waves-float waves-light" id="popup-1-button">
-                    <span class="align-middle">Chọn ảnh</span>
+                    <span class="align-middle">Chọn ảnh logo</span>
                 </button>
             </div>
         </div>

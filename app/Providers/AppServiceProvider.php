@@ -7,6 +7,7 @@ use App\Models\Banner;
 use App\Models\Blog;
 use App\Models\Category;
 use App\Models\ServiceCategory;
+use App\Models\Profile;
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -31,7 +32,8 @@ class AppServiceProvider extends ServiceProvider
                 'categories'=>  Category::where('parent_id', '=', 0)->get(),
                 'banner'=>Banner::all(),
                 'serviceCategory'=>ServiceCategory::all(),
-                'blog'=> Blog::all()->take(4),
+                'blog'=> Blog::all(),
+                'profile'=>Profile::all(),
             ]);
         });
     }

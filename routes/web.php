@@ -29,10 +29,6 @@ Route::get('/admin/logout',[App\Http\Controllers\Admin\LoginController::class,'l
 Route::prefix('admin')->middleware('auth')->group(function () {
     Route::get('/',[App\Http\Controllers\Admin\LoginController::class,'showHome'])->name('admin.showHome');
 
-    // showDashbooard
-    Route::get('/',[App\Http\Controllers\Admin\LoginController::class,'showDashboard'])->name('admin.showDashboard');
-
-
     // category ??? 
     Route::prefix('category')->group(function() {
         // get

@@ -9,6 +9,7 @@ class EditProfileController extends Controller
 {
     public function getEdit() {
         $data = Profile::all();
+        // dd($data);
         return view('backend.editting.editting',['breadcrumb'=>'Chỉnh sửa thông tin chi tiết']);
     }
 }
