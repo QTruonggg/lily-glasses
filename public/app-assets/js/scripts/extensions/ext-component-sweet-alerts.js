@@ -520,7 +520,7 @@ $(function () {
         text: "Bạn sẽ không thể hoàn tác lại!",
         icon: 'warning',
         showCancelButton: true,
-        confirmButtonText: '<a href="/admin/banner/deletebanner/' + `${id}` + '" class="text-light"> Xóa </a>',
+        confirmButtonText: '<a href="' + `${id}` + '" class="text-light"> Xóa </a>',
         cancelButtonText:'Hủy',
         customClass: {
           confirmButton: 'btn btn-danger',

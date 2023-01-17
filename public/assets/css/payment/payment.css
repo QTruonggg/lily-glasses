@@ -200,6 +200,10 @@ footer .box-2 a, footer .box-3 a {
   text-decoration: none;
   color: black;
 }
+footer .box-2 ul li a:hover,
+footer .box-3 ul li a:hover {
+  color: black;
+}
 footer .box-4 .contact {
   padding: 10px 0;
 }

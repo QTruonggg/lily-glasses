@@ -18,7 +18,7 @@
     <div class="card">
                     <div class="card-body border-bottom d-flex justify-content-between align-items-center">
                         <h4 class="card-title">Danh sách</h4>
-                        <a href="{{route('banner.create')}}"><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                        <a href="{{route('blog.create')}}"><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                            Thêm mới
                         </button></a>
                     </div>
@@ -29,14 +29,14 @@
                                     <th style="width: 1%; text-align: center;">
                                         Id
                                     </th>
+                                    <th style="width: 5%">
+                                        Tên
+                                    </th>
                                     <th style="width: 15%">
                                         Ảnh
                                     </th>
-                                    <th style="width: 1%">
-                                        Stt
-                                    </th>
                                     <th style="width: 5%">
-                                        Tên
+                                        Tiêu đề
                                     </th>
                                     <th style="width: 10%">
                                         Ngày tạo
@@ -48,22 +48,21 @@
                                         Tác vụ
                                     </th>
                                 </tr>
-                                @foreach($banner as $banner)
+                                @foreach($blog as $blog)
                                 <tr>
-                                    <th style="text-align: center;">{{ $banner->id }}</th>
-                                    <th><img src="{{$banner->image}}" alt="" style="width:100%; height: 130px; object-fit: cover;"></th>
-                                    <th>{{ $banner->sort }}</th>
-                                    <th>{{ $banner->name }}</th>
+                                    <th style="text-align: center;">{{ $blog->id }}</th>
+                                    <th>{{ $blog->name }}</th>
+                                    <th><img src="{{$blog->image}}" alt="" style="width:100%; height: 130px; object-fit: cover;"></th>
+                                    <th>{{ $blog->seo_title }}</th>
                                     <th>
-                                        {{$banner->created_at}}
+                                        {{$blog->created_at}}
                                     </th>
                                     <th>
-                                        {{$banner->updated_at}}
+                                        {{$blog->updated_at}}
                                     </th>
                                     <th style="text-align: right;">
-                                        <a href="/admin/banner/update/{{ $banner->id }}" class="btn btn-info btn-sm">Sửa</a>
-                                        <a type="button" class="btn btn-danger btn-sm confirm-color" data-id="/admin/banner/deletebanner/{{$banner->id}}">Xóa</a>
-                                        <!-- <a href="/admin/banner/deletebanner/{{ $banner->id }}" type="button" class="btn btn-danger btn-sm waves-effect">Xóa</a> -->
+                                        <a href="/admin/blog/update/{{ $blog->id }}" class="btn btn-info btn-sm">Sửa</a>
+                                        <a type="button" class="btn btn-danger btn-sm confirm-color" data-id="/admin/blog/deleteblog/{{$blog->id}}">Xóa</a>
                                     </th>
                                 </tr>
                                 @endforeach

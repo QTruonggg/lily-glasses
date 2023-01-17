@@ -7,7 +7,11 @@ use App\Models\Banner;
 use App\Models\Category;
 use App\Models\ServiceCategory;
 use App\Models\Product;
+<<<<<<< HEAD
 use App\Models\Introduce;
+=======
+use App\Models\Blog;
+>>>>>>> 152f75ac98dd8053ef8437ba61e9754dd365063f
 use App\Http\Controllers\Hook\GetCategoryHook;
 use Gloudemans\Shoppingcart\Facades\Cart;
 
@@ -99,5 +103,11 @@ class FrontendController extends Controller
             'diachi.required'=>'Vui lòng nhập địa chỉ cụ thể !',
         ]);
         return view('frontend.product.index');
+    }
+
+    public function blog(){
+        $blog = Blog::all();
+        return view('frontend.blog.index',
+        compact('blog'));
     }
 }
