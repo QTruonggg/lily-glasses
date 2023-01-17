@@ -32,7 +32,7 @@
             </div>
             <div class="card-body p-0">
                 
-                <form id="cerfitication" action="create" method="POST" enctype="multipart/form-data">
+                <form id="cerfitication" action="" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="row">
                         <div class="col-md-12">
@@ -48,7 +48,7 @@
                                 <div class="card-body">
                                     <div class="form-group mt-1 mb-1">
                                         <label for="inputName" class="form-label mb-1">Tên</label>
-                                        <input type="text" id="title" name="title" value="" class="form-control" placeholder="Nhập tên">
+                                        <input type="text" id="name" name="name" value="" class="form-control" placeholder="Nhập tên">
                                         @error('title')
                                         <span class="text-danger mt-1 d-block">{{ $message }}</span>
                                         @enderror

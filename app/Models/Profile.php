@@ -8,20 +8,17 @@ use Illuminate\Database\Eloquent\Model;
 class Profile extends Model
 {
     use HasFactory;
-    protected $table = 'profiles';
+    protected $table = 'profile';
     protected $fillable = [
         'logo',
-        'title',
+        'name',
         'address',
         'time',
         'email',
         'hotline',
-        'blog',
-        'share',
-        'category',
-        'service',
         'video',
-        'social_network',
+        'network_fb',
+        'network_ins',
         'google_map',
         'seo_title',
         'seo_description',

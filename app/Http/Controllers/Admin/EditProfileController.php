@@ -8,8 +8,16 @@ use App\Models\Profile;
 class EditProfileController extends Controller
 {
     public function getEdit() {
-        $data = Profile::all();
+        $profile = Profile::all();
         // dd($data);
-        return view('backend.editting.editting',['breadcrumb'=>'Chỉnh sửa thông tin chi tiết']);
+        return view('backend.editting.editting',['breadcrumb'=>'Chỉnh sửa thông tin footer']
+        , compact('profile'));
+    }
+
+    public function updateProfile(Request $request){
+        $profile = Profile::all();
+        $data = $request->all();
+        $profile->update($data);
+        return back()->with('success', 'Chỉnh sửa thành công!!!');
     }
 }
