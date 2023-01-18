@@ -5,16 +5,15 @@
         </div>
         <div class="col-xl-12 col-md-12 col-lg-12">
             <div class="row">
-                @foreach ($pr_category as $category)
-                    @foreach ($category->childs as $category_child)
-                        @foreach ($category_child->productChilds as $product)
-                        <div class="col-xl-3 col-md-3 col-lg-3">
-                            @include('frontend.components.product_item')
-                        </div>
-                        @endforeach
+                @if($products->isEmpty())
+                <h2 class="d-flex justify-content-center align-items-center mt-5 mb-5" style="color:#777;">Het hang</h2>
+                @else 
+                    @foreach ($products as $product)
+                    <div class="col-xl-3 col-md-3 col-lg-3">
+                        @include('frontend.components.product_item')
+                    </div>
                     @endforeach
-                @endforeach
-                
+                @endif
             </div>
         </div>
         {{-- <div class="col-xl-12 col-md-12 col-lg-12 col-sm-12">

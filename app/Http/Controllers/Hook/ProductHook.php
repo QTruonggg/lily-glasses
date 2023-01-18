@@ -9,6 +9,9 @@ class ProductHook {
     public function createProduct($data) {
         return Product::create($data);
     }
+    public function updateProduct($data) {
+        return Product::update($data);
+    }
     public function getCategoryStatus() {
         return Product::where('category_id','=', '1')->where('status','=','0')->get();
     }

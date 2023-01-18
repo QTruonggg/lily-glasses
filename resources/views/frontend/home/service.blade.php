@@ -7,9 +7,7 @@
                 </div>
             </div>
             <div class="col-md-12 col-sm-12 col-12">
-                <a href="#" class="d-block mb-3">
-                    <img src="{{asset('upload_thumbnail/empty_img.png')}}" alt="Best seller">
-                </a>
+               
             </div>
             <div class="swiper service-swiper">
                 <div class="swiper-wrapper">
@@ -21,9 +19,6 @@
                             </div>
                             <div class="service-content">
                                 <h3>{{$item->name}}</h3>
-                                <a href="#">
-                                    <span>Liên hệ ngay <i class="fa-solid fa-chevron-right"></i></span>
-                                </a>
                             </div>
                         </div>
                     </div>

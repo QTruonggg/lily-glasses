@@ -10,13 +10,13 @@
                 <div class="row">
                     <div class="col-md-12">
                         <ul class="type d-flex justify-content-center">
-                           @foreach ($pr_category as $category)
-                                @foreach($category->childs as $category)
+                            @foreach($pr_category as $category)
+                                @foreach ($category->childs as $item)
                                     <li class="">
-                                        <a href="{{route('showChildCategory',$category->id)}}">{{$category->name}}</a>
+                                        <a href="{{route('showChildCategory',$item->id)}}">{{$item->name}}</a>
                                     </li>
                                 @endforeach
-                           @endforeach
+                            @endforeach
                         </ul>   
                     </div>
                 </div>

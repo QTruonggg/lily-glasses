@@ -8,28 +8,22 @@ use App\Models\Order;
 use App\Models\Category;
 use App\Models\ServiceCategory;
 use App\Models\Product;
-<<<<<<< HEAD
 use App\Models\Feedback;
 use App\Models\Introduce;
 use App\Models\Blog;
 use App\Models\Appointment;
-=======
-use App\Models\Introduce;
-use App\Models\Blog;
->>>>>>> dev
 use App\Http\Controllers\Hook\GetCategoryHook;
 use App\Models\Policy;
 use App\Models\Shared;
 use Gloudemans\Shoppingcart\Facades\Cart;
 
-
-
 class FrontendController extends Controller
 {
     public function showHome(){
         $feedback = Feedback::orderBy('created_at', 'DESC')->get();
+        $shared = Shared::all();
         $products = Product::orderBy('created_at', 'DESC')->with('colors')->take(4)->get();
-        return view('frontend.home.index',compact('products','feedback'));
+        return view('frontend.home.index',compact('products','feedback','shared'));
     }
     public function post(Request $request) {
     }
@@ -44,9 +38,16 @@ class FrontendController extends Controller
     public function showFormBook(Request $request) {
         return view('frontend.form_book.index');
     }
-    public function showProduct( $slug){
+    public function showProduct($slug){
+        $pr_categoryf = Category::where('slug',$slug)->with('childs')->first();
         $pr_category = Category::where('slug',$slug)->with('childs')->get();
-        return view('frontend.product.index',compact('pr_category'));
+        $childCategories = Category::where('parent_id',$pr_categoryf->id)->get();
+    
+        foreach ($childCategories as $childCategory) {
+            $id_array[] = $childCategory->id;
+        }
+        $products = Product::whereIn('category_id',$id_array)->get();
+        return view('frontend.product.index',compact('pr_category', 'products'));
     }
     
     public function showChildCategory($id ,Request $request ){
@@ -139,5 +140,9 @@ class FrontendController extends Controller
     public function serviceDetail($id){
         $service_detail = ServiceCategory::find($id);
         return view('frontend.service.index',compact('service_detail'));
+    }
+    public function products() {
+        $products = Product::all();
+        return view('frontend.all_product.index',compact('products'));
     }
 }

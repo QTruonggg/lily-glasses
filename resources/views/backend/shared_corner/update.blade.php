@@ -95,6 +95,7 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <input type="hidden" name="thumbnail"  value="{{$shared_detail->thumbnail}}">
                                 </div>
                                 <!-- /.card-body -->
                             </div>

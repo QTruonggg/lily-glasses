@@ -199,11 +199,11 @@
     max-height: 50px;
   }
   #header .main-header-mobile .slogan i {
+    font-size: 15px;
     font-family: "Lato", sans-serif;
     font-family: "Noto Sans Limbu", sans-serif;
     font-family: "Roboto Condensed", sans-serif;
     color: #EBD7A9;
-    font-size: 28px;
   }
   #header .main-header-mobile .shopping-cart {
     position: relative;
