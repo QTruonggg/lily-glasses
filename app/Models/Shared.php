@@ -5,16 +5,17 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class ServiceCategory extends Model
+class Shared extends Model
 {
     use HasFactory;
-    protected $table = 'service_categories';
+    protected $table = "shared";
     protected $fillable = [
-        'category_id',
-        'thumbnail',
+        'id',
         'name',
-        'seo_description',
+        'subname',
+        'thumbnail',
         'seo_title',
         'seo_keyword',
+        'seo_description',
     ];
 }
