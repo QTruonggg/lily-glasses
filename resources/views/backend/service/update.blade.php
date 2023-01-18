@@ -6,7 +6,7 @@
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1>Thêm danh mục</h1>
+                <h1>Chỉnh sửa dịch vụ</h1>
             </div>
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right justify-content-end">
@@ -61,6 +61,33 @@
                                             @endforeach
                                         </select>
                                     </div>
+                                    <div class="form-group mt-1 mb-1">
+                                        <label for="seo_description" class="form-label mb-1">Mô tả:</label>
+                                        <textarea class="form-control" id="summary-ckeditor" name="seo_description">{{$data->seo_description}}</textarea>
+                                         @error('seo_description')
+                                        <span class="text-danger mt-1 d-block">{{ $message }}</span>
+                                        @enderror
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <div class="form-group mt-1 mb-1">
+                                                <label for="inputName" class="form-label mb-1">Tiêu đề - tìm kiếm:</label>
+                                                <input type="text" id="seo_title" name="seo_title" value="{{$data->seo_title}}" class="form-control" placeholder="Nhập tiêu đề">
+                                                @error('seo_title')
+                                                <span class="text-danger mt-1 d-block">{{ $message }}</span>
+                                                @enderror
+                                            </div> 
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="form-group mt-1 mb-1">
+                                                <label for="inputName" class="form-label mb-1">Từ khóa:</label>
+                                                <input type="text" id="seo_keyword" name="seo_keyword" value="{{$data->seo_keyword}}" class="form-control" placeholder="Nhập  từ khóa ">
+                                                 @error('seo_keyword')
+                                                <span class="text-danger mt-1 d-block">{{ $message }}</span>
+                                                @enderror
+                                            </div>
+                                        </div>
+                                    </div>
                                     <input type="hidden" name="thumbnail"  value="{{$data->thumbnail}}">
                                 </div>
                                 <!-- /.card-body -->
@@ -71,7 +98,7 @@
                     <div class="row">
                         <div class="col-12  ps-5 mb-2">
                             <a href="{{route('admin.ShowServiceCategory')}}" class="btn btn-secondary">Quay lại</a>
-                            <input type="submit" value="Thêm" class="btn btn-success float-right ms-2">
+                            <input type="submit" value="Chỉnh sửa" class="btn btn-success float-right ms-2">
                         </div>
                     </div>
                 </form>

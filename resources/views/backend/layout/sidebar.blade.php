@@ -49,7 +49,7 @@
               </li>
             </ul>
           </li>
-          <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="file-text"></i><span class="menu-title text-truncate" data-i18n="Pages">Danh mục dịch vụ</span></a>
+          <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="file-text"></i><span class="menu-title text-truncate" data-i18n="Pages">Dịch vụ</span></a>
             <ul class="menu-content">
               <li><a class="d-flex align-items-center" href="{{route('admin.ShowServiceCategory')}}"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="License">Danh sách dịch vụ</span></a>
               </li>
@@ -82,7 +82,27 @@
               </li>
             </ul>
           </li>
+<<<<<<< HEAD
           <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="file-text"></i><span class="menu-title text-truncate" data-i18n="Invoice">Đặt hàng</span></a>
+=======
+          <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="file-text"></i><span class="menu-title text-truncate" data-i18n="Pages">Chính sách</span></a>
+            <ul class="menu-content">
+              <li><a class="d-flex align-items-center" href="{{route('policy.list')}}"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="License">Danh sách chính sách</span></a>
+              </li>
+              <li><a class="d-flex align-items-center" href="{{route('policy.create')}}"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="API Key">Thêm chính sách</span></a>
+              </li>
+            </ul>
+          </li>
+          <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="file-text"></i><span class="menu-title text-truncate" data-i18n="Pages">Góc chia sẻ</span></a>
+            <ul class="menu-content">
+              <li><a class="d-flex align-items-center" href="{{route('shared.list')}}"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="License">Danh sách góc chia sẻ</span></a>
+              </li>
+              <li><a class="d-flex align-items-center" href="{{route('shared.create')}}"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="API Key">Thêm góc chia sẻ</span></a>
+              </li>
+            </ul>
+          </li>
+          <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="file-text"></i><span class="menu-title text-truncate" data-i18n="Invoice"></span></a>
+>>>>>>> dev
             <ul class="menu-content">
               <li><a class="d-flex align-items-center" href="{{route('showListOrder')}}"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="List">Danh sách</span></a>
               </li>
@@ -124,7 +144,7 @@
           </li>
           <!-- <li class=" nav-item"><a class="d-flex align-items-center" href="https://pixinvent.com/demo/vuexy-html-bootstrap-admin-template/documentation" target="_blank"><i data-feather="folder"></i><span class="menu-title text-truncate" data-i18n="Documentation">Documentation</span></a>
           </li> -->
-          <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="menu"></i><span class="menu-title text-truncate" data-i18n="Menu Levels">Thông tin chi tiết</span></a>
+          <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="menu"></i><span class="menu-title text-truncate" data-i18n="Menu Levels">Thông tin footer</span></a>
             <ul class="menu-content">
               <li><a class="d-flex align-items-center" href="{{route('admin.getEditProfile')}}"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Second Level">Chỉnh sửa thông tin</span></a>
               </li>

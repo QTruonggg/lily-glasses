@@ -8,11 +8,18 @@ use App\Models\Order;
 use App\Models\Category;
 use App\Models\ServiceCategory;
 use App\Models\Product;
+<<<<<<< HEAD
 use App\Models\Feedback;
 use App\Models\Introduce;
 use App\Models\Blog;
 use App\Models\Appointment;
+=======
+use App\Models\Introduce;
+use App\Models\Blog;
+>>>>>>> dev
 use App\Http\Controllers\Hook\GetCategoryHook;
+use App\Models\Policy;
+use App\Models\Shared;
 use Gloudemans\Shoppingcart\Facades\Cart;
 
 
@@ -118,5 +125,19 @@ class FrontendController extends Controller
         $blog = Blog::all();
         return view('frontend.blog.index',
         compact('blog'));
+    }
+
+    
+    public function policyDetail($id){
+        $policy_detail = Policy::find($id);
+        return view('frontend.policy.index',compact('policy_detail'));
+    }
+    public function sharedDetail($id){
+        $shared_detail = Shared::find($id);
+        return view('frontend.shared_corner.index',compact('shared_detail'));
+    }
+    public function serviceDetail($id){
+        $service_detail = ServiceCategory::find($id);
+        return view('frontend.service.index',compact('service_detail'));
     }
 }

@@ -3,6 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\BannerController;
 use App\Http\Controllers\Admin\BlogController;
+use App\Http\Controllers\Admin\PolicyController;
+use App\Http\Controllers\Admin\SharedController;
+
 use App\Http\Controllers\Frontend\FrontendController;
 
 /*
@@ -27,8 +30,13 @@ Route::get('/admin/logout',[App\Http\Controllers\Admin\LoginController::class,'l
 
 // auth manager
 Route::prefix('admin')->middleware('auth')->group(function () {
+<<<<<<< HEAD
     // show home
     Route::get('/',[App\Http\Controllers\Admin\NewOrderController::class,'showHome'])->name('admin.showHome');
+=======
+    Route::get('/',[App\Http\Controllers\Admin\LoginController::class,'showHome'])->name('admin.showHome');
+
+>>>>>>> dev
     // category ??? 
     Route::prefix('category')->group(function() {
         // get
@@ -116,7 +124,24 @@ Route::prefix('admin')->middleware('auth')->group(function () {
         Route::get('update/{id}',[BlogController::class,'getUpdateBlog'])->name('blog.getUpdate');
         Route::post('update/{id}',[BlogController::class,'updateBlog'])->name('blog.update');
         Route::get('deleteblog/{id}', [BlogController::class, 'deleteBlog'])->name('blog.delete');
+    });
 
+    Route::prefix('policy')->group(function(){
+        Route::get('list',[PolicyController::class,'viewPolicy'])->name('policy.list');
+        Route::get('create',[PolicyController::class,'createPolicy'])->name('policy.create');
+        Route::post('create',[PolicyController::class,'storePolicy']);
+        Route::get('update/{id}',[PolicyController::class,'getUpdatePolicy'])->name('policy.getUpdate');
+        Route::post('update/{id}',[PolicyController::class,'updatePolicy'])->name('policy.update');
+        Route::get('deletePolicy/{id}', [PolicyController::class, 'deletePolicy'])->name('policy.delete');
+    });
+
+    Route::prefix('shared')->group(function(){
+        Route::get('list',[SharedController::class,'viewShared'])->name('shared.list');
+        Route::get('create',[SharedController::class,'createShared'])->name('shared.create');
+        Route::post('create',[SharedController::class,'storeShared']);
+        Route::get('update/{id}',[SharedController::class,'getUpdateShared'])->name('shared.getUpdate');
+        Route::post('update/{id}',[SharedController::class,'updateShared'])->name('shared.update');
+        Route::get('deleteShared/{id}', [SharedController::class, 'deleteShared'])->name('shared.delete');
     });
 
     // order
@@ -167,4 +192,13 @@ Route::get('/xoa-gio-hang-{rowId}',[App\Http\Controllers\Frontend\AddProductCont
 Route::get('/thanh-toan-{slug}-{id}',[App\Http\Controllers\Frontend\FrontendController::class , 'showFormPayment'])->name('showFormPayment');
 Route::post('/thanh-toan',[App\Http\Controllers\Frontend\FrontendController::class , 'sendOrder'])->name('sendRequest');
 
+<<<<<<< HEAD
 Route::get('/blog',[App\Http\Controllers\Frontend\FrontendController::class, 'blog'])->name('blog');
+=======
+
+Route::get('/blog',[App\Http\Controllers\Frontend\FrontendController::class, 'blog'])->name('blog');
+Route::get('/chinh-sach/{id}',[App\Http\Controllers\Frontend\FrontendController::class, 'policyDetail'])->name('policyDetail');
+Route::get('/goc-chia-se/{id}',[App\Http\Controllers\Frontend\FrontendController::class, 'sharedDetail'])->name('sharedDetail');
+Route::get('/dich-vu/{id}',[App\Http\Controllers\Frontend\FrontendController::class, 'serviceDetail'])->name('serviceDetail');
+
+>>>>>>> dev

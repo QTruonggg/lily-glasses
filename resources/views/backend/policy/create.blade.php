@@ -6,12 +6,12 @@
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1>Thêm chính sách</h1>
+                <h1>{{$title}}</h1>
             </div>
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right justify-content-end">
                     <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
-                    <li class="breadcrumb-item active">{{$breadcrumb}}</li>
+                    <li class="breadcrumb-item active">{{$title}}</li>
                 </ol>
             </div>
         </div>
@@ -55,17 +55,19 @@
                                         @enderror
                                     </div>
                                     <div class="form-group mt-1 mb-1">
-                                        <label for="inputName" class="form-label mb-1">subname</label>
+                                        <label for="inputName" class="form-label mb-1">Tên phụ</label>
                                         <input type="text" id="subname" name="subname"  value="" class="form-control" placeholder="">
                                         @error('slug')
                                         <span class="text-danger mt-1 d-block">{{ $message }}</span>
                                         @enderror
                                     </div>
                                     <div class="form-group mt-1 mb-1">
-                                        <label for="parent_id" class="form-label mb-1">description</label>
-                                        <input type="text" id="seo_title" name="seo_title" value="" class="form-control" placeholder="Nhập tiêu đề">
-                                        
-                                    </div>
+                                        <label for="seo_description" class="form-label mb-1">Mô tả:</label>
+                                        <textarea class="form-control" id="summary-ckeditor" name="seo_description"></textarea>
+                                         @error('seo_description')
+                                        <span class="text-danger mt-1 d-block">{{ $message }}</span>
+                                        @enderror
+                                    </div> 
                                     <div class="form-group mt-1 mb-1">
                                         <label for="seo_title" class="form-label mb-1">Status</label>
                                         <select class="form-control custom-select" name="status" id="status" placeholder="">
@@ -78,15 +80,6 @@
                                              <div class="form-group mt-1 mb-1">
                                                 <label for="seo_keyword" class="form-label mb-1">Seo title</label>
                                                 <input type="text" id="seo_title" name="seo_title" value="" class="form-control">
-                                                @if ($errors->has('seo_keyword'))
-                                                    <span class="text-danger d-block mt-1">{{ $errors->first('seo_keyword') }}</span>
-                                                @endif
-                                            </div>
-                                        </div>
-                                        <div class="col-6">
-                                             <div class="form-group mt-1 mb-1">
-                                                <label for="seo_keyword" class="form-label mb-1">Seo description</label>
-                                                <input type="text" id="seo_description" name="seo_description" value="" class="form-control">
                                                 @if ($errors->has('seo_keyword'))
                                                     <span class="text-danger d-block mt-1">{{ $errors->first('seo_keyword') }}</span>
                                                 @endif
@@ -110,7 +103,7 @@
                     </div>
                     <div class="row">
                         <div class="col-12  ps-5 mb-2">
-                            <a href="{{route('admin.showCategoriesList')}}" class="btn btn-secondary">Quay lại</a>
+                            <a href="{{route('policy.list')}}" class="btn btn-secondary">Quay lại</a>
                             <input type="submit" value="Thêm" class="btn btn-success float-right ms-2">
                         </div>
                     </div>
@@ -198,13 +191,14 @@
     }
    
 </script>
-<script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
-<script>
-CKEDITOR.replace( 'summary-ckeditor' );
-</script>
+
 @endsection
 
 @section('script')
 <script src="{{asset('ckeditor/ckeditor.js')}}"></script>
 <script src="{{asset('ckfinder/ckfinder.js')}}" ></script>
+<script>
+    var editor = CKEDITOR.replace( 'summary-ckeditor' );
+        CKFinder.setupCKEditor(editor);
+</script>
 @endsection

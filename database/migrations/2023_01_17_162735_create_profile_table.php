@@ -13,13 +13,20 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('service_categories', function (Blueprint $table) {
+        Schema::create('profiles', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('category_id');
-            $table->string('thumbnail');
             $table->string('name');
-            $table->LONGTEXT('seo_description');
+            $table->string('logo');
+            $table->string('address');
+            $table->string('time');
+            $table->string('email');
+            $table->string('hotline');
+            $table->string('video');
+            $table->string('network_fb');
+            $table->string('network_ins');
+            $table->string('google_map');
             $table->string('seo_title');
+            $table->string('seo_description');
             $table->string('seo_keyword');
             $table->timestamps();
         });
@@ -32,6 +39,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('service_categories');
+        Schema::dropIfExists('profiles');
     }
 };

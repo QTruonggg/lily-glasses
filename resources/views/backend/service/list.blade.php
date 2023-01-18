@@ -8,7 +8,7 @@
         
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1>Quản lý danh mục</h1>
+                <h1>{{$breadcrumb}}</h1>
             </div>
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right justify-content-end">
@@ -24,7 +24,7 @@
                     <div class="card-body d-flex align-items-center justify-content-between">
                         <div>
                             <h3 class="fw-bolder mb-75">{{$dataLenght}}</h3>
-                            <span>Tổng số danh mục</span>
+                            <span>{{$breadcrumb}}</span>
                         </div>
                         <div class="avatar bg-light-primary p-50">
                             <span class="avatar-content">
@@ -92,7 +92,13 @@
                         <th style="width: 15%">
                             Danh mục
                         </th>
-                        <th style="width: 15%" class="text-right">
+                        <th style="width: 10%">
+                            Ngày tạo
+                        </th>
+                        <th style="width: 10%">
+                            Ngày cập nhật
+                        </th>
+                        <th style="width: 15%; text-align: right;">
                             Tác vụ
                         </th>
                     </tr>
@@ -118,7 +124,13 @@
                                 {{$item->category_id}}
                             </a>
                         </td>
-                        <td class="project-actions text-right">
+                        <th>
+                            {{$item->created_at}}
+                        </th>
+                        <th>
+                            {{$item->updated_at}}
+                        </th>
+                        <td class="project-actions" style="text-align: right;">
                             <a href="list/update/{{$item->id}}" class="btn btn-sm btn-icon">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit font-medium-2 text-body">
                                     <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>

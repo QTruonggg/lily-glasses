@@ -38,7 +38,7 @@
                             @foreach($serviceCategory as $child)
                                 <li class="item">
                                     <h2>
-                                        <a href="">{{$child->name}}</a>
+                                        <a href="{{route('serviceDetail',$child->id)}}">{{$child->name}}</a>
                                     </h2>
                                 </li>
                             @endforeach
@@ -53,26 +53,13 @@
                     </h3>
                     <div class="sub-menu">
                         <ul class="sub-menu-list">
-                            <li class="item">
-                                <h2>
-                                    <a href="">Mắt bạn nói gì ?</a>
-                                </h2>
-                            </li>
-                            <li class="item">
-                                <h2>
-                                    <a href="">Kính mắt</a>
-                                </h2>
-                            </li>
-                            <li class="item">
-                                <h2>
-                                    <a href="">Tật khúc xạ</a>
-                                </h2>
-                            </li>
-                            <li class="item">
-                                <h2>
-                                    <a href="">Tâm sự của SOLAR</a>
-                                </h2>
-                            </li>
+                            @foreach($shared as $shared)
+                                <li class="item">
+                                    <h2>
+                                        <a href="{{route('sharedDetail',$shared->id)}}">{{$shared->name}}</a>
+                                    </h2>
+                                </li>
+                            @endforeach
                         </ul>
                     </div>
                 </li>
