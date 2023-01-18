@@ -1,5 +1,5 @@
 <section id="header">
-    <header class="main-header-mobile d-none">
+    <header class="main-header-mobile">
         <div class="container">
             <div class="row">
                 <div class="col-2">
@@ -12,28 +12,120 @@
                             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                         </div>
                         <div class="offcanvas-body">
-                            <ul class="mb-sidebar-list">
-                                <li>
-                                    <ul class="mb-sidebar-list-child">
-                                        <li>
-
+                            <ul class="mb-sidebar-list-child">
+                            <li>
+                                <h3>
+                                    <a href="{{route('introduce')}}">
+                                        Giới thiệu
+                                    </a>
+                                </h3>
+                            </li>
+                            <li>
+                                <h3>
+                                    <a data-bs-toggle="collapse" href="#category_product" role="button" aria-expanded="false" aria-controls="category_product">
+                                        Sản phẩm
+                                    </a>
+                                    <i class="fa-solid fa-chevron-down"></i>
+                                </h3>
+                                <div class="sub-menu" >
+                                    <ul class="sub-menu-list collapse"  id="category_product">
+                                        @foreach($categories as $category)
+                                            <li class="item">
+                                                <h2>
+                                                    <a href="{{route('showProduct', ['slug'=>$category->slug])}}">{{$category->name}}</a>
+                                                </h2>
+                                            </li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <h3>
+                                    <a data-bs-toggle="collapse" href="#service" role="button" aria-expanded="false" aria-controls="service">
+                                        Dịch vụ
+                                    </a>
+                                    <i class="fa-solid fa-chevron-down"></i>
+                                </h3>
+                                <div class="sub-menu">
+                                    <ul class="sub-menu-list collapse"  id="service">
+                                        @foreach($serviceCategory as $child)
+                                            <li class="item">
+                                                <h2>
+                                                    <a href="">{{$child->name}}</a>
+                                                </h2>
+                                            </li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <h3>
+                                    <a data-bs-toggle="collapse" href="#share" role="button" aria-expanded="false" aria-controls="share">
+                                        Góc chia sẻ
+                                    </a>
+                                    <i class="fa-solid fa-chevron-down"></i>
+                                </h3>
+                                <div class="sub-menu">
+                                    <ul class="sub-menu-list collapse" id="share">
+                                        <li class="item">
+                                            <h2>
+                                                <a href="">Mắt bạn nói gì ?</a>
+                                            </h2>
+                                        </li>
+                                        <li class="item">
+                                            <h2>
+                                                <a href="">Kính mắt</a>
+                                            </h2>
+                                        </li>
+                                        <li class="item">
+                                            <h2>
+                                                <a href="">Tật khúc xạ</a>
+                                            </h2>
+                                        </li>
+                                        <li class="item">
+                                            <h2>
+                                                <a href="">Tâm sự của SOLAR</a>
+                                            </h2>
                                         </li>
                                     </ul>
-                                </li>
+                                </div>
+                            </li>
+                            <li>
+                                <h3>
+                                    <a href="{{route('showFormBook')}}">
+                                        Đặt lịch khám 
+                                    </a>
+                                </h3>
+                            </li>
                             </ul>
                                 
                         </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-6">
-                    asdfda
+                <div class="col-lg-6 col-md-6 col-sm-6 col-6 d-flex align-items-center">
+                    <a href="{{route('showhome')}}" class="logo">
+                        <img src="{{asset('assets/images/logo.png')}}" alt="">
+                    </a>
+                    <div class="slogan">
+                        <i>"Vison for future"</i>
+                    </div>
                 </div>
-                <div class="col-2">
-                    asdf
+                <div class="col-2 d-flex justify-content-end align-items-center">
+                    <a href="{{route('showCartList')}}" class="shopping-cart">
+                        <i class="fa-solid fa-bag-shopping"></i>
+                        <span class="count">{{Cart::count()}}</span>
+                    </a>
                 </div>
-                <div class="col-2">
-                    asdf
+                <div class="col-2 d-flex justify-content-end align-items-center">
+                    <div class="dropdown">
+                        <div class="" data-bs-toggle="dropdown" aria-expanded="true">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </div>
+                        <div class="dropdown-menu">
+                            <input type="search" placeholder="Tìm kiếm .. ">
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

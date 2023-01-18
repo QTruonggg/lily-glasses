@@ -1,5 +1,10 @@
 <section id="page-payment">
     <div class="container">
+        @if(session()->has('success'))
+            <div class="txt pb-2 pt-2 ps-2 alert alert-success h3">
+            {{ session()->get('success') }}
+            </div>
+        @endif
         <div class="row">
             <div class="col-md-12 col-12">
                 <div class="payment-top">
@@ -31,6 +36,19 @@
                                                         <div class="item">
                                                             <div class="row">
                                                                 <div class="col-xl-3 col-lg-3 col-md-3 col-12">
+                                                                    Email <span class="required">*</span>
+                                                                </div>
+                                                                <div class="col-xl-9 col-lg-9 col-md-9 col-12">
+                                                                    <input id="email" class="form-control" name="email" value="">
+                                                                    @error('email')
+                                                                        <span class="text-danger mt-1 d-block">{{ $message }}</span>
+                                                                    @enderror
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="item">
+                                                            <div class="row">
+                                                                <div class="col-xl-3 col-lg-3 col-md-3 col-12">
                                                                     Số điện thoại 
                                                                     <span class="required">*</span>
                                                                 </div>
@@ -42,19 +60,7 @@
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        <div class="item">
-                                                            <div class="row">
-                                                                <div class="col-xl-3 col-lg-3 col-md-3 col-12">
-                                                                    Email <span class="required">*</span>
-                                                                </div>
-                                                                <div class="col-xl-9 col-lg-9 col-md-9 col-12">
-                                                                    <input id="email" class="form-control" name="email" value="">
-                                                                    @error('email')
-                                                                        <span class="text-danger mt-1 d-block">{{ $message }}</span>
-                                                                    @enderror
-                                                                </div>
-                                                            </div>
-                                                        </div>
+                                                        
                                                     </div>
                                                 </div>
                                             </div>
@@ -71,8 +77,8 @@
                                                                     <span class="required">*</span>
                                                                 </div>
                                                                 <div class="col-xl-9 col-lg-9 col-md-9 col-12">
-                                                                    <input id="tinh" class="form-control" name="tinh" value="">
-                                                                    @error('tinh')
+                                                                    <input id="province" class="form-control" name="province" value="">
+                                                                    @error('province')
                                                                         <span class="text-danger mt-1 d-block">{{ $message }}</span>
                                                                     @enderror
                                                                 </div>
@@ -85,8 +91,8 @@
                                                                     <span class="required">*</span>
                                                                 </div>
                                                                 <div class="col-xl-9 col-lg-9 col-md-9 col-12">
-                                                                    <input id="huyen" class="form-control" name="huyen"  value="">
-                                                                    @error('huyen')
+                                                                    <input id="district" class="form-control" name="district"  value="">
+                                                                    @error('district')
                                                                         <span class="text-danger mt-1 d-block">{{ $message }}</span>
                                                                     @enderror
                                                                 </div>
@@ -98,8 +104,8 @@
                                                                     Phường / Xã <span class="required">*</span>
                                                                 </div>
                                                                 <div class="col-xl-9 col-lg-9 col-md-9 col-12">
-                                                                    <input id="xa" class="form-control" name="xa"  value="">
-                                                                    @error('xa')
+                                                                    <input id="ward" class="form-control" name="ward"  value="">
+                                                                    @error('ward')
                                                                         <span class="text-danger mt-1 d-block">{{ $message }}</span>
                                                                     @enderror
                                                                 </div>
@@ -111,8 +117,8 @@
                                                                     Địa chỉ <span class="required">*</span>
                                                                 </div>
                                                                 <div class="col-xl-9 col-lg-9 col-md-9 col-12">
-                                                                    <input id="diachi" class="form-control" name="diachi"  value="">
-                                                                    @error('diachi')
+                                                                    <input id="address" class="form-control" name="address"  value="">
+                                                                    @error('address')
                                                                         <span class="text-danger mt-1 d-block">{{ $message }}</span>
                                                                     @enderror
                                                                 </div>
@@ -225,7 +231,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <input type="hidden" name="" value="{{}}">
+                                <input type="hidden" name="product_rowId[]" value="{{Cart::content()}}">
                             </form>
                         </div>
                     </div>

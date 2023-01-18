@@ -56,8 +56,8 @@
     }
     $('.cl').each(function() {
         $(this).click(function() {
-            $('.cl').css('border', 'none')
-            $(this).css('border', '2px solid #666')
+            $('.cl').css('outline', 'none')
+            $(this).css('outline', '3px solid #000')
            var dataColor =  $(this).attr('data-color')
             $('.input-color').val(dataColor)
             

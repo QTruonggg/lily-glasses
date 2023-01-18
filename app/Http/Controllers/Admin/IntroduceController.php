@@ -8,19 +8,17 @@ use Illuminate\Support\Facades\DB;
 class IntroduceController extends Controller
 {
     function getUpdateIntroduce() {
-        $data = DB::select('SELECT * from Introduces WHERE id = ?', [1]);
-        return view('backend.introduce.update',['breadcrumb'=>'Chỉnh sửa giới thiệu'], compact('data'));
+        $datas = DB::select('SELECT * from Introduces WHERE id = ?', [1]);
+        return view('backend.introduce.update',['breadcrumb'=>'Chỉnh sửa giới thiệu'], compact('datas'));
     }
     function updateIntroduce(Request $request) {
         $request->validate([
             'name'=>'required|max:2000',
-            'thumbnail'=>'required|max:2000',
             'seo_title'=>'required|max:2000',
             'seo_description'=>'required|max:2000',
         ],
         [
             'name.required'=>'vui lòng nhập tên ',
-            'thumbnail.required'=>'vui lòng nhập ảnh',
             'seo_title.required'=>'vui lòng nhập tiêu đề',
             'seo_description.required'=>'vui lòng nhập nội dung',
         ]

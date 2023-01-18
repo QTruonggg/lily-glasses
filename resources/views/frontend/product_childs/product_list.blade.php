@@ -12,7 +12,7 @@
                 @endforeach
             </div>
         </div>
-        <div class="col-xl-12 col-md-12 col-lg-12 col-sm-12">
+        {{-- <div class="col-xl-12 col-md-12 col-lg-12 col-sm-12">
             <nav aria-label="Page navigation example ">
                 <ul class="pagination justify-content-center">
                     <li class="page-item">
@@ -32,6 +32,6 @@
                     </li>
                 </ul>
             </nav>
-        </div>
+        </div> --}}
     </div>
 </div>

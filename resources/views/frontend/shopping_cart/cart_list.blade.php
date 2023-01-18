@@ -94,10 +94,10 @@
                 <div class="btn-order">
                     <div class="wrap-btn">
                         <div class="resrum">
-                            <a href="{{route('showhome')}}">Tiếp tục mua hàng</a>
+                            <a style="text-decoration:none;" href="{{route('showhome')}}">Tiếp tục mua hàng</a>
                         </div>
                         <div class="order">
-                            <a href="{{route('showFormPayment', [Str::slug($product->name), $product->id])}}">Đặt hàng</a>
+                            <a style="text-decoration:none;" href="{{route('showFormPayment', [Str::slug($product->name), $product->id])}}">Đặt hàng</a>
                         </div>
                     </div>
                 </div>

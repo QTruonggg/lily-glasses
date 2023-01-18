@@ -1,32 +1,11 @@
 
-<<<<<<< HEAD
-    <div class="filter">
-        <button class="filter-drop"><i class="fa-solid fa-arrow-down-wide-short"></i> BỘ LỌC</button>
-        <div id="filter-dropdown" class="filter-content">
-
-            <div class="filter-price">
-                <button onclick="" class="price-drop"><h2><span>Giá từ</span></h2></button>
-                <div id="price-dropdown" class="price-content">
-                    <ul>
-                        <li> <a style="color:#333; text-decoration:none;"  href="{{request()->fullUrlWithQuery(['price' => 'desc'])}}">Giá từ cao xuống thấp</a> <i class="fa-solid fa-arrow-down-long"></i></li>
-                        <li><a style="color:#333; text-decoration:none;"  href="{{request()->fullUrlWithQuery(['price' => 'asc'])}}   ">Giá từ thấp tới cao</a> <i class="fa-solid fa-arrow-up-long"></i></li>
-                        <li> <a style="color:#333; text-decoration:none;"  href="{{request()->fullUrlWithQuery(['created_at' => 'desc'])}}">Mới nhất</a> <i class="fa-solid fa-arrow-up-long"></i></li>
-                        <li> <a style="color:#333; text-decoration:none;"  href="{{request()->fullUrlWithQuery(['created_at' => 'asc'])}}">Cũ nhất</a> <i class="fa-solid fa-arrow-down-long"></i></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="delete-filter"> <a style="color:#333; text-decoration:none;"  href="{{Request::URL()}}"> Xóa bộ lọc</a></div>
-         
-          </div>
-=======
 <div class="filter">
     <div class="filter-title">
         <i class="fa-solid fa-arrow-down-wide-short"></i> BỘ LỌC
->>>>>>> 152f75ac98dd8053ef8437ba61e9754dd365063f
     </div>
     <div class="filter-new">
         <a href="{{request()->fullUrlWithQuery(['created_at' => 'desc'])}}">Mới nhất <i class="fa-solid fa-arrow-up-long"></i></a> 
-        <a href="{{request()->fullUrlWithQuery(['Created_at' => 'asc'])}}">Cũ nhất <i class="fa-solid fa-arrow-down-long"></i></a> 
+        <a href="{{request()->fullUrlWithQuery(['created_at' => 'asc'])}}">Cũ nhất <i class="fa-solid fa-arrow-down-long"></i></a> 
         <a href="{{request()->fullUrlWithQuery(['price' => 'desc'])}}">Giá từ cao xuống thấp <i class="fa-solid fa-arrow-down-long"></i></a> 
         <a href="{{request()->fullUrlWithQuery(['price' => 'asc'])}}   ">Giá từ thấp tới cao <i class="fa-solid fa-arrow-up-long"></i></a> 
         <a href="{{Request::URL()}}"> Xóa bộ lọc</a>

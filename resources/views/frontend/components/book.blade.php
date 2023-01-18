@@ -1,3 +1,4 @@
+
 <section id="book">
     <div class="container">
         <div class="row">
@@ -12,15 +13,15 @@
                     <div class="book-form-title">
                         <h3>đặt lịch khám</h3>
                     </div>
-                    <form action="{{route('postBook')}}" class="book-form-input" method="post"  enctype="multipart/form-data">
+                    <form action="{{route('appointments')}}" class="book-form-input" method="post"  enctype="multipart/form-data">
                         @csrf
                         <div class="group">
                             <label for="input-name">Họ và tên (<span>*</span>)</label>
-                            <input type="text" name="name" id="" placeholder="Họ và tên(*)">
+                            <input type="text" name="name" id="" placeholder="Họ và tên">
                         </div>
                          <div class="group">
                             <label for="input-name">Số điện thoại (<span>*</span>)</label>
-                            <input type="number" id="old_price" name="phoneNUmber" oninput="this.value = this.value.replace(/[^0-9.]/g, '')" value=""  placeholder="số điện thoại(*)">
+                            <input type="number" id="phoneNumber" name="phoneNumber" oninput="this.value = this.value.replace(/[^0-9.]/g, '')" value=""  placeholder="số điện thoại">
                         </div>
                          <div class="group">
                             <label for="input-name">Thời gian(<span>*</span>)</label>
@@ -30,10 +31,10 @@
                             <label for="">Triệu chứng</label>
                            <select class="form-select" aria-label="Default select example" name="symptom">
                                 <option selected>Các triệu chứng thường gặp : </option>
-                                <option value="1"> Nhìn mờ</option>>
-                                <option value="3"> Đỏ mắt</option>
-                                <option value="4"> Chảy nước mắt</option>
-                                <option value="5"> Khác</option>
+                                <option value="Nhìn mờ"> Nhìn mờ</option>>
+                                <option value="Đỏ mắt"> Đỏ mắt</option>
+                                <option value="Chảy nước mắt"> Chảy nước mắt</option>
+                                <option value="Khác"> Khác</option>
                             </select>
                         </div>
                         <input type="submit" value="đặt lịch khám">

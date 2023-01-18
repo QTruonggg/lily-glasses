@@ -13,7 +13,7 @@ class ProductController extends Controller
 {
     public function showProductList(ProductHook $productHook) {
         $dataProduct = $productHook->getAll();
-        dd($dataProduct);
+        // dd($dataProduct);
         // dd(json_decode($dataProduct[0]->color));
         $dataLenght = count($dataProduct);
         return view('backend.product.list',['breadcrumb'=>'Danh sách sản phẩm'],compact('dataProduct','dataLenght'));

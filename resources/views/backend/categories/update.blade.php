@@ -112,7 +112,7 @@
                         margin: 0 auto;
                         margin-bottom: 20px;
                     ">
-                    <img style="width:100%; height:100%; border-radius:50%; object-fit:cover;" id="thumbnail_prev" src="{{asset('upload_thumbnail/empty_img.png')}}"  alt="..">
+                    <img style="width:100%; height:100%; border-radius:50%; object-fit:cover;" id="thumbnail_prev" src="{{$category->thumbnail}}"  alt="..">
                 </div>
                 <button class="btn btn-primary btn-toggle-sidebar w-100 waves-effect waves-float waves-light" id="popup-1-button">
                     <span class="align-middle">Chọn ảnh</span>
@@ -162,6 +162,8 @@
                     var file = evt.data.files.first();
                     var img = document.getElementById('thumbnail_prev')
                     var thumbnail = file.getUrl();
+                    console.log(thumbnail);
+                    console.log(`{{env('APP_URL')}}`);
                     $('input[name="thumbnail"]').val(`{{env('APP_URL')}}${thumbnail}`);
                     img.src = `{{env('APP_URL')}}${thumbnail}`;    
                 } );

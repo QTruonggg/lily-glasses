@@ -4,14 +4,14 @@ namespace App\Http\Controllers\Frontend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Banner;
+use App\Models\Order;
 use App\Models\Category;
 use App\Models\ServiceCategory;
 use App\Models\Product;
-<<<<<<< HEAD
+use App\Models\Feedback;
 use App\Models\Introduce;
-=======
 use App\Models\Blog;
->>>>>>> 152f75ac98dd8053ef8437ba61e9754dd365063f
+use App\Models\Appointment;
 use App\Http\Controllers\Hook\GetCategoryHook;
 use Gloudemans\Shoppingcart\Facades\Cart;
 
@@ -20,8 +20,9 @@ use Gloudemans\Shoppingcart\Facades\Cart;
 class FrontendController extends Controller
 {
     public function showHome(){
+        $feedback = Feedback::orderBy('created_at', 'DESC')->get();
         $products = Product::orderBy('created_at', 'DESC')->with('colors')->take(4)->get();
-        return view('frontend.home.index',compact('products'));
+        return view('frontend.home.index',compact('products','feedback'));
     }
     public function post(Request $request) {
     }
@@ -67,10 +68,14 @@ class FrontendController extends Controller
         return view('frontend.product_childs.index',compact('pr_category','products'));
     }
     public function introduce() {
+        $feedback = Feedback::orderBy('created_at', 'DESC')->get();
         $data = Introduce::where('id','=', 1)->get();
-        return view('frontend.introduce.index', ['title'=>'Giới thiệu chung'] ,compact('data'));
+        return view('frontend.introduce.index', ['title'=>'Giới thiệu chung'] ,compact('data','feedback'));
     }
-    public function postBook(Request $request) {
+    public function appointments(Request $request) {
+        $appointment = $request->all();
+        Appointment::create($appointment);
+        return back()->with('success', 'Đặt lịch khám thành công');
     }
     
     // thanh toan
@@ -86,10 +91,10 @@ class FrontendController extends Controller
             'name'=>'required',
             'phoneNumber'=>'required|min:10|max:10|',
             'email'=>'required|email',
-            'tinh'=>'required',
-            'huyen'=>'required',
-            'xa'=>'required',
-            'diachi'=>'required',
+            'province'=>'required',
+            'district'=>'required',
+            'ward'=>'required',
+            'address'=>'required',
         ],[
             'name.required'=>'Vui lòng nhập đầy đủ họ tên !',
             'phoneNumber.required'=>'Vui lòng nhập số điện thoại !',
@@ -97,12 +102,16 @@ class FrontendController extends Controller
             'phoneNumber.max'=>'Vui lòng nhập đúng số điện thoại !',
             'email.required'=>'Vui lòng nhập địa chỉ email !',
             'email.email'=>'Vui lòng nhập đúng địa chỉ email !',
-            'tinh.required'=>'Vui lòng nhập tỉnh !',
-            'huyen.required'=>'Vui lòng nhập huyện !',
-            'xa.required'=>'Vui lòng nhập xã !',
-            'diachi.required'=>'Vui lòng nhập địa chỉ cụ thể !',
+            'province.required'=>'Vui lòng nhập tỉnh !',
+            'district.required'=>'Vui lòng nhập huyện !',
+            'ward.required'=>'Vui lòng nhập xã !',
+            'address.required'=>'Vui lòng nhập địa chỉ cụ thể !',
         ]);
-        return view('frontend.product.index');
+        $productRowId = $data['product_rowId'];
+        $json = json_encode($productRowId);
+        $data['product_rowId'] = $json;
+        Order::create($data);
+        return back()->with('success', 'Bạn đã đặt hàng thành công');
     }
 
     public function blog(){

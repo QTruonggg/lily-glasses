@@ -12,6 +12,8 @@
 
 @section('script')
  <script>
-     
+    setTimeout(()=> {
+        $('.txt').addClass('d-none')
+    },3000)
 </script>
 @endsection

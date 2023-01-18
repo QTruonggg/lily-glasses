@@ -27,12 +27,8 @@ Route::get('/admin/logout',[App\Http\Controllers\Admin\LoginController::class,'l
 
 // auth manager
 Route::prefix('admin')->middleware('auth')->group(function () {
-    Route::get('/',[App\Http\Controllers\Admin\LoginController::class,'showHome'])->name('admin.showHome');
-
-    // showDashbooard
-    Route::get('/',[App\Http\Controllers\Admin\LoginController::class,'showDashboard'])->name('admin.showDashboard');
-
-
+    // show home
+    Route::get('/',[App\Http\Controllers\Admin\NewOrderController::class,'showHome'])->name('admin.showHome');
     // category ??? 
     Route::prefix('category')->group(function() {
         // get
@@ -78,17 +74,23 @@ Route::prefix('admin')->middleware('auth')->group(function () {
 
     Route::prefix('introduce')->group(function() {
         // get update
-
         Route::get('update',[App\Http\Controllers\Admin\IntroduceController::class,'getUpdateIntroduce'])->name('get.intro');
-        Route::post('update',[App\Http\Controllers\Admin\IntroduceController::class,'updateIntroduce']);
+        // post update
+        Route::post('update-{id}',[App\Http\Controllers\Admin\IntroduceController::class,'updateIntroduce'])->name('updateIntroduce');
     });
 
-
+    Route::prefix('appointment')->group(function() {
+        // get update
+        Route::get('list',[App\Http\Controllers\Admin\OrderController::class,'orderAppointment'])->name('get.orderAppointment');
+    });
+    
 
 
     // editting
     Route::prefix('editing')->group(function () {
+        // get
         Route::get('update', [App\Http\Controllers\Admin\EditProfileController::class, 'getEdit'])->name('admin.getEditProfile');
+        // post
         Route::post('update', [App\Http\Controllers\Admin\EditProfileController::class, 'updateProfile'])->name('admin.getEditProfile');
     });
 
@@ -116,13 +118,37 @@ Route::prefix('admin')->middleware('auth')->group(function () {
         Route::get('deleteblog/{id}', [BlogController::class, 'deleteBlog'])->name('blog.delete');
 
     });
+
+    // order
+    Route::prefix('order')->group(function() {
+        //show list order
+        Route::get('/get', [App\Http\Controllers\Admin\OrderController::class, 'showListOrder'])->name('showListOrder');
+
+        // show detail order
+        Route::get('/details-{id}', [App\Http\Controllers\Admin\OrderController::class, 'showDetailsOrder'])->name('showDetailsOrder');
+    });
+
+    // feelback
+    Route::prefix('feedback')->group(function() {
+        //show list order
+        Route::get('/get', [App\Http\Controllers\Admin\FeedbackController::class, 'showFeedback'])->name('showFeedback');
+        Route::get('/create', [App\Http\Controllers\Admin\FeedbackController::class, 'showcreateFeedback'])->name('showcreateFeedback');
+        Route::post('/create', [App\Http\Controllers\Admin\FeedbackController::class, 'createFeedback'])->name('createFeedback');
+        // show detail order
+        Route::get('/update-{id}', [App\Http\Controllers\Admin\FeedbackController::class, 'showUpdateFeedback'])->name('showUpdateFeedback');
+        Route::post('/update-{id}', [App\Http\Controllers\Admin\FeedbackController::class, 'UpdateFeedback'])->name('updateFeedback');
+        Route::get('/delete-{id}', [App\Http\Controllers\Admin\FeedbackController::class, 'deleteFeedback'])->name('deleteFeedback');
+        
+    });
 });
 
 // frontend ....
+// home
 Route::get('/',[App\Http\Controllers\Frontend\FrontendController::class, 'showHome'])->name('showhome');
-Route::post('/',[App\Http\Controllers\Frontend\FrontendController::class, 'post'])->name('post');
+
+// book
 Route::get('/dat-lich',[App\Http\Controllers\Frontend\FrontendController::class , 'showFormBook'])->name('showFormBook');
-Route::post('/dat-lich',[App\Http\Controllers\Frontend\FrontendController::class , 'postBook'])->name('postBook');
+Route::post('/dat-lich',[App\Http\Controllers\Frontend\FrontendController::class , 'appointments'])->name('appointments');
 
 
 Route::get('/danh-muc/{slug}',[App\Http\Controllers\Frontend\FrontendController::class, 'showProduct'])->name('showProduct');
@@ -130,7 +156,6 @@ Route::get('/san-pham-con/{id}',[App\Http\Controllers\Frontend\FrontendControlle
 Route::get('/san-pham/{id}-{slug}',[App\Http\Controllers\Frontend\FrontendController::class , 'showDetailsProduct'])->name('showDetailsProduct');
 Route::get('/gioi-thieu',[App\Http\Controllers\Frontend\FrontendController::class, 'introduce'])->name('introduce');
 
-<<<<<<< HEAD
 
 
 // bumbum
@@ -141,7 +166,5 @@ Route::get('/xoa-gio-hang-{rowId}',[App\Http\Controllers\Frontend\AddProductCont
 // thanh toán 
 Route::get('/thanh-toan-{slug}-{id}',[App\Http\Controllers\Frontend\FrontendController::class , 'showFormPayment'])->name('showFormPayment');
 Route::post('/thanh-toan',[App\Http\Controllers\Frontend\FrontendController::class , 'sendOrder'])->name('sendRequest');
-=======
-Route::get('/blog',[App\Http\Controllers\Frontend\FrontendController::class, 'blog'])->name('blog');
 
->>>>>>> 152f75ac98dd8053ef8437ba61e9754dd365063f
+Route::get('/blog',[App\Http\Controllers\Frontend\FrontendController::class, 'blog'])->name('blog');

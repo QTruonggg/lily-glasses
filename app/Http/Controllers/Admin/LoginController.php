@@ -10,16 +10,10 @@ class LoginController extends Controller
     //show login
     public function showLogin() {
         if (Auth::check()) {
-            return redirect(route('admin.showDashboard'));
+            return redirect(route('admin.showHome'));
         } 
         return view('backend.auth.login');
     }
-
-    // dashboard
-    public function showDashboard() {
-        return view('backend.home.index');
-    }
-    
     // login
     public function login(Request $request) {  
         $credential = $request->validate([
@@ -29,7 +23,7 @@ class LoginController extends Controller
         
         if (Auth::attempt($credential)) {
             $request->session()->regenerate();
-            return redirect(route('admin.showDashboard'));
+            return redirect(route('admin.showHome'));
         } 
         
         return back()->with('message','Sai tên đăng nhập hoặc mật khẩu');
@@ -40,4 +34,5 @@ class LoginController extends Controller
         Auth()->logout();
         return view('backend.auth.login');
     }
+    
 }

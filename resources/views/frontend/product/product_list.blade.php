@@ -8,16 +8,16 @@
                 @foreach ($pr_category as $category)
                     @foreach ($category->childs as $category_child)
                         @foreach ($category_child->productChilds as $product)
-                            <div class="col-xl-3 col-md-3 col-lg-3">
-                                @include('frontend.components.product_item')
-                            </div>
+                        <div class="col-xl-3 col-md-3 col-lg-3">
+                            @include('frontend.components.product_item')
+                        </div>
                         @endforeach
                     @endforeach
                 @endforeach
                 
             </div>
         </div>
-        <div class="col-xl-12 col-md-12 col-lg-12 col-sm-12">
+        {{-- <div class="col-xl-12 col-md-12 col-lg-12 col-sm-12">
             <nav aria-label="Page navigation example ">
                 <ul class="pagination justify-content-center">
                     <li class="page-item">
@@ -37,6 +37,6 @@
                     </li>
                 </ul>
             </nav>
-        </div>
+        </div> --}}
     </div>
 </div>

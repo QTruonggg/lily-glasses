@@ -1,3 +1,14 @@
+
+@if(session()->has('success'))
+  <div class="txt pb-2 pt-2 ps-2 alert alert-success h3">
+    {{ session()->get('success') }}
+  </div>
+@endif
+<script>
+    setTimeout(()=> {
+        $('.txt').addClass('d-none')
+    },3000)
+</script>
 <section id="details-product">
     <div class="container">
         <div class="row">

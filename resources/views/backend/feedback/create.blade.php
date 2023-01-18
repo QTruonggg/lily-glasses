@@ -6,7 +6,7 @@
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1>{{$breadcrumb}}</h1>
+                <h1>Thêm Đánh giá</h1>
             </div>
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right justify-content-end">
@@ -32,8 +32,8 @@
             <div class="card-header">
             </div>
             <div class="card-body p-0">
-                @foreach ($datas as $data)
-                <form id="cerfitication" action="{{route('updateIntroduce',[$data->id])}}" method="POST" enctype="multipart/form-data">
+                
+                <form id="cerfitication" action="{{route('createFeedback')}}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="row">
                         <div class="col-md-12">
@@ -47,28 +47,21 @@
                                     </div>
                                 </div>
                                 <div class="card-body">
-                                    <div class="form-group mt-1 mb-1"> 
+                                    <div class="form-group mt-1 mb-1">
                                         <label for="inputName" class="form-label mb-1">Tên</label>
-                                        <input type="text" id="name" name="name" value="{{$data->name}}" class="form-control" placeholder="Nhập tên">
+                                        <input type="text" id="name" name="name" value="" class="form-control" placeholder="Nhập tên">
                                         @error('name')
                                         <span class="text-danger mt-1 d-block">{{ $message }}</span>
                                         @enderror
                                     </div>
                                     <div class="form-group mt-1 mb-1">
-                                        <label for="seo_title" class="form-label mb-1"> Tiêu đề</label>
-                                        <input type="text" id="seo_title" name="seo_title" value="{{$data->seo_title}}" class="form-control" placeholder="Nhập tiêu đề">
-                                        @if ($errors->has('seo_title'))
-                                            <span class="text-danger d-block mt-1">{{ $errors->first('seo_title') }}</span>
-                                        @endif
-                                    </div>
-                                    <div class="form-group mt-1 mb-1">
-                                        <label for="seo_description" class="form-label mb-1">Nội dung</label>
-                                        <textarea class="form-control" id="summary-ckeditor" name="seo_description" value="{{ $data->seo_description }}">{{ $data->seo_description }}</textarea>
-                                        @error('seo_description')
+                                        <label for="inputName" class="form-label mb-1">Bình luận</label>
+                                        <input type="text" id="comment" name="comment"  value="" class="form-control" placeholder="">
+                                        @error('comment')
                                         <span class="text-danger mt-1 d-block">{{ $message }}</span>
                                         @enderror
                                     </div>
-                                    <input type="hidden" name="thumbnail"  value="">
+                                    <input type="hidden" name="avatar"  value="{{asset('upload_thumbnail/empty_img.png')}}">
                                 </div>
                                 <!-- /.card-body -->
                             </div>
@@ -77,11 +70,11 @@
                     </div>
                     <div class="row">
                         <div class="col-12  ps-5 mb-2">
-                            <input type="submit" value="Chỉnh sửa" class="btn btn-success float-right ms-2">
+                            <a href="{{route('showFeedback')}}" class="btn btn-secondary">Quay lại</a>
+                            <input type="submit" value="Thêm" class="btn btn-success float-right ms-2">
                         </div>
                     </div>
                 </form>
-                @endforeach
             </div>
             <!-- /.card-body -->
         </div>
@@ -111,8 +104,12 @@
 </div>
 <!-- /.card -->
 </section>
-  <script>
+
+
+<script>
+    
     var button = document.getElementById( 'popup-1-button' );
+    
     function selectFileWithCKFinder() {
         CKFinder.modal( {
             chooseFiles: true,
@@ -123,7 +120,7 @@
                     var file = evt.data.files.first();
                     var img = document.getElementById('thumbnail_prev')
                     var thumbnail = file.getUrl();
-                    $('input[name="thumbnail"]').val(`{{env('APP_URL')}}${thumbnail}`);
+                    $('input[name="avatar"]').val(`{{env('APP_URL')}}${thumbnail}`);
                     img.src = `{{env('APP_URL')}}${thumbnail}`;    
                 } );
             }
@@ -132,6 +129,7 @@
     button.onclick =() => {
         selectFileWithCKFinder( 'ckfinder-input-1' );
     }
+   
 </script>
 <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
 <script>

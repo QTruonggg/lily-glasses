@@ -35,7 +35,7 @@
         <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
           <li class=" nav-item"><a class="d-flex align-items-center" href=""><i data-feather="home"></i><span class="menu-title text-truncate" data-i18n="Dashboards">Dashboards</span><span class="badge badge-light-warning rounded-pill ms-auto me-1">1</span></a>
             <ul class="menu-content">
-                <li><a class="d-flex align-items-center" href="{{route('admin.showDashboard')}}"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="eCommerce">Trang chủ</span></a>
+                <li><a class="d-flex align-items-center" href="{{route('admin.showHome')}}"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="eCommerce">Trang chủ</span></a>
               </li>
             </ul>
           </li>
@@ -82,9 +82,9 @@
               </li>
             </ul>
           </li>
-          <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="file-text"></i><span class="menu-title text-truncate" data-i18n="Invoice"></span></a>
+          <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="file-text"></i><span class="menu-title text-truncate" data-i18n="Invoice">Đặt hàng</span></a>
             <ul class="menu-content">
-              <li><a class="d-flex align-items-center" href="app-invoice-list.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="List">Danh sách</span></a>
+              <li><a class="d-flex align-items-center" href="{{route('showListOrder')}}"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="List">Danh sách</span></a>
               </li>
             </ul>
           </li>
@@ -94,9 +94,17 @@
               </li>
             </ul>
           </li>
-          <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="file-text"></i><span class="menu-title text-truncate" data-i18n="Invoice">Liên hệ</span></a>
+          <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="file-text"></i><span class="menu-title text-truncate" data-i18n="Invoice">Lịch hẹn</span></a>
             <ul class="menu-content">
-              <li><a class="d-flex align-items-center" href="app-invoice-list.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="List">Danh sách</span></a>
+              <li><a class="d-flex align-items-center" href="{{route('get.orderAppointment')}}"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="List">Danh sách</span></a>
+              </li>
+            </ul>
+          </li>
+          <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="file-text"></i><span class="menu-title text-truncate" data-i18n="Pages">Đánh giá khách hàng</span></a>
+            <ul class="menu-content">
+              <li><a class="d-flex align-items-center" href="{{route('showFeedback')}}"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="License">Danh sách</span></a>
+              </li>
+              <li><a class="d-flex align-items-center" href="{{route('showcreateFeedback')}}"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="API Key">Thêm đánh giá</span></a>
               </li>
             </ul>
           </li>
