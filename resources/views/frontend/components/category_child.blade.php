@@ -68,5 +68,11 @@
     left: 25%;
     border-radius: 10px;
 }
+
+@media (max-width:768px) {
+    #category_child {
+        display: none;
+    }
+}
 </style>
 @endpushonce

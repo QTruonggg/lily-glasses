@@ -5,7 +5,7 @@
         </div>
         <div class="row">
             @foreach ($products as $product)
-                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6">
+                <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
                     @include('frontend.components.product_item')
                 </div>
             @endforeach

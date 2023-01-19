@@ -11,9 +11,22 @@
     .container{
         max-width: 90%;
     }
+    
 }
 @media (min-width: 576px){
     .container{
         max-width: 90%;
+    }
+}
+
+@media (min-width: 415px) and (max-width:821px) {
+    #category_child {
+        padding-top: 60px;
+    }
+    .list-cat-child ul {
+        flex-wrap: wrap;
+    }
+    .filter-new {
+        width: 100%;
     }
 }

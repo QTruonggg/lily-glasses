@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\models\Category;
-use App\models\ServiceCategory;
+use App\Models\Category;
+use App\Models\ServiceCategory;
 use App\Http\Controllers\Hook\CategoryHook;
 class CategoryController extends Controller
 {

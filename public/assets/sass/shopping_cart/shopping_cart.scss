@@ -316,3 +316,39 @@
         }
     }
 }
+
+@media (min-width:415px) and (max-width:821px) {
+    #cart_list .form-wrap .total-product .wrap .tt-prct,
+    #cart_list .form-wrap .total-product .wrap .provisional {
+        width: 60%;
+    }
+    #cart_list .form-wrap .form .tt .images {
+        width: 65%;
+    }
+    #cart_list .form-wrap .form table {
+        width: 800px;
+    }
+}
+@media (min-width:319px) and (max-width:415px) {
+
+    #cart_list .form-wrap .total-product .wrap .tt-prct,
+    #cart_list .form-wrap .total-product .wrap .provisional {
+        width: 100%;
+    }
+
+    #cart_list .form-wrap .form .tt .images {
+        width: 65%;
+    }
+
+    #cart_list .form-wrap .form table {
+        width: 800px;
+    }
+    #cart_list .form-wrap .btn-order .wrap-btn {
+        flex-direction: column;
+    }
+    #cart_list .form-wrap .btn-order .wrap-btn .resrum,
+    #cart_list .form-wrap .btn-order .wrap-btn .order {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}

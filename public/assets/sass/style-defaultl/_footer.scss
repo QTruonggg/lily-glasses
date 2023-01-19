@@ -64,3 +64,21 @@ footer{
         }
     }
 }
+
+@media (max-width:821px) and (min-width:415px) {
+    footer .box-2 ul,footer .box-3 ul,footer .box-2 a,footer .box-3 a {
+            padding-left: 0;
+        }
+}
+@media (max-width:415px) and (min-width:319px) {
+
+    footer .box-2 ul,
+    footer .box-3 ul,
+    footer .box-2 a,
+    footer .box-3 a {
+        padding-left: 0;
+    }
+    footer {
+        padding: 160px 0px 30px;
+    }
+}

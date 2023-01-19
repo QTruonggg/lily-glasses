@@ -1,7 +1,7 @@
 <section id="question">
     <div class="container">
          <div class="row  gx-0">
-            <div class="col-md-6 col-sm-6 col-6">
+            <div class="col-md-6 col-sm-6 col-sm-6">
                <div class="question-list">
                     <div class="cat-title">
                         <span>Kính mắt SOLAR có phải là sự lựa chọn đúng đắn ?</span>
@@ -53,7 +53,7 @@
                     </div>
                </div>
             </div>
-             <div class="col-md-6 col-sm-6 col-6">
+             <div class="col-md-6 col-sm-6 col-sm-6">
                 <div class="question-logo">
                     <img src="{{asset('assets/images/trong-kinh.jpg')}}" alt="">
                 </div>

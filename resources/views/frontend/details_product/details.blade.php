@@ -12,7 +12,7 @@
 <section id="details-product">
     <div class="container">
         <div class="row">
-            <div class="col-xl-8 col-lg-8 col-md-8 col-12">
+            <div class="col-xl-8 col-lg-8 col-md-12 col-sm-12">
                 <div class="galleries">
                     <div class="galleries-thumb">
                        <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper swiper-thumb-big">
@@ -34,7 +34,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-xl-4 col-lg-4 col-md-4 col-12">
+            <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12">
                 <div class="info">
                     <h1>{{$product->name}}</h1>
                     <div class="product-code">

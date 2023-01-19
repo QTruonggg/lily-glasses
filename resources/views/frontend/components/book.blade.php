@@ -130,5 +130,21 @@
   text-transform: uppercase;
   border: 1px solid #e0e0e0;
 }
+@media (max-width:821px) and (min-width:415px)  {
+    #book .book-group .book-form .book-form-input {
+        padding:10px 10px ;
+    }
+    #book .book-group .book-form {
+        width: 100%;
+    }
+}
+@media (min-width:319px) and (max-width: 415px) {
+  #book .book-group .book-form .book-form-input {
+    padding: 5px;
+  }
+  #book .book-group .book-form {
+    width: 100%;
+  }
+}
 </style>
 @endpushonce

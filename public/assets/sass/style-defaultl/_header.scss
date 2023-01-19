@@ -90,9 +90,6 @@
         height: 60px;
         padding: 5px 0;
         background-color: rgb(255, 255, 255);
-        position: fixed;
-        top: 0px;
-        left: 0px;
         z-index: 99;
         width: 100%;
         border-bottom: 1px solid rgb(243, 245, 247);
@@ -212,6 +209,12 @@
                 }
             }
         }
+    }
+    #header .main-header-mobile.active {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
     }
     
 }

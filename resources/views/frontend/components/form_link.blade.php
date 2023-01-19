@@ -153,5 +153,48 @@
   border-top-right-radius: 4px;
   border-bottom-right-radius: 4px;
 }
+@media (min-width: 415px) and (max-width:821px) {
+ #form_link .form .info h2 {
+    font-size: 20px
+}
+#form_link .form .info p  {
+  font-size: 15px;
+}
+#form_link .form form {
+  flex-direction: column
+}
+#form_link .form form button {
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+}
+
+@media (min-width:319px) and (max-width:415px) {
+  #form_link .form-newsletter .social {
+    padding-left: 0;margin-bottom:-15px;
+    z-index: 1;
+    position: sticky;
+    width: 100%;
+    flex-wrap: wrap;
+  }
+  #form_link .form {
+    padding-bottom: 25px;
+    padding-top: 25px;
+  }
+  #form_link .form form {
+    flex-direction: column;
+  }
+  #form_link .form form .select {
+    margin-bottom: 5px;
+    border-radius: 4px;
+  }
+  #form_link .form form input {
+    margin-bottom: 5px;
+    border-radius: 4px;
+  }
+  #form_link .form form button{
+    border-radius: 4px;
+  }
+}
 </style>
 @endpushonce

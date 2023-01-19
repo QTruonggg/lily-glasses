@@ -14,15 +14,12 @@ class LoginController extends Controller
         } 
         return view('backend.auth.login');
     }
-<<<<<<< HEAD
-=======
 
     // dashboard
     public function showHome() {
-        return view('backend.layout.layout_default');
+        return view('backend.home.index');
     }
     
->>>>>>> dev
     // login
     public function login(Request $request) {  
         $credential = $request->validate([

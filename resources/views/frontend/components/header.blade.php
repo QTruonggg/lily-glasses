@@ -1,5 +1,5 @@
 <section id="header">
-    <header class="main-header-mobile">
+    <header class="main-header-mobile ">
         <div class="container">
             <div class="row">
                 <div class="col-2">
@@ -25,15 +25,27 @@
                                     <a data-bs-toggle="collapse" href="#category_product" role="button" aria-expanded="false" aria-controls="category_product">
                                         Sản phẩm
                                     </a>
-                                    <i class="fa-solid fa-chevron-down"></i>
+                                    <a data-bs-toggle="collapse" href="#category_product" role="button" aria-expanded="false" aria-controls="category_product">
+                                        <i class="fa-solid fa-chevron-down"></i>
+                                    </a>
                                 </h3>
                                 <div class="sub-menu" >
                                     <ul class="sub-menu-list collapse"  id="category_product">
                                         @foreach($categories as $category)
                                             <li class="item">
-                                                <h2>
+                                                <h2 class="d-flex align-items-center justify-content-between">
                                                     <a href="{{route('showProduct', ['slug'=>$category->slug])}}">{{$category->name}}</a>
+                                                     <a data-bs-toggle="collapse" href="#cate_child-{{$category->slug}}" role="button" aria-expanded="false" aria-controls="cate_child-{{$category->slug}}">
+                                                        <i class="fa-solid fa-chevron-down"></i>
+                                                    </a>
                                                 </h2>
+                                                <ul class="sub-menu-list collapse"  id="cate_child-{{$category->slug}}">
+                                                @foreach ($category->childs as $item)
+                                                    <li >
+                                                        <a style="text-decoration: none; color:#666;font-size: 18px;" href="{{route('showChildCategory',$item->id)}}">{{$item->name}}</a>
+                                                    </li>
+                                                @endforeach
+                                            </ul>
                                             </li>
                                         @endforeach
                                     </ul>
@@ -44,7 +56,10 @@
                                     <a data-bs-toggle="collapse" href="#service" role="button" aria-expanded="false" aria-controls="service">
                                         Dịch vụ
                                     </a>
-                                    <i class="fa-solid fa-chevron-down"></i>
+                                    <a data-bs-toggle="collapse" href="#service" role="button" aria-expanded="false" aria-controls="service">
+                                        <i class="fa-solid fa-chevron-down"></i>
+                                    </a>
+                                    
                                 </h3>
                                 <div class="sub-menu">
                                     <ul class="sub-menu-list collapse"  id="service">
@@ -63,7 +78,10 @@
                                     <a data-bs-toggle="collapse" href="#share" role="button" aria-expanded="false" aria-controls="share">
                                         Góc chia sẻ
                                     </a>
-                                    <i class="fa-solid fa-chevron-down"></i>
+                                     <a data-bs-toggle="collapse" href="#share" role="button" aria-expanded="false" aria-controls="share">
+                                         <i class="fa-solid fa-chevron-down"></i>
+                                    </a>
+                                   
                                 </h3>
                                 <div class="sub-menu">
                                     <ul class="sub-menu-list collapse" id="share">
@@ -152,3 +170,18 @@
     </header>
 </section>
 @include('frontend.components.category')
+
+<script>
+
+    
+    window.onscroll = () => {
+        console.log(123);
+        if(window.scrollY >= $('#header').height()) {
+            $('.main-header-mobile').addClass('active')
+        }
+        if(window.scrollY <= $('#header').height()) {
+            $('.main-header-mobile').removeClass('active')
+
+        }
+    }
+</script>
