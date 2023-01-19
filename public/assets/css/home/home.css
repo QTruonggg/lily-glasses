@@ -721,6 +721,7 @@ footer .box-4 .contact a img {
 #feedback .list-feedback .content .comment-feedback p {
   font-size: 14px;
 }
+
 @media (max-width: 821px) and (min-width: 415px) {
   #question .question-list .cat-title {
     font-size: 18px;
