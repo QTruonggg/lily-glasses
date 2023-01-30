@@ -91,6 +91,10 @@
               spaceBetween: 30
             },
             1023: {
+              slidesPerView: 3,
+              spaceBetween: 30
+            },
+            1401: {
               slidesPerView: 4,
               spaceBetween: 30
             },
