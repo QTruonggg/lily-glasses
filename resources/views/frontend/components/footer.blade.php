@@ -30,7 +30,7 @@
                     <p>Góc chia sẻ</p>
                     @foreach($shared_footer as $share)
                     
-                    <li><a href="">{{$share->name}}</a></li>
+                    <li><a href="{{route('sharedDetail',[$share->id])}}">{{$share->name}}</a></li>
                     @endforeach
                     
                 </ul>
@@ -49,7 +49,7 @@
                     <p>Dịch vụ</p>
                     @foreach($service_footer as $service)
                         <li>
-                            <a href="">{{$service->name}}</a>
+                            <a href="{{route('serviceDetail',[$service->id] )}}">{{$service->name}}</a>
                         </li>
                     @endforeach
 
