@@ -8,7 +8,7 @@
                             <i class="fa-solid fa-bars"></i>
                         </a>
                         <div class="offcanvas offcanvas-start" tabindex="-1" id="mb-menu-sidebar" aria-labelledby="offcanvasExampleLabel">
-                        <div class="offcanvas-header">
+                        <div class="offcanvas-header justify-content-end">
                             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                         </div>
                         <div class="offcanvas-body">

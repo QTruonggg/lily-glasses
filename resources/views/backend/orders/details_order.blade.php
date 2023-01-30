@@ -42,7 +42,6 @@
                     <ul>
                         @foreach ($data_details as $info_order)
                             <li class="pb-1">Tên khách hàng : {{$info_order->name}}</li>
-                            <li class="pb-1">Địa chỉ email : {{$info_order->email}}</li>
                             <li class="pb-1">Số điện thoại : {{$info_order->phoneNumber}}</li>
                             <li class="pb-1">Tỉnh / Thành phố : {{$info_order->province}}</li>
                             <li class="pb-1">Quận / Huyện : {{$info_order->district}}</li>

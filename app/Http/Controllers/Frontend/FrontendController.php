@@ -99,7 +99,7 @@ class FrontendController extends Controller
         return back()->with('success', 'Đặt lịch khám thành công');
     }
     // thanh toan
-    public function showFormPayment($slug, $id) {
+    public function showFormPayment() {
         $productCart = Cart::content();
         return view('frontend.form_payment.index', compact('productCart'));
     }
