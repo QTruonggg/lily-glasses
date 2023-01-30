@@ -15,10 +15,10 @@
                     <div class="swiper-slide">
                         <div class="wrap">
                             <div class="service-thumbnail">
-                                <img src="{{$item->thumbnail}}" alt="">
+                               <a href="{{route('sharedDetail',[$item->id])}}"> <img src="{{$item->thumbnail}}" alt=""></a>
                             </div>
                             <div class="service-content">
-                                <h3>{{$item->name}}</h3>
+                                <a href=""><h3>{{$item->name}}</h3></a>
                             </div>
                         </div>
                     </div>

@@ -8,7 +8,8 @@
               
                 @foreach($profile as $profile)
                     <a href="" class="logo">
-                        <img src="{{ $profile->logo }}" alt="">
+                        <img src="{{ $profile->logo }}" alt="" style="margin-left: -20px;
+    margin-bottom: 20px;">
                     </a>
                     <p>{{ $profile->name }}</p>
                     <p>Địa chỉ: <span>{{ $profile->address}}</span></p>
@@ -25,7 +26,14 @@
                     @endforeach
                     
                 </ul>
-                <a href="">Góc chia sẻ</a>
+                <ul>
+                    <p>Góc chia sẻ</p>
+                    @foreach($shared_footer as $share)
+                    
+                    <li><a href="">{{$share->name}}</a></li>
+                    @endforeach
+                    
+                </ul>
             </div>
             <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-6 box-3">
                 <ul>
@@ -37,7 +45,15 @@
                     @endforeach
 
                 </ul>
-                <a href="">Dịch vụ</a>
+                <ul>
+                    <p>Dịch vụ</p>
+                    @foreach($service_footer as $service)
+                        <li>
+                            <a href="">{{$service->name}}</a>
+                        </li>
+                    @endforeach
+
+                </ul>
             </div>
             <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-12 box-4">
                 <div class="video-top" >

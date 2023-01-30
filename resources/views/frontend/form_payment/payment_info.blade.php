@@ -36,19 +36,6 @@
                                                         <div class="item">
                                                             <div class="row">
                                                                 <div class="col-xl-3 col-lg-3 col-md-3 col-12">
-                                                                    Email <span class="required">*</span>
-                                                                </div>
-                                                                <div class="col-xl-9 col-lg-9 col-md-9 col-12">
-                                                                    <input id="email" class="form-control" name="email" value="">
-                                                                    @error('email')
-                                                                        <span class="text-danger mt-1 d-block">{{ $message }}</span>
-                                                                    @enderror
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="item">
-                                                            <div class="row">
-                                                                <div class="col-xl-3 col-lg-3 col-md-3 col-12">
                                                                     Số điện thoại 
                                                                     <span class="required">*</span>
                                                                 </div>
@@ -184,16 +171,6 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="item">
-                                                        <label class="checkbox-cm">
-                                                            <input type="checkbox" name="id_payment_method" id="id_payment_method_11" class="id_payment_method">
-                                                            <span class="checkmark"></span>
-                                                            <span class="required">*</span>
-                                                                 Tôi đã đọc và đồng ý với 
-                                                                 <a href="" target="_tblank" style="color: red;">điều khoản và điều kiện</a>
-                                                                  của website
-                                                        </label>
-                                                    </div>
                                                 </div>
                                                 <button type="submit" class="payment-now">Đặt hàng</button>
                                             </div>
@@ -214,7 +191,7 @@
                                                     <label class="radio-cm-round">
                                                         <input type="radio" name="id_payment_method" id="bankking" class="dola" value="13">
                                                         <span class="checkmark"></span>
-                                                            Thanh toán bằng Internet Bangking
+                                                            Thanh toán bằng Internet Banking
                                                     </label>
                                                 </div>
                                             </div>

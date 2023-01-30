@@ -10,7 +10,7 @@
                         <div class="row gx-3 gy-2">
                             <div class="col-md-6 col-sm-6 col-6">
                                 <div class="wrap position-relative mb-2">
-                                    <a href="" class="cat-img d-block">
+                                    <a class="cat-img d-block">
                                         <img src="{{asset('assets/images/trong-kinh.jpg')}}" alt="">
                                     </a>
                                     <div class="cat-info position-absolute">
@@ -20,7 +20,7 @@
                             </div>
                             <div class="col-md-6 col-sm-6 col-6">
                                 <div class="wrap position-relative mb-2">
-                                    <a href="" class="cat-img d-block">
+                                    <a class="cat-img d-block">
                                         <img src="{{asset('assets/images/trong-kinh.jpg')}}" alt="">
                                     </a>
                                     <div class="cat-info position-absolute">
@@ -30,7 +30,7 @@
                             </div>
                             <div class="col-md-6 col-sm-6 col-6">
                                 <div class="wrap position-relative mb-2">
-                                    <a href="" class="cat-img d-block">
+                                    <a class="cat-img d-block">
                                         <img src="{{asset('assets/images/trong-kinh.jpg')}}" alt="">
                                     </a>
                                     <div class="cat-info position-absolute">
@@ -40,7 +40,7 @@
                             </div>
                             <div class="col-md-6 col-sm-6 col-6">
                                 <div class="wrap position-relative mb-2">
-                                    <a href="" class="cat-img d-block">
+                                    <a class="cat-img d-block">
                                         <img src="{{asset('assets/images/trong-kinh.jpg')}}" alt="">
                                     </a>
                                     <div class="cat-info position-absolute">

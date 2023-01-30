@@ -16,25 +16,34 @@
                     <form action="{{route('appointments')}}" class="book-form-input" method="post"  enctype="multipart/form-data">
                         @csrf
                         <div class="group">
-                            <label for="input-name">Họ và tên (<span>*</span>)</label>
+                            <label for="input-name">Họ và tên  (<span>*</span>)</label>
                             <input type="text" name="name" id="" placeholder="Họ và tên">
+                             @error('name')
+                                <span class="text-danger mt-1 d-block">{{ $message }}</span>
+                              @enderror
                         </div>
                          <div class="group">
-                            <label for="input-name">Số điện thoại (<span>*</span>)</label>
-                            <input type="number" id="phoneNumber" name="phoneNumber" oninput="this.value = this.value.replace(/[^0-9.]/g, '')" value=""  placeholder="số điện thoại">
+                            <label for="input-name">Số điện thoại (<span>*</span>) </label>
+                            <input type="text" id="phoneNumber" name="phoneNumber" oninput="this.value = this.value.replace(/[^0-9]/g, '')" value=""  placeholder="Số điện thoại">
+                             @error('phoneNumber')
+                              <span class="text-danger mt-1 d-block">{{ $message }}</span>
+                              @enderror
                         </div>
                          <div class="group">
-                            <label for="input-name">Thời gian(<span>*</span>)</label>
+                            <label for="input-name">Thời gian (<span>*</span>)</label>
                             <input type="datetime-local" name="time" id="" placeholder="Time">
+                             @error('time')
+                              <span class="text-danger mt-1 d-block">{{ $message }}</span>
+                              @enderror
                         </div>
                          <div class="group">
                             <label for="">Triệu chứng</label>
-                           <select class="form-select" aria-label="Default select example" name="symptom">
-                                <option selected>Các triệu chứng thường gặp : </option>
+                           <select class="form-select" aria-label="Default select example" name="symptom" value="Các triệu trứng thường">
                                 <option value="Nhìn mờ"> Nhìn mờ</option>>
-                                <option value="Đỏ mắt"> Đỏ mắt</option>
-                                <option value="Chảy nước mắt"> Chảy nước mắt</option>
-                                <option value="Khác"> Khác</option>
+                                <option value="Nhức mỏi mắt">Nhức mỏi mắt</option>>
+                                <option value="Đỏ mắt"> Đỏ mắt</option>>
+                                <option value="Chảy nước mắt"> Chảy nước mắt</option>>
+                                <option value="Bệnh lý về mắt khác"> Bệnh lý về mắt khác</option>
                             </select>
                         </div>
                         <input type="submit" value="đặt lịch khám">
@@ -44,8 +53,6 @@
         </div>
     </div>
 </section>
-
-
 @pushonce('component-css')
 <style>
     #book {

@@ -81,11 +81,23 @@ class FrontendController extends Controller
         return view('frontend.introduce.index', ['title'=>'Giới thiệu chung'] ,compact('data','feedback'));
     }
     public function appointments(Request $request) {
+        // dd($request->all());
+
+        $request->validate(
+        [
+            'name'=>'required',
+            'phoneNumber'=>'required',
+            'time'=>'required',
+        ],
+        [
+            'name.required'=>'Vui lòng nhập đầy đủ họ tên !',
+            'phoneNumber.required'=>'Vui lòng nhập số điện thoại !',
+            'time.required'=>'Vui lòng nhập thời gian đặt lịch hẹn !',
+        ]);
         $appointment = $request->all();
         Appointment::create($appointment);
         return back()->with('success', 'Đặt lịch khám thành công');
     }
-    
     // thanh toan
     public function showFormPayment($slug, $id) {
         $productCart = Cart::content();

@@ -113,7 +113,9 @@
                         <img src="{{asset('assets/images/logo.png')}}" alt="">
                     </a>
                     <div class="slogan">
-                        <i>"Vison for future"</i>
+                        <a href="{{route('showhome')}}" style="text-decoration:none;">
+                            <i>"Vision for future"</i>
+                        </a>
                     </div>
                 </div>
                 <div class="col-2 d-flex justify-content-end align-items-center">
@@ -128,7 +130,7 @@
                             <i class="fa-solid fa-magnifying-glass"></i>
                         </div>
                         <div class="dropdown-menu">
-                            <input type="search" placeholder="Tìm kiếm .. ">
+                            <input type="search" placeholder="Tìm kiếm">
                         </div>
                     </div>
                 </div>
@@ -144,21 +146,21 @@
                             <img src="{{asset('assets/images/logo.png')}}" alt="">
                         </a>
                         <div class="slogan">
-                            <i>"Vison for future"</i>
+                            <a href="{{route('showhome')}}" style="text-decoration:none;">
+                                <i>"Vision for future"</i>
+                            </a>
                         </div>
                     </div>
 
                     <div class="col-lg-6 col-md-6 col-sm-6 col-6 d-flex align-items-center justify-content-end">
-                        <div class="action ">
-                            <div class="dropdown">
-                                <div class="" data-bs-toggle="dropdown" aria-expanded="true">
-                                    <i class="fa-solid fa-magnifying-glass"></i>
-                                </div>
-                                <div class="dropdown-menu">
-                                    <input type="search" placeholder="Tìm kiếm .. ">
+                        <div class="action">
+                            <div class="search me-3 position-relative">
+                                <input type="text" class="form-control me-5" aria-label="Default" aria-describedby="inputGroup-sizing-default" placeholder="Tìm kiếm">
+                                <div class="position-absolute icon-search" style="top:8px;right:15px;">
+                                    <i class="fa-solid fa-magnifying-glass" style="font-size:22px; color:#e7ba51;"></i>
                                 </div>
                             </div>
-                            <a href="{{route('showCartList')}}" class="shopping-cart">
+                            <a href="{{route('showCartList')}}" class="shopping-cart ms-3">
                                 <i class="fa-solid fa-bag-shopping"></i>
                                 <span class="count">{{Cart::count()}}</span>
                             </a>

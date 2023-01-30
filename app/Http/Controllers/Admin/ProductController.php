@@ -60,7 +60,7 @@ class ProductController extends Controller
     public function getUpdateProduct($id, CategoryHook $categoryHook) {
         $product = Product::find($id);
          $category_id =  $categoryHook->getCategoryStatus();   
-        return view('backend.product.update',['breadcrumb'=>'Chỉnh sưuar sản phẩm'], compact('product','category_id'));
+        return view('backend.product.update',['breadcrumb'=>'Chỉnh sửa sản phẩm'], compact('product','category_id'));
     }
 
     public function updateProduct($id, Request $request) {

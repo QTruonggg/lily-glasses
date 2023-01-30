@@ -39,6 +39,8 @@ class AppServiceProvider extends ServiceProvider
                 'profile'=>Profile::all(),
                 'policy'=>Policy::all(),
                 'shared'=>Shared::all(),
+                'shared_footer'=>Shared::orderBy('id')->limit(4)->get(),
+                'service_footer'=>ServiceCategory::orderBy('id')->limit(4)->get(),
             ]);
         });
     }

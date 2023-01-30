@@ -18,7 +18,7 @@
                                 <a href="">{{$child->name}}</a>
                             </div>
                             <div class="more">
-                                <a href="">Xem thêm</a>
+                                <a href="{{route('showProduct',['slug'=>$child->slug])}}">Xem thêm</a>
                             </div>
                         </div>
                     </div>

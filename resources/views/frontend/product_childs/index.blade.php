@@ -6,7 +6,7 @@
 
 @section('content')
 @include('frontend.components.category_child')
-@include('frontend.components.breadcrumb', ['name'=>'das sản phẩm'])
+@include('frontend.components.breadcrumb', ['name'=>'Danh sách sản phẩm'])
 @include('frontend.product_childs.product_list')
 @include('frontend.components.form_link')
 @endsection

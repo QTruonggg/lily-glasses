@@ -6,7 +6,7 @@
         <div class="col-xl-12 col-md-12 col-lg-12">
             <div class="row">
                 @if($products->isEmpty())
-                <h2 class="d-flex justify-content-center align-items-center mt-5 mb-5" style="color:#777;">Het hang</h2>
+                <h2 class="d-flex justify-content-center align-items-center mt-5 mb-5" style="color:#777;">Chưa có sản phẩm</h2>
                 @else 
                     @foreach ($products as $product)
                     <div class="col-xl-3 col-md-4 col-lg-3 col-sm-6">
