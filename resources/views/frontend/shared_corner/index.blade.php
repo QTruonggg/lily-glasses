@@ -5,6 +5,8 @@
 @endsection
 
 @section('content')
+@include('frontend.components.breadcrumb', ['name'=>$shared_detail->name])
+
 <div class="container"> 
         {!! $shared_detail->seo_description !!}
 </div>
