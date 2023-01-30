@@ -9,7 +9,6 @@ class Order extends Model
     use HasFactory;
     protected $fillable = [
         'name',
-        'email',
         'phoneNumber',
         'province',
         'district',
@@ -17,6 +16,8 @@ class Order extends Model
         'address',
         'note',
         'product_rowId',
+        'total',
+        'qty',
     ];
     
 }

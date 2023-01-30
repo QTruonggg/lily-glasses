@@ -40,15 +40,13 @@
                 <div class="card-body p-0">
                 <h2 class="ps-2 pb-2 pt-2">Thông tin địa chỉ</h2>
                     <ul>
-                        @foreach ($data_details as $info_order)
-                            <li class="pb-1">Tên khách hàng : {{$info_order->name}}</li>
-                            <li class="pb-1">Số điện thoại : {{$info_order->phoneNumber}}</li>
-                            <li class="pb-1">Tỉnh / Thành phố : {{$info_order->province}}</li>
-                            <li class="pb-1">Quận / Huyện : {{$info_order->district}}</li>
-                            <li class="pb-1">Phường / Xã : {{$info_order->ward}}</li>
-                            <li class="pb-1">Địa chỉ : {{$info_order->address}}</li>
-                            <li class="pb-1">Ghi chú : {{$info_order->note}}</li>
-                        @endforeach
+                        <li class="pb-1">Tên khách hàng : {{$data_details->name}}</li>
+                        <li class="pb-1">Số điện thoại : {{$data_details->phoneNumber}}</li>
+                        <li class="pb-1">Tỉnh / Thành phố : {{$data_details->province}}</li>
+                        <li class="pb-1">Quận / Huyện : {{$data_details->district}}</li>
+                        <li class="pb-1">Phường / Xã : {{$data_details->ward}}</li>
+                        <li class="pb-1">Địa chỉ : {{$data_details->address}}</li>
+                        <li class="pb-1">Ghi chú : {{$data_details->note}}</li>
                     </ul>
                     <div class="table-responsive-xl">
                         <table class="table table-striped projects">
@@ -112,8 +110,8 @@
                         </table>
                     </div>
                     <div class="total d-flex flex-column align-items-end pt-1 pb-1 pe-2">
-                        <span class="pt-1 pb-1">Số lượng : </span>
-                        <span >Tổng tiền : {{Cart::priceTotal()}} đ</span>
+                        <span class="pt-1 pb-1">Số lượng : {{$data_details->qty}}</span>
+                        <span >Tổng tiền : {{$data_details->total}} đ</span>
                     </div>
                     <br>
                 </div>
