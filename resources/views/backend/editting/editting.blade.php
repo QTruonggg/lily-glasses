@@ -88,10 +88,19 @@
                                     </div>
 
                                     <div class="form-group mt-1 mb-1">
-                                        <label for="inputName" class="form-label mb-1">Mạng xã hội</label>
+                                        <label for="inputName" class="form-label mb-2">Mạng xã hội: </label>
+                                        <br>
+                                        <label for="inputName" class="form-label mb-1 ps-1">Facebook</label>
                                         <input type="text" id="network_fb" name="network_fb" value="{{$item->network_fb}}" class="form-control" placeholder="Nhập link fb">
                                         <br>
+                                        <label for="inputName" class="form-label mb-1 ps-1">Instagram</label>
                                         <input type="text" id="network_ins" name="network_ins" value="{{$item->network_ins}}" class="form-control" placeholder="Nhập link intergram">
+                                        <br>
+                                        <label for="inputName" class="form-label mb-1 ps-1">Tiktok</label>
+                                        <input type="text" id="network_tiktok" name="network_tiktok" value="{{$item->network_tiktok}}" class="form-control" placeholder="Nhập link tiktok">
+                                        <br>
+                                        <label for="inputName" class="form-label mb-1 ps-1">Shopee</label>
+                                        <input type="text" id="network_shopee" name="network_shopee" value="{{$item->network_shopee}}" class="form-control" placeholder="Nhập link shopee">
                                         @error('social_network')
                                         <span class="text-danger mt-1 d-block">{{ $message }}</span>
                                         @enderror

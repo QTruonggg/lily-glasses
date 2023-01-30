@@ -24,6 +24,8 @@ return new class extends Migration
             $table->string('video');
             $table->string('network_fb');
             $table->string('network_ins');
+            $table->string('network_tiktok');
+            $table->string('network_shopee');
             $table->string('google_map');
             $table->string('seo_title');
             $table->string('seo_description');

@@ -18,6 +18,8 @@ class Profile extends Model
         'video',
         'network_fb',
         'network_ins',
+        'network_tiktok',
+        'network_shopee',
         'google_map',
         'seo_title',
         'seo_description',
