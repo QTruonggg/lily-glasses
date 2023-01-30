@@ -5,6 +5,7 @@
 @endsection
 
 @section('content')
+@include('frontend.components.breadcrumb', ['name'=>$service_detail->name])
 <div class="container"> 
         {!! $service_detail->seo_description !!}
 </div>
