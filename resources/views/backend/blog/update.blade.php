@@ -37,7 +37,7 @@
                 </div>
                 <div class="card-body p-0">
                     
-                    <form action="{{$blog->id}}" method="POST" enctype="multipart/form-data">
+                    <form action="{{$blog_detail->id}}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="row">
                             <div class="col-md-12">
@@ -53,47 +53,47 @@
                                     <div class="card-body">
                                         <div class="form-group mt-1 mb-1">
                                             <label for="inputName" class="form-label mb-1">Tên:</label>
-                                            <input type="text" id="name" name="name" value="{{$blog->name}}" class="form-control" placeholder="Nhập tên">
+                                            <input type="text" id="name" name="name" value="{{$blog_detail->name}}" class="form-control" placeholder="Nhập tên">
                                             @error('name')
                                             <span class="text-danger mt-1 d-block">{{ $message }}</span>
                                             @enderror
                                         </div> 
                                         <div class="form-group mt-1 mb-1">
                                             <label for="inputName" class="form-label mb-1">Tên phụ:</label>
-                                            <input type="text" id="subname" name="subname" value="{{$blog->subname}}" class="form-control" placeholder="Nhập tên phụ">
+                                            <input type="text" id="subname" name="subname" value="{{$blog_detail->subname}}" class="form-control" placeholder="Nhập tên phụ">
                                             @error('subname')
                                             <span class="text-danger mt-1 d-block">{{ $message }}</span>
                                             @enderror
                                         </div> 
                                         <div class="form-group mt-1 mb-1">
                                             <label for="inputName" class="form-label mb-1">Miêu tả:</label>
-                                            <input type="text" id="description" name="description" value="{{$blog->description}}" class="form-control" placeholder="Nhập miêu tả">
+                                            <input type="text" id="description" name="description" value="{{$blog_detail->description}}" class="form-control" placeholder="Nhập miêu tả">
                                             @error('description')
                                             <span class="text-danger mt-1 d-block">{{ $message }}</span>
                                             @enderror
                                         </div> 
                                         <div class="form-group mt-1 mb-1">
                                             <label for="inputName" class="form-label mb-1">Tiêu đề - tìm kiếm:</label>
-                                            <input type="text" id="seo_title" name="seo_title" value="{{$blog->seo_title}}" class="form-control" placeholder="Nhập tiêu đề">
+                                            <input type="text" id="seo_title" name="seo_title" value="{{$blog_detail->seo_title}}" class="form-control" placeholder="Nhập tiêu đề">
                                             @error('seo_title')
                                             <span class="text-danger mt-1 d-block">{{ $message }}</span>
                                             @enderror
                                         </div> 
                                         <div class="form-group mt-1 mb-1">
                                             <label for="seo_description" class="form-label mb-1">Mô tả:</label>
-                                            <textarea class="form-control" id="summary-ckeditor" name="seo_description">{{$blog->seo_description}}</textarea>
+                                            <textarea class="form-control" id="summary-ckeditor" name="seo_description">{{$blog_detail->seo_description}}</textarea>
                                              @error('seo_description')
                                             <span class="text-danger mt-1 d-block">{{ $message }}</span>
                                             @enderror
                                         </div>   
                                         <div class="form-group mt-1 mb-1">
                                             <label for="inputName" class="form-label mb-1">Từ khóa:</label>
-                                            <input type="text" id="seo_keyword" name="seo_keyword" value="{{$blog->seo_keyword}}" class="form-control" placeholder="Nhập  từ khóa ">
+                                            <input type="text" id="seo_keyword" name="seo_keyword" value="{{$blog_detail->seo_keyword}}" class="form-control" placeholder="Nhập  từ khóa ">
                                              @error('seo_keyword')
                                             <span class="text-danger mt-1 d-block">{{ $message }}</span>
                                             @enderror
                                         </div>          
-                                        <input type="hidden" name="image"  value="{{$blog->image}}">
+                                        <input type="hidden" name="image"  value="{{$blog_detail->image}}">
 
                                     </div>                               
                                 </div>
@@ -123,7 +123,7 @@
                             margin: 0 auto;
                             margin-bottom: 20px;
                         ">
-                        <img style="width:100%; height:100%; border-radius:50%; object-fit:cover;" id="img_blog" src="{{$blog->image}}"  alt="..">
+                        <img style="width:100%; height:100%; border-radius:50%; object-fit:cover;" id="img_blog" src="{{$blog_detail->image}}"  alt="..">
                     </div>
                     <button class="btn btn-primary btn-toggle-sidebar w-100 waves-effect waves-float waves-light" id="popup-1-button">
                         <span class="align-middle">Chọn ảnh</span>

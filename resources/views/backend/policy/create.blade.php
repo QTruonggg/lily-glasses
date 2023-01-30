@@ -49,21 +49,21 @@
                                 <div class="card-body">
                                     <div class="form-group mt-1 mb-1">
                                         <label for="inputName" class="form-label mb-1">Tên</label>
-                                        <input type="text" id="name" name="name" value="" class="form-control" placeholder="Nhập tên">
+                                        <input type="text" id="name" name="name" value="{{old('name')}}" class="form-control" placeholder="Nhập tên">
                                         @error('name')
                                         <span class="text-danger mt-1 d-block">{{ $message }}</span>
                                         @enderror
                                     </div>
                                     <div class="form-group mt-1 mb-1">
                                         <label for="inputName" class="form-label mb-1">Tên phụ</label>
-                                        <input type="text" id="subname" name="subname"  value="" class="form-control" placeholder="">
-                                        @error('slug')
+                                        <input type="text" id="subname" name="subname"  value="{{old('subname')}}" class="form-control" placeholder="Nhập tên phụ">
+                                        @error('subname')
                                         <span class="text-danger mt-1 d-block">{{ $message }}</span>
                                         @enderror
                                     </div>
                                     <div class="form-group mt-1 mb-1">
                                         <label for="seo_description" class="form-label mb-1">Mô tả:</label>
-                                        <textarea class="form-control" id="summary-ckeditor" name="seo_description"></textarea>
+                                        <textarea class="form-control" id="summary-ckeditor" name="seo_description">{{old('seo_description')}}</textarea>
                                          @error('seo_description')
                                         <span class="text-danger mt-1 d-block">{{ $message }}</span>
                                         @enderror
@@ -79,7 +79,7 @@
                                         <div class="col-6">
                                              <div class="form-group mt-1 mb-1">
                                                 <label for="seo_keyword" class="form-label mb-1">Seo title</label>
-                                                <input type="text" id="seo_title" name="seo_title" value="" class="form-control">
+                                                <input type="text" id="seo_title" name="seo_title" value="{{old('seo_title')}}" class="form-control" placeholder="Nhập tiêu đề - tìm kiếm">
                                                 @if ($errors->has('seo_keyword'))
                                                     <span class="text-danger d-block mt-1">{{ $errors->first('seo_keyword') }}</span>
                                                 @endif
@@ -88,13 +88,14 @@
                                         <div class="col-6">
                                              <div class="form-group mt-1 mb-1">
                                                 <label for="seo_keyword" class="form-label mb-1">Từ khóa</label>
-                                                <input type="text" id="keyword" name="seo_keyword" value="" class="form-control">
+                                                <input type="text" id="keyword" name="seo_keyword" value="{{old('seo_keyword')}}" class="form-control" placeholder="Nhập từ khóa">
                                                 @if ($errors->has('seo_keyword'))
                                                     <span class="text-danger d-block mt-1">{{ $errors->first('seo_keyword') }}</span>
                                                 @endif
                                             </div>
                                         </div>
                                     </div>
+                                    <input type="hidden" name="thumbnail"  value="{{old('thumbnail')}}">
                                 </div>
                                 <!-- /.card-body -->
                             </div>
@@ -131,6 +132,9 @@
                 <button class="btn btn-primary btn-toggle-sidebar w-100 waves-effect waves-float waves-light" id="popup-1-button">
                     <span class="align-middle">Chọn ảnh</span>
                 </button>
+                @error('thumbnail')
+                    <span class="text-danger mt-1 d-block">{{ $message }}</span>
+                @enderror
             </div>
         </div>
     </div>

@@ -36,30 +36,30 @@
             <div class="card-header">
             </div>
             <div class="card-body p-0">
-                
-                <form action="{{$banner->id}}" method="POST" enctype="multipart/form-data">
+                <form action="{{$banner_detail->id}}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="row">
                         <div class="col-md-12">
                             <div class="card card-primary">
                                 <div class="card-header">
                                     <h3 class="card-title">Thông tin</h3>
-
                                     <div class="card-tools">
                                         <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
                                             <i class="fas fa-minus"></i></button>
                                     </div>
                                 </div>
+                      
                                 <div class="card-body">
                                     <div class="form-group mt-1 mb-1">
                                         <label for="inputName" class="form-label mb-1">Tên:</label>
-                                        <input type="text" id="name" name="name" value="{{$banner->name}}" class="form-control" placeholder="Nhập tên">
+                                        <input type="text" id="name" name="name" value="{{$banner_detail->name}}" class="form-control" placeholder="Nhập tên">
                                     </div>
                                     <div class="form-group mt-1 mb-1">
                                         <label for="inputName" class="form-label mb-1">Thứ tự:</label>
-                                        <input type="number" id="sort" name="sort" min="1" value="{{$banner->sort}}" class="form-control" placeholder="Nhập số thứ tự là số nguyên dương">
+                                        <input type="number" id="sort" name="sort" min="1" value="{{$banner_detail->sort}}" class="form-control" placeholder="Nhập số thứ tự là số nguyên dương">
                                     </div>
-                                    <input type="hidden" name="image"  value="{{$banner->image}}">
+                                    
+                                    <input type="hidden" name="image"  value="{{$banner_detail->image}}">
                                 </div>
                             </div>
                         </div>
@@ -88,7 +88,7 @@
                         margin: 0 auto;
                         margin-bottom: 20px;
                     ">
-                    <img style="width:100%; height:100%; border-radius:50%; object-fit:cover;" id="img_banner" src="{{$banner->image}}"  alt="..">
+                    <img style="width:100%; height:100%; border-radius:50%; object-fit:cover;" id="img_banner" src="{{$banner_detail->image}}"  alt="..">
                 </div>
                 <button class="btn btn-primary btn-toggle-sidebar w-100 waves-effect waves-float waves-light" id="popup-1-button">
                     <span class="align-middle">Chọn ảnh</span>

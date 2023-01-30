@@ -43,7 +43,7 @@
                             <div class="col-md-12">
                                 <div class="card card-primary">
                                     <div class="card-header">
-                                        <h3 class="card-title">Thông tin</h3>
+                                        <h3 class="card-title">Thông tin (Nhập đầy đủ các thông tin)</h3>
 
                                         <div class="card-tools">
                                             <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
@@ -53,42 +53,42 @@
                                     <div class="card-body">
                                         <div class="form-group mt-1 mb-1">
                                             <label for="inputName" class="form-label mb-1">Tên:</label>
-                                            <input type="text" id="name" name="name" value="" class="form-control" placeholder="Nhập tên">
+                                            <input type="text" id="name" name="name" value="{{old('name')}}" class="form-control" placeholder="Nhập tên">
                                             @error('name')
                                             <span class="text-danger mt-1 d-block">{{ $message }}</span>
                                             @enderror
                                         </div> 
                                         <div class="form-group mt-1 mb-1">
                                             <label for="inputName" class="form-label mb-1">Tên phụ:</label>
-                                            <input type="text" id="subname" name="subname" value="" class="form-control" placeholder="Nhập tên phụ">
+                                            <input type="text" id="subname" name="subname" value="{{old('subname')}}" class="form-control" placeholder="Nhập tên phụ">
                                             @error('subname')
                                             <span class="text-danger mt-1 d-block">{{ $message }}</span>
                                             @enderror
                                         </div> 
                                         <div class="form-group mt-1 mb-1">
                                             <label for="inputName" class="form-label mb-1">Miêu tả:</label>
-                                            <input type="text" id="description" name="description" value="" class="form-control" placeholder="Nhập miêu tả">
+                                            <input type="text" id="description" name="description" value="{{old('description')}}" class="form-control" placeholder="Nhập miêu tả">
                                             @error('description')
                                             <span class="text-danger mt-1 d-block">{{ $message }}</span>
                                             @enderror
                                         </div> 
                                         <div class="form-group mt-1 mb-1">
                                             <label for="inputName" class="form-label mb-1">Tiêu đề - tìm kiếm:</label>
-                                            <input type="text" id="seo_title" name="seo_title" value="" class="form-control" placeholder="Nhập tiêu đề">
+                                            <input type="text" id="seo_title" name="seo_title" value="{{old('seo_title')}}" class="form-control" placeholder="Nhập tiêu đề">
                                             @error('seo_title')
                                             <span class="text-danger mt-1 d-block">{{ $message }}</span>
                                             @enderror
                                         </div> 
                                         <div class="form-group mt-1 mb-1">
                                             <label for="seo_description" class="form-label mb-1">Mô tả:</label>
-                                            <textarea class="form-control" id="summary-ckeditor" name="seo_description"></textarea>
+                                            <textarea class="form-control" id="summary-ckeditor" name="seo_description">{{old('seo_description')}}</textarea>
                                              @error('seo_description')
                                             <span class="text-danger mt-1 d-block">{{ $message }}</span>
                                             @enderror
                                         </div>   
                                         <div class="form-group mt-1 mb-1">
                                             <label for="inputName" class="form-label mb-1">Từ khóa:</label>
-                                            <input type="text" id="seo_keyword" name="seo_keyword" value="" class="form-control" placeholder="Nhập  từ khóa ">
+                                            <input type="text" id="seo_keyword" name="seo_keyword" value="{{old('seo_keyword')}}" class="form-control" placeholder="Nhập  từ khóa ">
                                              @error('seo_keyword')
                                             <span class="text-danger mt-1 d-block">{{ $message }}</span>
                                             @enderror
