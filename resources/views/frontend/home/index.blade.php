@@ -10,6 +10,13 @@
       {{ session()->get('success') }}
     </div>
   @endif
+  @if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            <li>Quý khách vui lòng nhập đầy đủ thông tin cần thiết !</li>
+        </ul>
+    </div>
+  @endif
   <script>
       setTimeout(()=> {
           $('.txt').addClass('d-none')
