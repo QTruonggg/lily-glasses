@@ -53,14 +53,14 @@
                                 <div class="card-body">
                                     <div class="form-group mt-1 mb-1">
                                         <label for="inputName" class="form-label mb-1">Tên:</label>
-                                        <input type="text" id="name" name="name" value="" class="form-control" placeholder="Nhập tên">
+                                        <input type="text" id="name" name="name" value="{{old('name')}}" class="form-control" placeholder="Nhập tên">
                                         @error('name')
                                         <span class="text-danger mt-1 d-block">{{ $message }}</span>
                                         @enderror
                                     </div>
                                     <div class="form-group mt-1 mb-1">
                                         <label for="inputSort" class="form-label mb-1">Thứ tự:</label>
-                                        <input type="number" id="sort" name="sort" min="1" value="" class="form-control" placeholder="Nhập số thứ tự là số nguyên dương">
+                                        <input type="number" id="sort" name="sort" min="1" value="{{old('sort')}}" class="form-control" placeholder="Nhập số thứ tự là số nguyên dương">
                                         @error('sort')
                                         <span class="text-danger mt-1 d-block">{{ $message }}</span>
                                         @enderror

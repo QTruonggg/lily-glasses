@@ -61,7 +61,7 @@
                                         {{$blog->updated_at}}
                                     </th>
                                     <th style="text-align: right;">
-                                        <a href="/admin/blog/update/{{ $blog->id }}" class="btn btn-info btn-sm">Sửa</a>
+                                        <a href="{{route('blog.getUpdate',$blog->id)}}" class="btn btn-info btn-sm">Sửa</a>
                                         <a type="button" class="btn btn-danger btn-sm confirm-color" data-id="/admin/blog/deleteblog/{{$blog->id}}">Xóa</a>
                                     </th>
                                 </tr>

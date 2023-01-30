@@ -43,9 +43,9 @@ class BannerController extends Controller
     }
 
     public function getUpdateBanner($id){
-        $banner = Banner::findOrFail($id);
+        $banner_detail = Banner::findOrFail($id);
         return view('backend.banner.update', 
-        ['title'=>'Chỉnh sửa Banner'], compact('banner'));
+        ['title'=>'Chỉnh sửa Banner'], compact('banner_detail'));
     }
 
     public function updateBanner(Request $request, $id){

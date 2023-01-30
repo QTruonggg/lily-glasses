@@ -21,17 +21,35 @@ class BlogController extends Controller
         );
     }
     public function storeBlog(Request $request){
+        $requi = [
+            'name'  => 'required|max:255',
+            'subname' => 'required|max:255',
+            'description' => 'required|max:255',
+            'seo_title' => 'required|max:255',
+            'seo_description' => 'required|max:255',
+            'seo_keyword' => 'required|max:255',
+            'image'   => 'required'
+        ];
+        $messages = [
+            'name.required'    => 'Nhập tên !!!',
+            'subname.required'    => 'Nhập tên phụ !!!',
+            'description.required'    => 'Nhập miêu tả !!!',
+            'seo_title.required'    => 'Nhập tiêu đề - tìm kiếm !!!',
+            'seo_description.required'    => 'Nhập mô tả !!!',
+            'seo_keyword.required'    => 'Nhập từ khóa !!!',
+            'image.required'  => 'Nhập ảnh !!!'
+        ];
+        $validate = $request->validate($requi, $messages);
         $data = $request->all();
-        // dd($data);
         Blog::create($data);
         return redirect(route('blog.list'));
     }
 
     public function getUpdateBlog($id){
-        $blog = Blog::findOrFail($id);
+        $blog_detail = Blog::findOrFail($id);
         return view('backend.blog.update', 
         ['title'=>'Chỉnh sửa Blog']
-        , compact('blog'));
+        , compact('blog_detail'));
     }
 
     public function updateBlog(Request $request, $id){

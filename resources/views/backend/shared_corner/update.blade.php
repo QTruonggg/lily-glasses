@@ -68,13 +68,13 @@
                                         <span class="text-danger mt-1 d-block">{{ $message }}</span>
                                         @enderror
                                     </div> 
-                                    <div class="form-group mt-1 mb-1">
+                                    {{-- <div class="form-group mt-1 mb-1">
                                         <label for="seo_title" class="form-label mb-1">Status</label>
                                         <select class="form-control custom-select" name="status" id="status" placeholder="">
                                             <option value="0">Ẩn</option>
                                             <option value="1">Hiện</option>
                                         </select>
-                                    </div>
+                                    </div> --}}
                                     <div class="row">
                                         <div class="col-6">
                                              <div class="form-group mt-1 mb-1">

@@ -22,8 +22,20 @@ class SharedController extends Controller
     }
 
     public function storeShared(Request $request){
+        $requi = [
+            'name'  => 'required|max:255',
+            'subname' => 'required|max:255',
+            'seo_description' => 'required|max:255',
+            'thumbnail'   => 'required'
+        ];
+        $messages = [
+            'name.required'    => 'Nhập tên !!!',
+            'subname.required'    => 'Nhập tên phụ !!!',
+            'seo_description.required'    => 'Nhập mô tả !!!',
+            'thumbnail.required'  => 'Nhập ảnh !!!'
+        ];
+        $validate = $request->validate($requi, $messages);
         $data = $request->all();
-        // dd($data);
         Shared::create($data);
         return redirect(route('shared.list'));
     }
