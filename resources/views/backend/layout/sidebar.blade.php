@@ -101,6 +101,12 @@
               </li>
             </ul>
           </li>
+          <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="file-text"></i><span class="menu-title text-truncate" data-i18n="Invoice">Câu hỏi</span></a>
+            <ul class="menu-content">
+              <li><a class="d-flex align-items-center" href="{{route('admin.getEditQuestion')}}"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="List">Chỉnh sửa câu hỏi</span></a>
+              </li>
+            </ul>
+          </li>
          
           <!--    -->
           <!--    -->
