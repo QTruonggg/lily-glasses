@@ -52,14 +52,15 @@
             <table>
                 <tbody>
                 <tr>
-                    <form method="get" action="" enctype="multipart/form-data"></form>
+                    <form action="{{route('admin.product.search')}}" method="GET">
                     <td>
-                        <input class="form-control" name="category_name" placeholder="Nhập tên sản phẩm" value="">
+                        <input class="form-control" name="search" placeholder="Nhập tên sản phẩm" value="">
 
                     </td>
                     <td>
                         <button type="submit" class="btn btn-secondary">Tìm kiếm</button>
                     </td>
+                </form>
                 </tr>
             </tbody>
         </table>

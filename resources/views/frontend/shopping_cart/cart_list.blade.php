@@ -18,56 +18,56 @@
                             </thead>
                             <tbody>
                                 @if (Cart::count() != 0)
-                                    @foreach ($productCart as $product)
-                                        <tr>
-                                            <td class="tt">
-                                                <div class="images">
-                                                    <a href="{{route('showhome')}}">
-                                                        <img src="{{$product->options->thumbnail}}" alt="">
-                                                    </a>
+                                @foreach ($productCart as $product)
+                                    <tr>
+                                        <td class="tt">
+                                            <div class="images">
+                                                <a href="{{route('showhome')}}">
+                                                    <img src="{{$product->options->thumbnail}}" alt="">
+                                                </a>
+                                            </div>
+                                            <div class="item-details">
+                                                <div class="item-name">
+                                                    <a href="#">{{$product->name}}</a>
                                                 </div>
-                                                <div class="item-details">
-                                                    <div class="item-name">
-                                                        <a href="#">{{$product->name}}</a>
-                                                    </div>
-                                                    <div class="item-code">
-                                                        <span > mã sản phẩm: {{$product->options->product_code}}</span>
-                                                    </div>
-                                                    <div class="item-color">
-                                                        <span>Màu sắc: </span>
-                                                        <span class="cl" style="background-color:{{$product->options->color}} ;"></span>
-                                                    </div>
+                                                <div class="item-code">
+                                                    <span > mã sản phẩm: {{$product->options->product_code}}</span>
                                                 </div>
-                                            </td>
-                                            
-                                            <td class="input">
-                                                <div class="item-box">
-                                                    <div class="item-option">
-                                                        <input type="text"  value="{{$product->qty}}">
-                                                    </div>
-                                
+                                                <div class="item-color">
+                                                    <span>Màu sắc: </span>
+                                                    <span class="cl" style="background-color:{{$product->options->color}} ;"></span>
                                                 </div>
-                                            </td>
-                                            <td class="price-wrap">
-                                                <div class="item-price">
-                                                    <span class="old_price d-block pb-1" style="text-decoration:line-through; color:#999;">{{$product->options->old_price}} đ</span>
-                                                    <span class="price">{{$product->price}} ₫</span>
+                                            </div>
+                                        </td>
+                                        
+                                        <td class="input">
+                                            <div class="item-box">
+                                                <div class="item-option">
+                                                    <input type="text"  value="{{$product->qty}}">
                                                 </div>
-                                            </td>
-                                            <td class="total-wrap">
-                                                <div class="total">
-                                                    <span>{{$product->price * $product->qty}} ₫</span>
-                                                </div>
-                                            </td>
-                                            <td class="clear">
-                                                <div class="delete">
-                                                    <a href="{{route('deleteCart', $product->rowId)}}">
-                                                        <span>Xoá</span>
-                                                    </a>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                    @endforeach
+                            
+                                            </div>
+                                        </td>
+                                        <td class="price-wrap">
+                                            <div class="item-price">
+                                                <span class="old_price d-block pb-1" style="text-decoration:line-through; color:#999;">{{$product->options->old_price}} đ</span>
+                                                <span class="price">{{$product->price}} ₫</span>
+                                            </div>
+                                        </td>
+                                        <td class="total-wrap">
+                                            <div class="total">
+                                                <span>{{$product->price * $product->qty}} ₫</span>
+                                            </div>
+                                        </td>
+                                        <td class="clear">
+                                            <div class="delete">
+                                                <a href="{{route('deleteCart', $product->rowId)}}">
+                                                    <span>Xoá</span>
+                                                </a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                @endforeach
                                 @else 
                                     <h2 style="text-align:center; padding: 60px 10px 110px; color:#999; font-weight:600;">Giỏ hàng trống</h2>
                                 @endif
@@ -84,12 +84,12 @@
                             <span class="quality">{{Cart::count()}}</span>
                         </div>
                         <div class="provisional">
+                             
                             <span class="pr">Tạm tính:</span>
                             <span class="price-provisional">{{Cart::subtotal()}} ₫</span>
                         </div>
                     </div>
                 </div>
-
 
                 <div class="btn-order">
                     <div class="wrap-btn">
@@ -97,7 +97,7 @@
                             <a style="text-decoration:none;" href="{{route('showhome')}}">Tiếp tục mua hàng</a>
                         </div>
                         <div class="order">
-                            <a style="text-decoration:none;" href="{{route('showFormPayment', [Str::slug($product->name), $product->id])}}">Đặt hàng</a>
+                            <a style="text-decoration:none;" href="{{route('showFormPayment')}}">Đặt hàng</a>
                         </div>
                     </div>
                 </div>

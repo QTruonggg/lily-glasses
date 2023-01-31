@@ -56,6 +56,9 @@
                                 <th style="width: 10%">
                                     Triệu chứng
                                 </th>
+                                <th style="width: 10%">
+                                    Trạng thái
+                                </th>
                             </tr>
                         </thead>
                         <tbody>
@@ -84,6 +87,12 @@
                                         {{$appointment->symptom}}
                                     </a>
                                 </td>
+                                <td class=""  style="max-width:150px;">
+                                    <a style="display:-webkit-box;word-wrap: break-word;white-space: normal;overflow: hidden;display: -webkit-box;text-overflow: ellipsis;-webkit-box-orient: vertical;-webkit-line-clamp: 2; ">
+                                        <p class="bg-success d-inline-block d-none ps-1 pe-1 mb-0 rounded text_success" style="color:#fff;" status="0">Đã xem</p>
+                                        <p class="bg-danger d-inline-block  ps-1 pe-1 rounded mb-0 text_fail" style="color:#fff; " status="1">Chưa xem</p>
+                                    </a>
+                                </td>
                             </tr>
                             @endforeach
                         </tbody>
@@ -98,4 +107,19 @@
 </div>
 <!-- /.card -->
 </section>
+
+<script>
+    $('.text_success').each(function() {
+        $(this).click(function() {
+            $(this).addClass('d-none')
+            $(this).next().removeClass('d-none')
+        })
+    })
+    $('.text_fail').each(function() {
+        $(this).click(function() {
+            $(this).addClass('d-none')
+            $(this).prev().removeClass('d-none')
+        })
+    })
+</script>
 @endsection

@@ -99,7 +99,7 @@ class FrontendController extends Controller
         return back()->with('success', 'Đặt lịch khám thành công');
     }
     // thanh toan
-    public function showFormPayment($slug, $id) {
+    public function showFormPayment() {
         $productCart = Cart::content();
         return view('frontend.form_payment.index', compact('productCart'));
     }
@@ -110,7 +110,6 @@ class FrontendController extends Controller
         $request->validate([
             'name'=>'required',
             'phoneNumber'=>'required|min:10|max:10|',
-            'email'=>'required|email',
             'province'=>'required',
             'district'=>'required',
             'ward'=>'required',
@@ -120,8 +119,6 @@ class FrontendController extends Controller
             'phoneNumber.required'=>'Vui lòng nhập số điện thoại !',
             'phoneNumber.min'=>'Vui lòng nhập đúng số điện thoại !',
             'phoneNumber.max'=>'Vui lòng nhập đúng số điện thoại !',
-            'email.required'=>'Vui lòng nhập địa chỉ email !',
-            'email.email'=>'Vui lòng nhập đúng địa chỉ email !',
             'province.required'=>'Vui lòng nhập tỉnh !',
             'district.required'=>'Vui lòng nhập huyện !',
             'ward.required'=>'Vui lòng nhập xã !',
@@ -130,6 +127,8 @@ class FrontendController extends Controller
         $productRowId = $data['product_rowId'];
         $json = json_encode($productRowId);
         $data['product_rowId'] = $json;
+        $data['total'] = (int)$data['total'];
+        $data['qty'] = (int)$data['qty'];
         Order::create($data);
         return back()->with('success', 'Bạn đã đặt hàng thành công');
     }

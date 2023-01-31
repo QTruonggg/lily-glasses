@@ -47,9 +47,6 @@
                                 <th style="width: 10%">
                                     Tên
                                 </th>
-                                <th style="width: 15%">
-                                    Email
-                                </th>
                                 <th style="width: 10%">
                                     số điện thoại
                                 </th>
@@ -73,11 +70,6 @@
                                 <td >
                                     <a style="word-wrap: break-word;white-space: normal;overflow: hidden;display: -webkit-box;text-overflow: ellipsis;-webkit-box-orient: vertical;-webkit-line-clamp: 2; ">
                                         {{$order_list->name}}
-                                    </a>
-                                </td>
-                                <td style="max-width:110px;"> 
-                                    <a style="word-wrap: break-word;white-space: normal;overflow: hidden;display: -webkit-box;text-overflow: ellipsis;-webkit-box-orient: vertical;-webkit-line-clamp: 2; ">
-                                        {{$order_list->email}}
                                     </a>
                                 </td>
                                 <td style="max-width:110px;"> 

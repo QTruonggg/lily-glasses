@@ -16,14 +16,11 @@ class OrderController extends Controller
     }
 
     public function showDetailsOrder($id) {
-        $data_details = Order::where('id','=',$id)->get();
-        foreach ($data_details as $key => $item) {
-            $decode_product =  json_decode($item->product_rowId);
+        $data_details = Order::find($id);
+            $decode_product =  json_decode($data_details->product_rowId);
             foreach ($decode_product as $key => $value) {
             }
-        }
         $product_cart = json_decode($value);
-        // dd($product_cart);
         return view('backend.orders.details_order',['breadcrumb'=>'Chi tiết đơn hàng'], compact('data_details','product_cart'));
     }
 
