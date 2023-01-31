@@ -3,14 +3,19 @@
 namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\models\Product;
-use App\models\ProductColor;
+use App\Models\Product;
+use App\Models\ProductColor;
 use App\Http\Controllers\Hook\ProductHook;
 use App\Http\Controllers\Hook\CategoryHook;
 use Illuminate\Support\Str;
 class ProductController extends Controller
 
 {
+    public function search(Request $request){
+        $dataProduct = Product::where('name', 'LIKE', '%'. $request->search .'%')->orWhere('product_code', 'LIKE', '%'. $request->search .'%')->get();
+        $dataLenght = count($dataProduct);
+        return view('backend.product.list',['breadcrumb'=>'Danh sách sản phẩm'],compact('dataProduct','dataLenght'));
+    }
     public function showProductList(ProductHook $productHook) {
         $dataProduct = $productHook->getAll();
         // dd($dataProduct);

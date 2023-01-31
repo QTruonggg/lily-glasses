@@ -60,7 +60,7 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     Route::prefix('products')->group(function() {
         // get product
         Route::get('list', [App\Http\Controllers\Admin\ProductController::class,'showProductList'])->name('admin.showProductList');
-
+        Route::get('search', [App\Http\Controllers\Admin\ProductController::class,'search'])->name('admin.product.search');
         // post product
         Route::get('create', [App\Http\Controllers\Admin\ProductController::class,'getCreateProduct'])->name('admin.getCreateProduct');
         Route::post('create', [App\Http\Controllers\Admin\ProductController::class,'addProduct'])->name('admin.addProduct');
@@ -159,6 +159,14 @@ Route::prefix('admin')->middleware('auth')->group(function () {
         Route::post('/update-{id}', [App\Http\Controllers\Admin\FeedbackController::class, 'UpdateFeedback'])->name('updateFeedback');
         Route::get('/delete-{id}', [App\Http\Controllers\Admin\FeedbackController::class, 'deleteFeedback'])->name('deleteFeedback');
         
+    });
+
+    // question
+    Route::prefix('question')->group(function () {
+        // get
+        Route::get('update', [App\Http\Controllers\Admin\EditQuestionController::class, 'getEdit'])->name('admin.getEditQuestion');
+        // post
+        Route::post('update', [App\Http\Controllers\Admin\EditQuestionController::class, 'updateQuestion'])->name('admin.getEditQuestion');
     });
 });
 
