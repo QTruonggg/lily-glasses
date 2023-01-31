@@ -24,7 +24,7 @@
                     <div class="card-body d-flex align-items-center justify-content-between">
                         <div>
                             <h3 class="fw-bolder mb-75"></h3>
-                            <h3>{{$breadcrumb}}</h3>
+                            <h3>Tổng số lịch hẹn : {{$orderAppointment}}</h3>
                         </div>
                         <div class="avatar bg-light-primary p-50">
                             <span class="avatar-content">

@@ -2,7 +2,7 @@
     <div class="swiper-wrapper">
         @foreach($banner as $banner)
         <div class="swiper-slide">
-            <a href="#">
+            <a>
                 <img src="{{$banner->image}}" alt="">
             </a>
         </div>

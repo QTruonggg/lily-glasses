@@ -23,7 +23,7 @@
                 <div class="card-body d-flex align-items-center justify-content-between">
                     <div>
                         <h3 class="fw-bolder mb-75"></h3>
-                        <span>Tổng só mặt hàng : </span>
+                        <span>Tổng só sản phẩm : {{$data_details->qty}}</span>
                     </div>
                     <div class="avatar bg-light-primary p-50">
                         <span class="avatar-content">
@@ -34,7 +34,7 @@
             </div>
         </div>
     </div>
-   <div class="row">
+    <div class="row">
         <div class="col-8">
              <div class="card">
                 <div class="card-body p-0">
@@ -115,10 +115,47 @@
                     </div>
                     <br>
                 </div>
+                
             <div>
         </div>
+    </div>
+    <div class="wrap d-flex justify-content-between">
+        <form action="{{route('updateStatus', $data_details->id)}}" method="POST" enctype="multipart/form-data">
+            @csrf
+            <select name="status" id="status" class="btn btn-secondary btn-sm waves-effect waves-float waves-light">
+                <option value="1">Xác nhận đơn hàng</option>
+                <option value="0">Gỡ xác nhận đơn hàng</option>
+            </select>
+            <button type="submit" class="btn btn-sm btn-secondary">Update đơn hàng</button>
+        </form>
+       <div class="action">
+        <a href="{{route('showListOrder')}}" class="btn btn-secondary waves-effect waves-float waves-light">Quay lại</a>
+       <a href="" class="btn btn-sm btn-icon delete-record btn btn-secondary waves-effect waves-float waves-light"  data-bs-toggle="modal" data-bs-target="#deleteProductModal">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-trash font-medium-2 text-body">
+                <polyline points="3 6 5 6 21 6"></polyline>
+                <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+            </svg>
+        </a>
+        <div class="modal fade" id="deleteProductModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header flex-column">
+                        <div class="icon-box">
+                        </div>						
+                        <h4 class="modal-title w-100">Bạn có chắc không?</h4>	
+                    </div>
+                    <div class="modal-body">
+                        <p>Bạn có thực sự muốn xóa? Quá trình này không thể được hoàn tác.</p>
+                    </div>
+                    <div class="modal-footer justify-content-center">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" aria-label="Close">Quay lại</button>
+                        <a href="{{route('deleteOrder', $data_details->id)}}"  type="button" class="btn btn-danger">Xóa</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+       </div>
    </div>
-   <a href="{{route('showListOrder')}}" class="btn btn-secondary waves-effect waves-float waves-light">Quay lại</a>
 </div>
 <!-- /.card -->
 </section>

@@ -19,7 +19,7 @@
                 <ul>
                     <p>Các chính sách</p>
                     @foreach($policy as $policy)
-                    <li><a href="{{route('policyDetail',[Str::slug($policy->name),$policy->id])}}">{{$policy->name}}</a></li>
+                    <li><a href="{{route('policyDetail',[$policy->id,Str::slug($policy->name)])}}">{{$policy->name}}</a></li>
                     @endforeach
                     
                 </ul>
@@ -27,7 +27,7 @@
                     <p>Góc chia sẻ</p>
                     @foreach($shared_footer as $share)
                     
-                    <li><a href="{{route('sharedDetail',[$share->id])}}">{{$share->name}}</a></li>
+                    <li><a href="{{route('sharedDetail',[$share->id,Str::slug($share->name)])}}">{{$share->name}}</a></li>
                     @endforeach
                     
                 </ul>
@@ -46,7 +46,7 @@
                     <p>Dịch vụ</p>
                     @foreach($service_footer as $service)
                         <li>
-                            <a href="{{route('serviceDetail',[$service->id] )}}">{{$service->name}}</a>
+                            <a href="{{route('serviceDetail',[$service->id,Str::slug($service->name)] )}}">{{$service->name}}</a>
                         </li>
                     @endforeach
 
@@ -61,6 +61,8 @@
                     <p>Kết nốt với SOLAR:</p>
                     <a href="{{$profile->network_fb}}" target="_blank" rel="noopener noreferrer"><img src="{{asset('assets/images/fb.png')}}" alt=""></a>
                     <a href="{{$profile->network_ins}}" target="_blank" rel="noopener noreferrer"><img src="{{asset('assets/images/intergram.png')}}" alt=""></a>
+                    <a href="{{$profile->network_fb}}" target="_blank" rel="noopener noreferrer"><img src="{{asset('assets/images/tiktok.png')}}" alt=""></a>
+                    <a href="{{$profile->network_fb}}" target="_blank" rel="noopener noreferrer"><img src="{{asset('assets/images/shopee.png')}}" alt=""></a>
                 </div>
                 <iframe width="100%" height="40%" src="{{$profile->google_map}}" style="border:0;"></iframe>
             </div>

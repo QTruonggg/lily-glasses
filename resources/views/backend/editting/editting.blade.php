@@ -46,42 +46,41 @@
                                     </div>
                                 </div>
                                 <div class="card-body">
-                                    @foreach ($profile as $item)                     
                                     <div class="form-group mt-1 mb-1">
                                         <label for="inputName" class="form-label mb-1">Tên</label>
-                                        <input type="text" id="name" name="name" value="{{$item->name}}" class="form-control" placeholder="Nhập tên">
+                                        <input type="text" id="name" name="name" value="{{$profile->name}}" class="form-control" placeholder="Nhập tên">
                                         @error('title')
                                         <span class="text-danger mt-1 d-block">{{ $message }}</span>
                                         @enderror
                                     </div>
                                     <div class="form-group mt-1 mb-1">
                                         <label for="inputName" class="form-label mb-1">Địa chỉ</label>
-                                        <input type="text" id="address" name="address"  value="{{$item->address}}" class="form-control" placeholder="Nhập địa chỉ">
+                                        <input type="text" id="address" name="address"  value="{{$profile->address}}" class="form-control" placeholder="Nhập địa chỉ">
                                         @error('address')
                                         <span class="text-danger mt-1 d-block">{{ $message }}</span>
                                         @enderror
                                     </div>
                                     <div class="form-group mt-1 mb-1">
                                         <label for="seo_title" class="form-label mb-1">Thời gian mở cửa</label>
-                                        <input type="text" id="time" name="time" value="{{$item->time}}" class="form-control" placeholder="Nhập thời gian">
+                                        <input type="text" id="time" name="time" value="{{$profile->time}}" class="form-control" placeholder="Nhập thời gian">
                                     </div>
                                     <div class="form-group mt-1 mb-1">
                                         <label for="inputName" class="form-label mb-1">Địa chỉ email</label>
-                                        <input type="text" id="email" name="email" value="{{$item->email}}" class="form-control" placeholder="Nhập email">
+                                        <input type="text" id="email" name="email" value="{{$profile->email}}" class="form-control" placeholder="Nhập email">
                                         @error('title')
                                         <span class="text-danger mt-1 d-block">{{ $message }}</span>
                                         @enderror
                                     </div>
                                     <div class="form-group mt-1 mb-1">
                                         <label for="inputName" class="form-label mb-1">Số điện thoại</label>
-                                        <input type="text" id="hotline" name="hotline" value="{{$item->hotline}}" class="form-control" placeholder="Nhập số điện thoại">
+                                        <input type="text" id="hotline" name="hotline" value="{{$profile->hotline}}" class="form-control" placeholder="Nhập số điện thoại">
                                         @error('title')
                                         <span class="text-danger mt-1 d-block">{{ $message }}</span>
                                         @enderror
                                     </div>
                                     <div class="form-group mt-1 mb-1">
                                         <label for="inputName" class="form-label mb-1">Video</label>
-                                        <input type="text" id="video" name="video" value="{{$item->video}}" class="form-control" placeholder="Nhập đường link video">
+                                        <input type="text" id="video" name="video" value="{{$profile->video}}" class="form-control" placeholder="Nhập đường link video">
                                         @error('video')
                                         <span class="text-danger mt-1 d-block">{{ $message }}</span>
                                         @enderror
@@ -91,16 +90,16 @@
                                         <label for="inputName" class="form-label mb-2">Mạng xã hội: </label>
                                         <br>
                                         <label for="inputName" class="form-label mb-1 ps-1">Facebook</label>
-                                        <input type="text" id="network_fb" name="network_fb" value="{{$item->network_fb}}" class="form-control" placeholder="Nhập link fb">
+                                        <input type="text" id="network_fb" name="network_fb" value="{{$profile->network_fb}}" class="form-control" placeholder="Nhập link fb">
                                         <br>
                                         <label for="inputName" class="form-label mb-1 ps-1">Instagram</label>
-                                        <input type="text" id="network_ins" name="network_ins" value="{{$item->network_ins}}" class="form-control" placeholder="Nhập link intergram">
+                                        <input type="text" id="network_ins" name="network_ins" value="{{$profile->network_ins}}" class="form-control" placeholder="Nhập link intergram">
                                         <br>
                                         <label for="inputName" class="form-label mb-1 ps-1">Tiktok</label>
-                                        <input type="text" id="network_tiktok" name="network_tiktok" value="{{$item->network_tiktok}}" class="form-control" placeholder="Nhập link tiktok">
+                                        <input type="text" id="network_tiktok" name="network_tiktok" value="{{$profile->network_tiktok}}" class="form-control" placeholder="Nhập link tiktok">
                                         <br>
                                         <label for="inputName" class="form-label mb-1 ps-1">Shopee</label>
-                                        <input type="text" id="network_shopee" name="network_shopee" value="{{$item->network_shopee}}" class="form-control" placeholder="Nhập link shopee">
+                                        <input type="text" id="network_shopee" name="network_shopee" value="{{$profile->network_shopee}}" class="form-control" placeholder="Nhập link shopee">
                                         @error('social_network')
                                         <span class="text-danger mt-1 d-block">{{ $message }}</span>
                                         @enderror
@@ -109,7 +108,7 @@
                                         <div class="col-6">
                                             <div class="form-group mt-1 mb-1">
                                                 <label for="seo_keyword" class="form-label mb-1">Google Maps</label>
-                                                <input type="text" id="google_map" name="google_map" value="{{$item->google_map}}" class="form-control" placeholder="Nhập iframe">
+                                                <input type="text" id="google_map" name="google_map" value="{{$profile->google_map}}" class="form-control" placeholder="Nhập iframe">
                                                 @if ($errors->has('google_map'))
                                                     <span class="text-danger d-block mt-1">{{ $errors->first('seo_keyword') }}</span>
                                                 @endif
@@ -118,7 +117,7 @@
                                         <div class="col-6">
                                             <div class="form-group mt-1 mb-1">
                                                 <label for="seo_keyword" class="form-label mb-1">Seo title</label>
-                                                <input type="text" id="seo_title" name="seo_title" value="{{$item->seo_title}}" class="form-control">
+                                                <input type="text" id="seo_title" name="seo_title" value="{{$profile->seo_title}}" class="form-control">
                                                 @if ($errors->has('seo_title'))
                                                     <span class="text-danger d-block mt-1">{{ $errors->first('seo_keyword') }}</span>
                                                 @endif
@@ -127,7 +126,7 @@
                                         <div class="col-6">
                                             <div class="form-group mt-1 mb-1">
                                                 <label for="seo_keyword" class="form-label mb-1">Seo description</label>
-                                                <input type="text" id="seo_description" name="seo_description" value="{{$item->seo_description}}" class="form-control">
+                                                <input type="text" id="seo_description" name="seo_description" value="{{$profile->seo_description}}" class="form-control">
                                                 @if ($errors->has('seo_description'))
                                                     <span class="text-danger d-block mt-1">{{ $errors->first('seo_keyword') }}</span>
                                                 @endif
@@ -136,15 +135,14 @@
                                         <div class="col-6">
                                             <div class="form-group mt-1 mb-1">
                                                 <label for="seo_keyword" class="form-label mb-1">Seo keyword</label>
-                                                <input type="text" id="seo_keyword" name="seo_keyword" value="{{$item->seo_keyword}}" class="form-control">
+                                                <input type="text" id="seo_keyword" name="seo_keyword" value="{{$profile->seo_keyword}}" class="form-control">
                                                 @if ($errors->has('seo_keyword'))
                                                     <span class="text-danger d-block mt-1">{{ $errors->first('seo_keyword') }}</span>
                                                 @endif
                                             </div>
                                         </div>
                                     </div>
-                                    <input type="hidden" name="logo"  value="{{$item->logo}}">
-                                    @endforeach
+                                    <input type="hidden" name="logo"  value="{{$profile->logo}}">
                                 </div>
                                 <!-- /.card-body -->
                             </div>
@@ -176,7 +174,7 @@
                         margin: 0 auto;
                         margin-bottom: 20px;
                     ">
-                    <img style="width:100%; height:100%; border-radius:50%; object-fit:cover;" id="thumbnail_prev" src="{{$item->logo}}"  alt="..">
+                    <img style="width:100%; height:100%; border-radius:50%; object-fit:cover;" id="thumbnail_prev" src="{{$profile->logo}}"  alt="..">
                 </div>
                 <button class="btn btn-primary btn-toggle-sidebar w-100 waves-effect waves-float waves-light" id="popup-1-button">
                     <span class="align-middle">Chọn ảnh logo</span>

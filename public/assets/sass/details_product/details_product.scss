@@ -174,16 +174,22 @@
                 min-width: 400px;
                 margin-bottom: 20px;
                 &:hover {
-                    background-color: rgb(0, 0, 0);
+                    background-color: rgba(250, 189, 82, 0.6);
                 }
             }
+            .add-to-cart.disabled {
+                background-color:rgba(249, 184, 70, 0.6);
+                &:hover {
+                        background-color: rgba(249, 184, 70, 0.6);
+                    }
+            }
             .add-to-cart.buy-now {
-                background-color: rgb(94, 102, 164);
+                background-color: rgb(130, 140, 216);
                 min-width: 400px;
                 display: block;
                 text-decoration: none;
                 &:hover {
-                    background-color: rgb(255, 255, 255);
+                    background-color: rgb(170, 170, 170);
                     color:#f9b846 ;
                 }
             }

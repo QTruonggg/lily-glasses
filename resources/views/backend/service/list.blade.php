@@ -48,22 +48,6 @@
     </script>
 <div class="card">
     <div class="card-header">
-        <div class="btn-group">
-            <table>
-                <tbody>
-                <tr>
-                    <form method="get" action="" enctype="multipart/form-data"></form>
-                    <td>
-                        <input class="form-control" name="category_name" placeholder="Nhập tên sản phẩm" value="">
-
-                    </td>
-                    <td>
-                        <button type="submit" class="btn btn-secondary">Tìm kiếm</button>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        </div>
         <div class="dt-buttons btn-group">
             <a href="{{route('admin.getAddServiceCategory')}}" class="btn btn-secondary action-item" tabindex="0" aria-controls="table-categories">
                 <span>

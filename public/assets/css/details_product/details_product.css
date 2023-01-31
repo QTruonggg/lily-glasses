@@ -343,7 +343,7 @@ footer .box-4 .contact a img {
     padding-left: 0;
   }
   footer {
-    padding: 160px 0px 30px;
+    padding: 50px 0px 30px;
   }
 }
 #details-product .galleries .galleries-thumb {
@@ -504,16 +504,22 @@ footer .box-4 .contact a img {
   margin-bottom: 20px;
 }
 #details-product .info .order .add-to-cart:hover {
-  background-color: rgb(0, 0, 0);
+  background-color: rgba(250, 189, 82, 0.6);
+}
+#details-product .info .order .add-to-cart.disabled {
+  background-color: rgba(249, 184, 70, 0.6);
+}
+#details-product .info .order .add-to-cart.disabled:hover {
+  background-color: rgba(249, 184, 70, 0.6);
 }
 #details-product .info .order .add-to-cart.buy-now {
-  background-color: rgb(94, 102, 164);
+  background-color: rgb(130, 140, 216);
   min-width: 400px;
   display: block;
   text-decoration: none;
 }
 #details-product .info .order .add-to-cart.buy-now:hover {
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(170, 170, 170);
   color: #f9b846;
 }
 #details-product .info .farallo-policy {

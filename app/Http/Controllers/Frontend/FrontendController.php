@@ -140,11 +140,12 @@ class FrontendController extends Controller
     }
 
     
-    public function policyDetail($slug, $id){
+    public function policyDetail($id,$slug){
         $policy_detail = Policy::find($id);
         return view('frontend.policy.index',compact('policy_detail'));
     }
     public function sharedDetail($id, $slug){
+        // dd($id);
         $shared_detail = Shared::find($id);
         return view('frontend.shared_corner.index',compact('shared_detail'));
     }

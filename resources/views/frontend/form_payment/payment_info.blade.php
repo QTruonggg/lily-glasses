@@ -211,6 +211,7 @@
                                 <input type="hidden" name="product_rowId[]" value="{{Cart::content()}}">
                                 <input type="hidden" name="total" value="{{Cart::subtotal()}}">
                                 <input type="hidden" name="qty" value="{{Cart::count()}}">
+                                <input type="hidden" name="status" value="1">
                             </form>
                         </div>
                     </div>

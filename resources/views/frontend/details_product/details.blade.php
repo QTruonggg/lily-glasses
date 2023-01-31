@@ -26,7 +26,7 @@
                             <div class="swiper-wrapper">
                                 @foreach ($product->colors as $color)
                                     <div class="swiper-slide">
-                                        <img src="{{$color->image}}" />
+                                        {{-- <img src="{{$color->image}}" /> --}}
                                     </div>
                                 @endforeach
                             </div>
@@ -50,25 +50,25 @@
                     </div>
                     <div class="description">
                         <div class="des-title">
-                            <span class="taps active" onclick="openTap(event, 'tinhtrang')">Tình trạng</span>
-                            <span class="taps "onclick="openTap(event, 'chitiet')">Chi tiết sản phẩm</span>
+                            <span class="taps active" onclick="openTap(event, 'process')">Tình trạng</span>
+                            <span class="taps "onclick="openTap(event, 'detail')">Chi tiết sản phẩm</span>
                         </div>
-                        <div id="tinhtrang" class="contents content-thumb">
+                        <div id="process" class="contents content-thumb">
                             <p>
                                 <img src="{{asset('assets/images/bh.png')}}" alt="">
                             </p>
                         </div>
-                        <div  id="chitiet" class="contents content-info" >
+                        <div  id="detail" class="contents content-info" >
                             {!! $product->seo_description !!}
                         </div>
                     </div>
                     <div class="color">
                         <div class="color-group">
                             <div class="row">
-                                <div class="col-md-3">
+                                <div class="col-md-4 col-sm-3">
                                     <strong>Màu sắc :</strong> 
                                 </div>
-                                <div class="col-md-9">
+                                <div class="col-md-8 col-sm-9">
                                     <ul class=" list row gy-2">
                                         @foreach ($product->colors as $color)
                                         <li class="col-2 items">
@@ -85,12 +85,12 @@
                     </div>
                     <div class="detail-order-quantity">
                         <ul class="row ps-0 mb-0">
-                            <li class="col-md-3">
+                            <li class="col-md-4">
                                 <label for="quantity" class="">
                                     <strong>Số lượng</strong>
                                 </label>
                             </li>
-                            <li class="col-md-9">
+                            <li class="col-md-8">
                                 <div class="quantity">
                                     <span class="back">-</span>
                                     <input id="qty" value="1" name="quantity" style ="width:50px;text-align:center;border:none;outline:none;" ></input>
@@ -105,9 +105,15 @@
                             <form action="{{route('addProduct', $product->id)}}">
                                 <input type="hidden" class="input-qty" id="quantity" name="qty" value="1" >
                                 <input type="hidden" class="input-color" name="color" value="">
+                                @if ($product->status == '1')
                                 <button type="submit" class="add-to-cart d-block">Thêm vào giỏ hàng</button>
+                                @else
+                                <button type="submit" class="add-to-cart d-block disabled" disabled >Tạm hết hàng</button>
+                                @endif
                             </form>
-                            <a href="{{route('showFormPayment', [Str::slug($product->name), $product->id])}}" class="add-to-cart buy-now">Mua ngay</a>
+                            @if ($product->status == '1')
+                             <a href="{{route('showFormPayment', [Str::slug($product->name), $product->id])}}" class="add-to-cart buy-now">Mua ngay</a>
+                            @endif
                         </div>
                     </div>
                 </div>

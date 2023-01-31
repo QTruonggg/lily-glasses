@@ -27,12 +27,6 @@
             </div>
         </div>
     </div>
-@section('seo_keywords')
-{!! $product->seo_keywords !!}
-@endsection()
-@section('description')
-{!! $product->seo_description !!}
-@endsection()
     @pushonce('component-css')
         <style> 
             .item-product {

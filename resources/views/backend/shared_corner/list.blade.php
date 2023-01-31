@@ -8,7 +8,7 @@
         
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1>Quản lý chính sách</h1>
+                <h1>Góc chia sẻ</h1>
             </div>
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right justify-content-end">

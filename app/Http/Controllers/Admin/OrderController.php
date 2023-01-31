@@ -28,6 +28,21 @@ class OrderController extends Controller
 
     public function orderAppointment(){
         $data = Appointment::orderBy('created_at', 'DESC')->get();
-        return view('backend.appointment.list', ['breadcrumb'=>'Danh sách lịch hẹn'],compact('data'));
+        $orderAppointment = count($data);
+        return view('backend.appointment.list', ['breadcrumb'=>'Danh sách lịch hẹn'],compact('data','orderAppointment'));
+    }
+    public function updateStatus($id, Request $request){
+        $status_order = Order::find($id);
+        $updateStatus =  $status_order['status'] = $request->status;
+        // DB::table('products')->where('id', $id)->update(['value' => $request->value"]);
+        Order::where('id', $id)->update(['status'=>$updateStatus]);
+        return redirect(route('showListOrder'))->with('messes', 'Cập nhật trạng thái thành công');
+    }
+
+    public function deleteOrder($id) {
+        $order = Order::find($id);
+
+        $order->delete();
+        return redirect(route('showListOrder'))->with('messes', 'Xóa đơn hàng thành công');
     }
 }

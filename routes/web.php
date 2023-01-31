@@ -36,6 +36,8 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     Route::prefix('category')->group(function() {
         // get
         Route::get('list',[App\Http\Controllers\Admin\CategoryController::class,'showCategoriesList'])->name('admin.showCategoriesList');
+        Route::get('search', [App\Http\Controllers\Admin\CategoryController::class,'search'])->name('admin.category.search');
+
         // post
         Route::get('create',[App\Http\Controllers\Admin\CategoryController::class,'interfaceAddCategoriesList'])->name('admin.interfaceAddCategoriesList');
         Route::post('create',[App\Http\Controllers\Admin\CategoryController::class,'addCategoriesList'])->name('admin.postCategoriesList');
@@ -144,8 +146,12 @@ Route::prefix('admin')->middleware('auth')->group(function () {
         //show list order
         Route::get('/get', [App\Http\Controllers\Admin\OrderController::class, 'showListOrder'])->name('showListOrder');
 
+        
         // show detail order
         Route::get('/details-{id}', [App\Http\Controllers\Admin\OrderController::class, 'showDetailsOrder'])->name('showDetailsOrder');
+        Route::post('update-{id}', [App\Http\Controllers\Admin\OrderController::class, 'updateStatus'])->name('updateStatus');
+        Route::get('delete-{id}', [App\Http\Controllers\Admin\OrderController::class, 'deleteOrder'])->name('deleteOrder');
+
     });
 
     // feelback

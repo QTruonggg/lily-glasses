@@ -56,6 +56,9 @@
                                 <th style="width: 10%">
                                     Thời gian tạo
                                 </th>
+                                <th style="width: 10%">
+                                    Trạng thái
+                                </th>
                                 <th style="width: 15%" class="text-right">
                                     Tác vụ
                                 </th>
@@ -86,6 +89,17 @@
                                     <a style="display:-webkit-box;word-wrap: break-word;white-space: normal;overflow: hidden;display: -webkit-box;text-overflow: ellipsis;-webkit-box-orient: vertical;-webkit-line-clamp: 2; ">
                                         {{$order_list->created_at}}
                                     </a>
+                                </td>
+                                <td class=""  style="max-width:150px;">
+                                    @if ($order_list->status == "0")
+                                        <a class="bg-danger d-inline-block  ps-1 pe-1 rounded mb-0 text-white" style="display:-webkit-box;word-wrap: break-word;white-space: normal;overflow: hidden;display: -webkit-box;text-overflow: ellipsis;-webkit-box-orient: vertical;-webkit-line-clamp: 2; ">
+                                            Chưa xem
+                                        </a>
+                                    @else
+                                        <a class="bg-success d-inline-block  ps-1 pe-1 rounded mb-0 text-white" style="display:-webkit-box;word-wrap: break-word;white-space: normal;overflow: hidden;display: -webkit-box;text-overflow: ellipsis;-webkit-box-orient: vertical;-webkit-line-clamp: 2; ">
+                                           Đã xem
+                                        </a>
+                                    @endif
                                 </td>
                                 <td class="project-actions text-right">
                                     <a href="{{route('showDetailsOrder',[$order_list->id])}}" class="btn btn-sm btn-icon" title="Chi tiết">

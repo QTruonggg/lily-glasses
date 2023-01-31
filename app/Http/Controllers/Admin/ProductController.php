@@ -55,12 +55,12 @@ class ProductController extends Controller
         ]);
         $model = $productHook->createProduct($data);
         $model->colors()->createMany($colorArray);
-        return back()->with('success', 'Tạo thành công danh mục !');
+        return back()->with('success', 'Tạo thành công sản phẩm !');
     }
     public function deleteProduct($id, ProductHook $productHook) {
         $product =  $productHook->getId($id);
         $productHook->delete($product);
-        return redirect(route('admin.showProductList'))->with('mess', 'xóa thành công danh mục');        
+        return redirect(route('admin.showProductList'))->with('mess', 'xóa thành công sản phẩm');        
     }
     public function getUpdateProduct($id, CategoryHook $categoryHook) {
         $product = Product::find($id);

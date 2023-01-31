@@ -8,7 +8,14 @@ use App\Models\ServiceCategory;
 use App\Http\Controllers\Hook\CategoryHook;
 class CategoryController extends Controller
 {
-  
+    public function search(Request $request){
+        // dd($request->all());
+        $data = Category::where('name', 'LIKE', '%'. $request->name .'%')->orWhere('seo_title', 'LIKE', '%'. $request->name .'%')->get();
+        $dataLenght = count($data);
+        return view('backend.categories.list', [
+            'breadcrumb'=>'Quản lý danh mục'
+        ],compact('data','dataLenght'));
+    }
     public function showCategoriesList(CategoryHook $CategoryHook) {
         $data = $CategoryHook->getAll();
         // dd($data);
