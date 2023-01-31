@@ -13,7 +13,7 @@
                             @foreach($pr_category as $category)
                                 @foreach ($category->childs as $item)
                                     <li class="">
-                                        <a href="{{route('showChildCategory',$item->id)}}">{{$item->name}}</a>
+                                        <a href="{{route('showChildCategory',[$item->id,Str::slug($item->name)])}}">{{$item->name}}</a>
                                     </li>
                                 @endforeach
                             @endforeach

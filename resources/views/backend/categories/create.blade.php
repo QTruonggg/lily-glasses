@@ -154,7 +154,7 @@
         return str
     }
     $('input[name="name"]').change(function() {
-         var s = xoa_dau($('input[name="name"]').val())
+         var s = xoa_dau($('input[name="name"]').val().toLowerCase().trim())
         result = s.replaceAll(' ', '-')
         $('input[name="slug"]').val(result)
     })

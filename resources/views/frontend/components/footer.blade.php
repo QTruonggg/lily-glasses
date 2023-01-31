@@ -5,8 +5,6 @@
                 {{-- <a href="" class="logo">
                     <img src="{{asset('assets/images/logo-footer.png')}}" alt="">
                 </a> --}}
-              
-                @foreach($profile as $profile)
                     <a href="" class="logo">
                         <img src="{{ $profile->logo }}" alt="" style="margin-left: -20px;
     margin-bottom: 20px;">
@@ -16,13 +14,12 @@
                     <p>Giờ mở cửa: <span>{{ $profile->time}}</span></p>
                     <p>Email: <span>{{ $profile->email}}</span></p>
                     <p>Hotline: <span>{{ $profile->hotline}}</span></p>
-                @endforeach
             </div>
             <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-6 box-2">
                 <ul>
                     <p>Các chính sách</p>
                     @foreach($policy as $policy)
-                    <li><a href="{{route('policyDetail',$policy->id)}}">{{$policy->name}}</a></li>
+                    <li><a href="{{route('policyDetail',[Str::slug($policy->name),$policy->id])}}">{{$policy->name}}</a></li>
                     @endforeach
                     
                 </ul>

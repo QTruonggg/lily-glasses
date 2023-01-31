@@ -14,13 +14,13 @@
                             <div class="main-item">
                                 <div class="item-new">
                                     <div class="img">
-                                        <a href="{{route('sharedDetail',[$item->id])}}">
+                                        <a href="{{route('sharedDetail',[$item->id,Str::slug($item->name)])}}">
                                             <img src="{{$item->thumbnail}}">
                                         </a>
                                     </div>
                                     <div class="content">
                                         <h2>
-                                            <a href="{{route('sharedDetail',[$item->id])}}">{{$item->name}}</a>
+                                            <a href="{{route('sharedDetail',[$item->id,Str::slug($item->name)])}}">{{$item->name}}</a>
                                         </h2>
                                         <p class="date">{{$item->created_at}}</p>
                                     </div>

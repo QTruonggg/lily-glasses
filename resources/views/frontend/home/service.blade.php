@@ -15,7 +15,7 @@
                     <div class="swiper-slide">
                         <div class="wrap">
                             <div class="service-thumbnail">
-                               <a href="{{route('serviceDetail',[$item->id])}}"> <img src="{{$item->thumbnail}}" alt=""></a>
+                               <a href="{{route('serviceDetail',[$item->id,Str::slug($item->name)])}}"> <img src="{{$item->thumbnail}}" alt=""></a>
                             </div>
                             <div class="service-content">
                                 <a href=""><h3>{{$item->name}}</h3></a>

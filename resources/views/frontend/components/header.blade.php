@@ -42,7 +42,7 @@
                                                 <ul class="sub-menu-list collapse"  id="cate_child-{{$category->slug}}">
                                                 @foreach ($category->childs as $item)
                                                     <li >
-                                                        <a style="text-decoration: none; color:#666;font-size: 18px;" href="{{route('showChildCategory',$item->id)}}">{{$item->name}}</a>
+                                                        <a style="text-decoration: none; color:#666;font-size: 18px;" href="{{route('showChildCategory',[$item->id,Str::slug($item->name)])}}">{{$item->name}}</a>
                                                     </li>
                                                 @endforeach
                                             </ul>
@@ -66,7 +66,7 @@
                                         @foreach($serviceCategory as $child)
                                             <li class="item">
                                                 <h2>
-                                                    <a href="{{route('serviceDetail',$child->id)}}">{{$child->name}}</a>
+                                                    <a href="{{route('serviceDetail',[$child->id,Str::slug($child->name)])}}">{{$child->name}}</a>
                                                 </h2>
                                             </li>
                                         @endforeach
@@ -88,7 +88,7 @@
                                         @foreach($shared as $shared)
                                             <li class="item">
                                                 <h2>
-                                                    <a href="{{route('sharedDetail',$shared->id)}}">{{$shared->name}}</a>
+                                                    <a href="{{route('sharedDetail',[$shared->id,Str::slug($shared->name)])}}">{{$shared->name}}</a>
                                                 </h2>
                                             </li>
                                         @endforeach

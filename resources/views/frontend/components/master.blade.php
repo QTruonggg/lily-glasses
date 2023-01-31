@@ -7,6 +7,40 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     @if(View::hasSection('description'))
+    <meta itemprop="description" content="@yield('description')" />
+    <meta name="twitter:description" content="@yield('description')" />
+    <meta property="og:description" content="@yield('description')" />
+    <meta name="description" content="@yield('description')" />
+    @else
+    <meta itemprop="description" content="{!!$profile->seo_description!!}" />
+    <meta name="twitter:description" content="{!!$profile->seo_description!!}" />
+    <meta property="og:description" content="{!!$profile->seo_description!!}" />
+    @endif
+
+    @if(View::hasSection('title'))
+    <meta name="twitter:title" content="@yield('title')" />
+    <meta property="og:title" content="@yield('title')" />
+    <meta property="og:image:alt" content="@yield('title')" />
+    <title>@yield('title')</title>
+    @else
+    <meta name="twitter:title" content="{!!$profile->seo_title!!}" />
+    <meta property="og:title" content="{!!$profile->seo_title!!}" />
+    <meta property="og:image:alt" content="{!!$profile->seo_title!!}" />
+    <title>{!!$profile->seo_title!!}</title>
+    @endif
+
+    @if(View::hasSection('seo_keywords'))
+    <meta name="twitter:seo_keywords" content="@yield('seo_keywords')" />
+    <meta property="og:seo_keywords" content="@yield('seo_keywords')" />
+    <meta property="og:image:alt" content="@yield('seo_keywords')" />
+    <title>@yield('seo_keywords')</title>
+    @else
+    <meta name="twitter:title" content="{!!$profile->seo_keyword!!}" />
+    <meta property="og:title" content="{!!$profile->seo_keyword!!}" />
+    <meta property="og:image:alt" content="{!!$profile->seo_keyword!!}" />
+    <title>{!!$profile->seo_keyword!!}</title>
+    @endif
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jgthms/minireset.css@master/minireset.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
@@ -26,6 +60,7 @@
     @stack('component-css')
 </head>
 <body>
+    
     @include('frontend.components.header')
     @yield('content')
     @include('frontend.components.footer')

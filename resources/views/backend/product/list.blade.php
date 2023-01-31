@@ -86,14 +86,11 @@
                         <th style=" font-size:10px;width: 10%">
                             Ảnh
                         </th>
-                        <th style=" font-size:10px;width: 10%">
+                        <th style=" font-size:10px;width: 20%">
                             tên
                         </th>
-                        <th style=" font-size:10px;width: 10%">
+                        <th style=" font-size:10px;width: 20%">
                             Mã sản phẩm
-                        </th>
-                        <th style=" font-size:10px;width: 10%">
-                             danh mục
                         </th>
                         <th style=" font-size:10px;width: 10%">
                             Giá gốc
@@ -103,9 +100,6 @@
                         </th>
                         <th style=" font-size:10px;width: 10%">
                             tình trạng
-                        </th>
-                        <th style=" font-size:10px;width: 10%">
-                            Mô tả
                         </th>
                         <th style=" font-size:10px;" class="text-right">
                             Tác vụ
@@ -137,11 +131,6 @@
                         </td>
                         <td style="max-width:110px;"> 
                             <a style="word-wrap: break-word;white-space: normal;overflow: hidden;display: -webkit-box;text-overflow: ellipsis;-webkit-box-orient: vertical;-webkit-line-clamp: 2; ">
-                                {{$item->category_id}}
-                            </a>
-                        </td>
-                        <td style="max-width:110px;"> 
-                            <a style="word-wrap: break-word;white-space: normal;overflow: hidden;display: -webkit-box;text-overflow: ellipsis;-webkit-box-orient: vertical;-webkit-line-clamp: 2; ">
                                 {{$item->old_price}}
                             </a>
                         </td>
@@ -153,11 +142,6 @@
                         <td style="max-width:110px;"> 
                             <a style="word-wrap: break-word;white-space: normal;overflow: hidden;display: -webkit-box;text-overflow: ellipsis;-webkit-box-orient: vertical;-webkit-line-clamp: 2; ">
                                 {{ $item->status}}
-                            </a>
-                        </td>
-                        <td style="max-width:110px;"> 
-                            <a style="word-wrap: break-word;white-space: normal;overflow: hidden;display: -webkit-box;text-overflow: ellipsis;-webkit-box-orient: vertical;-webkit-line-clamp: 2; ">
-                                {!!$item->seo_description!!}
                             </a>
                         </td>
                         <td class="project-actions">

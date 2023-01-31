@@ -172,7 +172,7 @@ Route::post('/dat-lich',[App\Http\Controllers\Frontend\FrontendController::class
 
 
 Route::get('/danh-muc/{slug}',[App\Http\Controllers\Frontend\FrontendController::class, 'showProduct'])->name('showProduct');
-Route::get('/san-pham-con/{id}',[App\Http\Controllers\Frontend\FrontendController::class, 'showChildCategory'])->name('showChildCategory');
+Route::get('/san-pham-con/{id}-{slug}',[App\Http\Controllers\Frontend\FrontendController::class, 'showChildCategory'])->name('showChildCategory');
 Route::get('/san-pham/{id}-{slug}',[App\Http\Controllers\Frontend\FrontendController::class , 'showDetailsProduct'])->name('showDetailsProduct');
 Route::get('/gioi-thieu',[App\Http\Controllers\Frontend\FrontendController::class, 'introduce'])->name('introduce');
 
@@ -189,9 +189,9 @@ Route::post('/thanh-toan',[App\Http\Controllers\Frontend\FrontendController::cla
 
 
 Route::get('/blog',[App\Http\Controllers\Frontend\FrontendController::class, 'blog'])->name('blog');
-Route::get('/chinh-sach/{id}',[App\Http\Controllers\Frontend\FrontendController::class, 'policyDetail'])->name('policyDetail');
-Route::get('/goc-chia-se/{id}',[App\Http\Controllers\Frontend\FrontendController::class, 'sharedDetail'])->name('sharedDetail');
-Route::get('/dich-vu/{id}',[App\Http\Controllers\Frontend\FrontendController::class, 'serviceDetail'])->name('serviceDetail');
+Route::get('/chinh-sach/{id}-{slug}',[App\Http\Controllers\Frontend\FrontendController::class, 'policyDetail'])->name('policyDetail');
+Route::get('/goc-chia-se/{id}-{slug}',[App\Http\Controllers\Frontend\FrontendController::class, 'sharedDetail'])->name('sharedDetail');
+Route::get('/dich-vu/{id}-{slug}',[App\Http\Controllers\Frontend\FrontendController::class, 'serviceDetail'])->name('serviceDetail');
 
 Route::get('/san-pham',[App\Http\Controllers\Frontend\FrontendController::class, 'products'])->name('products');
 

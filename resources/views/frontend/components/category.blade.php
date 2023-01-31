@@ -38,7 +38,7 @@
                             @foreach($serviceCategory as $child)
                                 <li class="item">
                                     <h2>
-                                        <a href="{{route('serviceDetail',$child->id)}}">{{$child->name}}</a>
+                                        <a href="{{route('serviceDetail',[$child->id,Str::slug($child->name)])}}">{{$child->name}}</a>
                                     </h2>
                                 </li>
                             @endforeach
@@ -56,7 +56,7 @@
                             @foreach($shared as $shared)
                                 <li class="item">
                                     <h2>
-                                        <a href="{{route('sharedDetail',$shared->id)}}">{{$shared->name}}</a>
+                                        <a href="{{route('sharedDetail',[$shared->id,Str::slug($shared->name)])}}">{{$shared->name}}</a>
                                     </h2>
                                 </li>
                             @endforeach
@@ -74,3 +74,13 @@
         </div>
     </div>
 </section>
+
+@section('title')
+{!! $category->seo_title !!}
+@endsection()
+@section('description')
+{!! $category->seo_description !!}
+@endsection()
+@section('seo_keywords')
+{!! $category->seo_keywords !!}
+@endsection()
