@@ -27,6 +27,12 @@
             </div>
         </div>
     </div>
+@section('seo_keywords')
+{!! $product->seo_keywords !!}
+@endsection()
+@section('description')
+{!! $product->seo_description !!}
+@endsection()
     @pushonce('component-css')
         <style> 
             .item-product {
@@ -83,9 +89,7 @@
     <script>
         
         function replaceImage() {
-            console.log(123);
             var name = $('input[type="hidden"]').attr('name')
-            console.log(name);
             $('.thumb').attr('src', name)
         }
     </script>

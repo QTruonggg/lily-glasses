@@ -50,7 +50,7 @@ class FrontendController extends Controller
         return view('frontend.product.index',compact('pr_category', 'products'));
     }
     
-    public function showChildCategory($id ,Request $request ){
+    public function showChildCategory( $id ,$slug,Request $request ){
         $products = Product::where('category_id',$id)->where('status','=',1);
         if($request->price == 'desc'){
             $products = $products->orderBy('current_price','DESC');
@@ -141,15 +141,15 @@ class FrontendController extends Controller
     }
 
     
-    public function policyDetail($id){
+    public function policyDetail($slug, $id){
         $policy_detail = Policy::find($id);
         return view('frontend.policy.index',compact('policy_detail'));
     }
-    public function sharedDetail($id){
+    public function sharedDetail($id, $slug){
         $shared_detail = Shared::find($id);
         return view('frontend.shared_corner.index',compact('shared_detail'));
     }
-    public function serviceDetail($id){
+    public function serviceDetail($id, $slug){
         $service_detail = ServiceCategory::find($id);
         return view('frontend.service.index',compact('service_detail'));
     }

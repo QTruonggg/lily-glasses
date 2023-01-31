@@ -51,10 +51,6 @@ class BannerController extends Controller
     public function updateBanner(Request $request, $id){
         $sort = $request->sort;
         $banner = Banner::where('sort','=',$sort)->get();
-        if(!$banner->isEmpty()){
-            return back()->with('error', 'Số thứ tự đã tồn tại !!!');
-        };
-        
         $banner = Banner::findOrFail($id);
         $data = $request->all();
         $banner->update($data);

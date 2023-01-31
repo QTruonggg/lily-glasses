@@ -10,6 +10,7 @@ use App\Models\ServiceCategory;
 use App\Models\Profile;
 use App\Models\Policy;
 use App\Models\Shared;
+use DB;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -36,7 +37,7 @@ class AppServiceProvider extends ServiceProvider
                 'banner'=>Banner::all(),
                 'serviceCategory'=>ServiceCategory::all(),
                 'blog'=> Blog::all(),
-                'profile'=>Profile::all(),
+                'profile'=>DB::table('profiles')->orderBy('id','DESC')->first(),
                 'policy'=>Policy::all(),
                 'shared'=>Shared::all(),
                 'shared_footer'=>Shared::orderBy('id')->limit(4)->get(),

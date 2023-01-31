@@ -71,8 +71,8 @@
                                 <div class="col-md-9">
                                     <ul class=" list row gy-2">
                                         @foreach ($product->colors as $color)
-                                        <li class="col-4 items">
-                                            <span class="cl h-100" data-color="{{$color->color}}" style="background-color:{{$color->color}};"></span>
+                                        <li class="col-2 items">
+                                            <span class="cl h-100 rounded-circle" data-color="{{$color->color}}" style="background-color:{{$color->color}};"></span>
                                         </li>
                                         @endforeach
                                         @error('color')
@@ -109,9 +109,6 @@
                             </form>
                             <a href="{{route('showFormPayment', [Str::slug($product->name), $product->id])}}" class="add-to-cart buy-now">Mua ngay</a>
                         </div>
-                    </div>
-                    <div class="farallo-policy">
-                        <p>Đặc quyền mua sản phẩm tại SOLAR</p>
                     </div>
                 </div>
             </div>

@@ -143,8 +143,8 @@
         return str
     }
     $('input[name="name"]').change(function() {
-         var s = xoa_dau($('input[name="name"]').val())
-        result = s.replaceAll(' ', '-')
+         var s = xoa_dau($('input[name="name"]').val().toLowerCase().trim())
+        result = s.replaceAll(' ', '-');
         $('input[name="slug"]').val(result)
     })
 
