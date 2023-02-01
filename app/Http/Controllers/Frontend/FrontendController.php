@@ -130,6 +130,7 @@ class FrontendController extends Controller
         $data['total'] = (int)$data['total'];
         $data['qty'] = (int)$data['qty'];
         Order::create($data);
+        Cart::destroy();
         return back()->with('success', 'Bạn đã đặt hàng thành công');
     }
 
@@ -155,6 +156,11 @@ class FrontendController extends Controller
     }
     public function products() {
         $products = Product::all();
+        return view('frontend.all_product.index',compact('products'));
+    }
+
+    public function search(Request $request) {
+        $products = Product::where('name', 'LIKE', '%'. $request->name .'%')->orWhere('seo_keyword', 'LIKE', '%'. $request->name .'%')->get();
         return view('frontend.all_product.index',compact('products'));
     }
 }

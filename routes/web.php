@@ -210,3 +210,4 @@ Route::get('/dich-vu/{id}-{slug}',[App\Http\Controllers\Frontend\FrontendControl
 Route::get('/san-pham',[App\Http\Controllers\Frontend\FrontendController::class, 'products'])->name('products');
 
 
+Route::get('/tim-kiem',[App\Http\Controllers\Frontend\FrontendController::class, 'search'])->name('search_product');

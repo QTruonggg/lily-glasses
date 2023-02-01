@@ -8,7 +8,7 @@ use App\Models\Question;
 class EditQuestionController extends Controller
 {
     public function getEdit() {
-        $question = Question::all();
+        $question = Question::find(1);
         return view('backend.question.edit_question',['breadcrumb'=>'Chỉnh sửa câu hỏi']
         , compact('question'));
     }
