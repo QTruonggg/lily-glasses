@@ -10,22 +10,22 @@
                             </p>
                         </li>
                         <li>
-                            <a href="" target="_blank">
+                            <a href="{{$profile->network_fb}}" target="_blank">
                                 <img src="{{asset('assets/images/fb.png')}}">
                             </a>
                         </li>
                         <li>
-                            <a href="">
+                            <a href="{{$profile->network_ins}}">
                                 <img src="{{asset('assets/images/instagram.png')}}">
                             </a>
                         </li>
                         <li>
-                            <a target="_blank" href="">
+                            <a target="_blank" href="{{$profile->network_fb}}">
                                 <img src="{{asset('assets/images/tiktok.png')}}">
                             </a>
                         </li>
                         <li>
-                            <a target="_blank" href="">
+                            <a target="_blank" href="{{$profile->network_fb}}">
                                 <img src="{{asset('assets/images/shopee.png')}}">
                             </a>
                         </li>
