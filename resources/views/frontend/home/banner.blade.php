@@ -25,7 +25,7 @@
         height: 100%;
     }
     .swiper-slide img{
-        max-width: 100%;
+        width: 100%;
         vertical-align: middle;
         object-fit: cover;
     } 
