@@ -142,7 +142,10 @@
   border-radius: 50%;
 }
 #header .header-top.active {
+  height: 80px;
+  padding: 10px 0;
   position: fixed;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 12px;
   top: 0;
   left: 0;
   right: 0;
