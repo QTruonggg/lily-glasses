@@ -9,7 +9,7 @@
                     <div class="cat-item">
                         <div class="row gx-3 gy-2">
                             <div class="col-md-6 col-sm-6 col-6">
-                                <div class="wrap position-relative mb-2">
+                                <div class="wrap position-relative mb-2" style="max-height:190px;">
                                     <a class="cat-img d-block">
                                         <img src="{{ $question->image_1 }}" alt="">
                                     </a>
@@ -19,7 +19,7 @@
                                 </div>
                             </div>
                             <div class="col-md-6 col-sm-6 col-6">
-                                <div class="wrap position-relative mb-2">
+                                <div class="wrap position-relative mb-2" style="max-height:190px;">
                                     <a class="cat-img d-block">
                                         <img src="{{ $question->image_2 }}" alt="">
                                     </a>
@@ -29,7 +29,7 @@
                                 </div>
                             </div>
                             <div class="col-md-6 col-sm-6 col-6">
-                                <div class="wrap position-relative mb-2">
+                                <div class="wrap position-relative mb-2" style="max-height:190px;">
                                     <a class="cat-img d-block">
                                         <img src="{{ $question->image_3 }}" alt="">
                                     </a>
@@ -39,7 +39,7 @@
                                 </div>
                             </div>
                             <div class="col-md-6 col-sm-6 col-6">
-                                <div class="wrap position-relative mb-2">
+                                <div class="wrap position-relative mb-2" style="max-height:190px;">
                                     <a class="cat-img d-block">
                                         <img src="{{ $question->image_4 }}" alt="">
                                     </a>

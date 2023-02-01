@@ -19,7 +19,7 @@
             <div class="list-color">
                 <ul>
                      @foreach ($product->colors as $color)
-                     <li class="color" onclick="replaceImage()" style="background-color:{{$color->color}};">
+                     <li class="color"  style="background-color:{{$color->color}};">
                         <input type="hidden" name="{{$color->image}}">
                      </li>
                      @endforeach

@@ -125,14 +125,19 @@
                     </a>
                 </div>
                 <div class="col-2 d-flex justify-content-end align-items-center">
-                    <div class="dropdown">
-                        <div class="" data-bs-toggle="dropdown" aria-expanded="true">
-                            <i class="fa-solid fa-magnifying-glass"></i>
+                     <form action="{{route('search_product')}}" method="get">
+                        <div class="dropdown">
+                            <button class="" style=" border:none;outline:none;background-color:transparent;" data-bs-toggle="dropdown" aria-expanded="true" >
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                            </button>
+                            <div class="dropdown-menu position:relative;">
+                                <input type="text" name="name" placeholder="Tìm kiếm sản phẩm">
+                                <button class=" position-absolute" style="right: 1px;0px;top:7px; border:none;outline:none;background-color:transparent;"  type="submit"  >
+                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                </button>
+                            </div>
                         </div>
-                        <div class="dropdown-menu">
-                            <input type="search" placeholder="Tìm kiếm">
-                        </div>
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>
@@ -154,12 +159,14 @@
 
                     <div class="col-lg-6 col-md-6 col-sm-6 col-6 d-flex align-items-center justify-content-end">
                         <div class="action">
-                            <div class="search me-3 position-relative">
-                                <input type="text" class="form-control me-5" aria-label="Default" aria-describedby="inputGroup-sizing-default" placeholder="Tìm kiếm">
-                                <div class="position-absolute icon-search" style="top:8px;right:15px;">
-                                    <i class="fa-solid fa-magnifying-glass" style="font-size:22px; color:#e7ba51;"></i>
+                            <form action="{{route('search_product')}}" method="get">
+                                <div class="search me-3 position-relative">
+                                    <input type="text" name="name" class="form-control me-5" aria-label="Default" aria-describedby="inputGroup-sizing-default" placeholder="Tìm kiếm sản phẩm">
+                                    <button class="position-absolute icon-search" style="top:8px;right:15px; border:none;outline:none;background-color:transparent;" type="submit" >
+                                        <i class="fa-solid fa-magnifying-glass" style="font-size:22px; color:#e7ba51;"></i>
+                                    </button>
                                 </div>
-                            </div>
+                            </form>
                             <a href="{{route('showCartList')}}" class="shopping-cart ms-3">
                                 <i class="fa-solid fa-bag-shopping"></i>
                                 <span class="count">{{Cart::count()}}</span>
@@ -177,12 +184,18 @@
 
     
     window.onscroll = () => {
-        console.log(123);
         if(window.scrollY >= $('#header').height()) {
             $('.main-header-mobile').addClass('active')
         }
         if(window.scrollY <= $('#header').height()) {
             $('.main-header-mobile').removeClass('active')
+
+        }
+        if(window.scrollY >= $('#header').height()) {
+            $('.header-top').addClass('active')
+        }
+        if(window.scrollY <= $('#header').height()) {
+            $('.header-top').removeClass('active')
 
         }
     }
