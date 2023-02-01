@@ -583,6 +583,7 @@ footer .box-4 .contact a img {
 }
 #question .question-logo {
   transform: translateX(-25px);
+  max-height: 500px;
   border-radius: 15px;
   overflow: hidden;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
