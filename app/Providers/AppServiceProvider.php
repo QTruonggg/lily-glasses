@@ -9,8 +9,9 @@ use App\Models\Category;
 use App\Models\ServiceCategory;
 use App\Models\Profile;
 use App\Models\Policy;
+use App\Models\Question;
 use App\Models\Shared;
-use DB;
+use Illuminate\Support\Facades\DB;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -42,6 +43,7 @@ class AppServiceProvider extends ServiceProvider
                 'shared'=>Shared::all(),
                 'shared_footer'=>Shared::orderBy('id')->limit(4)->get(),
                 'service_footer'=>ServiceCategory::orderBy('id')->limit(4)->get(),
+                'question'=>DB::table('question')->first(),
             ]);
         });
     }
