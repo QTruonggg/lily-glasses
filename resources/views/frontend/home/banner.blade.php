@@ -15,7 +15,7 @@
         <!-- end pagination -->
 </div>
 <div class="banner-content">
-    <div>Chọn kính thời trang - Nhớ tới ROLAR</div>
+    <div>Chọn kính thời trang - Nhớ tới SOLAR</div>
 </div>
 
 @pushonce('component-css')
@@ -38,7 +38,7 @@
         height: 40px;
         line-height: 40px;
         background-color: rgb(246, 246, 247);
-        color: rgb(193, 194, 196);
+        color: #f3c562;
         font-size: 18px;
     }
 

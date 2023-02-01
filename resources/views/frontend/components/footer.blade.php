@@ -68,4 +68,5 @@
             </div>
         </div>
     </div>
+    <div style="background-color: #dbdbdb; text-align: center; padding: 5px"><span>Designed By </span> <a href="https://ommanisoft.com/?fbclid=IwAR3CUUEkifh-pcEmwQ1l-4YuMnvcPcj5zkvVpdr7WE76hjEduwhcJXs1SXg" target="_blank" style="text-decoration: none; font-weight: 700"> Ommanisoft</a></div>
 </footer>
