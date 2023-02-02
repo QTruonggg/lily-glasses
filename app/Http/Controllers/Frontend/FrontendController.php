@@ -80,9 +80,31 @@ class FrontendController extends Controller
         $data = Introduce::where('id','=', 1)->get();
         return view('frontend.introduce.index', ['title'=>'Giới thiệu chung'] ,compact('data','feedback'));
     }
-    public function appointments(Request $request) {
-        // dd($request->all());
+    // public function appointments(Request $request) {
+    //     // dd($request->all());
 
+    //     $request->validate(
+    //     [
+    //         'name'=>'required',
+    //         'phoneNumber'=>'required',
+    //         'time'=>'required',
+    //     ],
+    //     [
+    //         'name.required'=>'Vui lòng nhập đầy đủ họ tên !',
+    //         'phoneNumber.required'=>'Vui lòng nhập số điện thoại !',
+    //         'time.required'=>'Vui lòng nhập thời gian đặt lịch hẹn !',
+    //     ]);
+    //     $appointment = $request->all();
+    //     Appointment::create($appointment);
+    //     return back()->with('success', 'Đặt lịch khám thành công');
+    // }
+    // thanh toan
+    public function showFormPayment() {
+        $productCart = Cart::content();
+        return view('frontend.form_payment.index', compact('productCart'));
+    }
+
+    public function appointmentsAjax(Request $request) {
         $request->validate(
         [
             'name'=>'required',
@@ -96,14 +118,8 @@ class FrontendController extends Controller
         ]);
         $appointment = $request->all();
         Appointment::create($appointment);
-        return back()->with('success', 'Đặt lịch khám thành công');
+        return response()->json(['success'=>'Đặt lịch thành công...']);
     }
-    // thanh toan
-    public function showFormPayment() {
-        $productCart = Cart::content();
-        return view('frontend.form_payment.index', compact('productCart'));
-    }
-
 
     public function sendOrder(Request $request){
         $data = $request->all();

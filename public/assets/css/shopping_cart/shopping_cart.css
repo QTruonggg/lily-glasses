@@ -537,7 +537,7 @@ footer .box-4 .contact a img {
 }
 #cart_list .form-wrap .total-product {
   padding: 0 4.16%;
-  padding-right: 14%;
+  padding-right: 15%;
 }
 #cart_list .form-wrap .total-product .wrap {
   display: flex;
@@ -572,6 +572,8 @@ footer .box-4 .contact a img {
 #cart_list .form-wrap .btn-order .wrap-btn .order {
   width: 50%;
   text-align: center;
+  display: flex;
+  justify-content: center;
 }
 #cart_list .form-wrap .btn-order .wrap-btn .resrum a,
 #cart_list .form-wrap .btn-order .wrap-btn .order a {

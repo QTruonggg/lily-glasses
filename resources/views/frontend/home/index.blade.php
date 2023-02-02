@@ -5,23 +5,7 @@
 @endsection
 
 @section('content')
-  @if(session()->has('success'))
-    <div class="txt pb-2 pt-2 ps-2 alert alert-success h3">
-      {{ session()->get('success') }}
-    </div>
-  @endif
-  @if ($errors->any())
-    <div class="alert alert-danger">
-        <ul>
-            <li>Quý khách vui lòng nhập đầy đủ thông tin cần thiết !</li>
-        </ul>
-    </div>
-  @endif
-  <script>
-      setTimeout(()=> {
-          $('.txt').addClass('d-none')
-      },3000)
-  </script>
+  
     @include('frontend.home.banner')
     @include('frontend.home.category_product')
     @include('frontend.home.service')
@@ -34,6 +18,8 @@
 
 @section('script')
 <script>
+    
+
     var swiper = new Swiper(".banner-slide", {
         slidesPerView: 1,
         spaceBetween: 30,

@@ -182,7 +182,8 @@ Route::get('/',[App\Http\Controllers\Frontend\FrontendController::class, 'showHo
 
 // book
 Route::get('/dat-lich',[App\Http\Controllers\Frontend\FrontendController::class , 'showFormBook'])->name('showFormBook');
-Route::post('/dat-lich',[App\Http\Controllers\Frontend\FrontendController::class , 'appointments'])->name('appointments');
+// Route::post('/dat-lich',[App\Http\Controllers\Frontend\FrontendController::class , 'appointments'])->name('appointments');
+Route::post('/dat-lich',[App\Http\Controllers\Frontend\FrontendController::class , 'appointmentsAjax'])->name('appointments.ajax');
 
 
 Route::get('/danh-muc/{slug}',[App\Http\Controllers\Frontend\FrontendController::class, 'showProduct'])->name('showProduct');
