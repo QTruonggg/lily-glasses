@@ -38,7 +38,7 @@ class FrontendController extends Controller
     public function showFormBook(Request $request) {
         return view('frontend.form_book.index');
     }
-    public function showProduct($slug){
+    public function showProduct($slug,Request $request){
         $pr_categoryf = Category::where('slug',$slug)->with('childs')->first();
         $pr_category = Category::where('slug',$slug)->with('childs')->get();
         $childCategories = Category::where('parent_id',$pr_categoryf->id)->get();
@@ -46,7 +46,27 @@ class FrontendController extends Controller
         foreach ($childCategories as $childCategory) {
             $id_array[] = $childCategory->id;
         }
-        $products = Product::whereIn('category_id',$id_array)->get();
+        $products = Product::whereIn('category_id',$id_array);
+        if($request->price == 'desc'){
+            $products = $products->orderBy('current_price','DESC');
+            
+        }
+        if($request->price == 'asc'){
+            $products = $products->orderBy('current_price','ASC');
+            
+        }
+        if($request->created_at == 'desc'){
+            $products = $products->orderBy('created_at','DESC');
+            
+        }
+        if($request->created_at == 'asc'){
+            $products = $products->orderBy('created_at','ASC');
+            
+        }
+        if($request->material == 'plastic'){
+            $products= $products->where('material','=','plastic');
+        }
+        $products = $products->get();
         return view('frontend.product.index',compact('pr_category', 'products'));
     }
     

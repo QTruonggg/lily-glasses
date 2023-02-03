@@ -64,7 +64,7 @@
                             </select>
                         </div>
                         
-                        <div class="bookAjax " >Đặt lịch khám</div>
+                        <button class="bookAjax ">Đặt lịch khám</button>
                       </div>
                 </div>
             </div>
@@ -109,7 +109,7 @@
   padding-top: 30px;
 }
 #book .book-group .book-form .book-form-title h3 {
-  color: #EBD7A9;
+  color: #C79B3F;
   font-size: 30px;
   font-weight: 700;
   text-transform: uppercase;
